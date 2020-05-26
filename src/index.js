@@ -1,6 +1,19 @@
-import './style/style.sass'
-// import img from './img/logo-default-261x72.png'
-// import img from './img/header/logo-default-261x72.png'
-// import ~normalize.scss  подключать в css // ~ (алиас) импорт из node_modules
+// JS
+import './js/'
 
-//json без модулей импортируется
+// SCSS
+import './assets/scss/main.scss'
+
+// CSS (example)
+// import './assets/css/main.css'
+
+// Vue.js
+// window.Vue = require('vue')
+
+// Vue components (for use in html)
+// Vue.component('example-component', require('./components/Example.vue').default)
+
+// Vue init
+// const app = new Vue({
+//   el: '#app'
+// })
