@@ -1,9 +1,15 @@
-@import "utils/libs";
-@import "utils/vars";
-@import "utils/mixins";
-@import "utils/fonts";
-@import "utils/reset";
+@import "utils/_libs.scss";
+@import "utils/_vars.scss";
+@import "utils/_mixins.scss";
+@import "utils/_fonts.scss";
+@import "utils/_reset.scss";
 
+@import "modules/_header.scss";
+@import "modules/_footer.scss";
+
+body {
+  background-color: #ffffff;
+}
 #head-page {
   font-family: $baseFont;
   height: 2000px;
