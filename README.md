@@ -3,3 +3,8 @@ Landing page, the design of which I borrowed from the template [www.templatemons
 ### For what
 To remember how to code using html and css.
 And learn how to add interactive landing pages using javascript.
+
+### run project
+to run a project with a module devServer: `npm run dev`.
+to run a project with an assembly in the source directory dist: `npm run start`
+
