@@ -23,14 +23,8 @@
 
 @include smDW {
   .header__logo {
-    justify-content: start;
+    padding: 7px 0;
     width: 100%;
-  }
-
-  .header__nav {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
+    justify-content: start;
   }
 }

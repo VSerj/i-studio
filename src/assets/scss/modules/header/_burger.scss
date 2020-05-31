@@ -4,28 +4,35 @@
 
 @include smDW {
   .menu__burger {
-    position: relative;
-    min-width: 50px;
+    padding: 0 15px 0 15px;
+    min-width: 55px;
+    max-width: 55px;
     height: auto;
+    display: block;
+  }
+  .btn__burger {
+    position: relative;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
-    background-color: rgb(112, 69, 69);
+    background: $baseBGcolor;
   }
-  .burger__line {
+  .line__burger {
     position: absolute;
     width: 100%;
-    height: 3px;
+    height: 4px;
     display: block;
-    background: white;
+    background: $baseLineColor;
     &::before {
-      @extend .burger__line;
+      @extend .line__burger;
       content: '';
-      top: 0;
+      top: 8px;
     }
     &::after {
-      @extend .burger__line;
+      @extend .line__burger;
       content: '';
-      bottom: 0;
+      bottom: 8px;
     }
   }
 }

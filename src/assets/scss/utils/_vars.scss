@@ -2,12 +2,15 @@
 $baseFont: "Poppins", Arial, Tahoma, sans-serif;
 $baseFontSize: 15px;
 $baseFontColor: #000000;
+$seconaryFontColor: #C4C4C4;
 
-$baseLineColor: #d5d5d5;
+$baseLineColor: #C4C4C4;
 
-$colorActiveLink: #6C69E1;
+$baseColorActiveLink: #6C69E1;
+$secondaryColorActiveLink: #ffffff;
 
 $baseBGcolor: #ffffff;
+$navBGcolor: #6C69E1;
 
 $desktopWidth            : 1200px;
 $smDesktopWidth          : 1000px;
@@ -15,4 +18,6 @@ $tableWidth              : 768px;
 $smTableWidth            : 640px;
 $phoneWidth              : 480px;
 // $smPhoneWidth            : 320px;
+
+$zIndexNav: 4000;
 

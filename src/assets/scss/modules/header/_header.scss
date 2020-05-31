@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   background: $baseBGcolor;
+  box-shadow: 0px 8px 4px 0px rgba(0,0,0,.1);;
 }
 
 @import "/_nav.scss";
