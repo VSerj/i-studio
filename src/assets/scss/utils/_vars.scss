@@ -1,11 +1,18 @@
 //font
 $baseFont: "Poppins", Arial, Tahoma, sans-serif;
-$baseFontSize: 16px;
+$baseFontSize: 15px;
 $baseFontColor: #000000;
 
 $baseLineColor: #d5d5d5;
 
-$colorActiveLink: #1A0DAB;
+$colorActiveLink: #6C69E1;
 
 $baseBGcolor: #ffffff;
+
+$desktopWidth            : 1200px;
+$smDesktopWidth          : 1000px;
+$tableWidth              : 768px;
+$smTableWidth            : 640px;
+$phoneWidth              : 480px;
+// $smPhoneWidth            : 320px;
 

@@ -1,0 +1,29 @@
+@mixin DW {
+  @media (max-width: $desktopWidth) {
+    @content;
+  }
+}
+
+@mixin smDW {
+  @media (max-width: #{$smDesktopWidth}) {
+    @content;
+  }
+}
+
+@mixin TW {
+  @media (max-width: #{$tableWidth}) {
+    @content;
+  }
+}
+
+@mixin smTW {
+  @media (max-width: #{$smtableWidth}) {
+    @content;
+  }
+}
+
+@mixin PW {
+  @media (max-width: #{$phoneWidth}) {
+    @content;
+  }
+}

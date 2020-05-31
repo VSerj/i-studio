@@ -1,0 +1,36 @@
+.header__logo {
+  width: 19vw;
+  padding: 7px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo__link {
+  max-width: 170px;
+
+  img {
+    width: 100%;
+  }
+}
+
+@include DW {
+  .logo__link {
+    max-width: 140px;
+    min-width: 140px;
+  }
+}
+
+@include smDW {
+  .header__logo {
+    justify-content: start;
+    width: 100%;
+  }
+
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

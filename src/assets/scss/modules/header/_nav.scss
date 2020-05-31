@@ -1,0 +1,32 @@
+.header__nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.nav__link {
+  width: 100%;
+  padding: 35px 10px;
+  color: #343434;
+  font-size: .95em;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  border-left: 1px solid $baseLineColor;
+  transition: background .2s ease-in,
+    color .2s ease-in;
+  &:hover {
+    color: $colorActiveLink;
+    background: #F9F9F9;
+  }
+}
+
+.isActive {
+  color: $colorActiveLink;
+  background: #F9F9F9;
+}
+
+@include DW {
+  .nav__link {
+    padding: 25px 10px;
+  }
+}
