@@ -8,10 +8,12 @@
 @import "modules/_footer.scss";
 
 body {
-  background-color: #ffffff;
+  background-color: $baseBGcolor;
 }
 #head-page {
   font-family: $baseFont;
+  font-size: $baseFontSize;
+}
+.wrapper {
   height: 2000px;
-  font-size: baseSize;
 }
