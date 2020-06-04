@@ -2,28 +2,29 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background: $baseBGcolor;
+  background: $headerNavBGcolor;
 }
 .nav__link {
   width: 100%;
   padding: 35px 10px;
-  color: #343434;
+  color: $headerNavFontColor;
   font-size: .95em;
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
-  border-left: 1px solid $baseLineColor;
-  transition: background .2s ease-in,
+  border-left: 1px solid $headerNavLineColor;
+  transition: 
+    background .2s ease-in,
     color .2s ease-in;
   &:hover {
-    color: $baseColorActiveLink;
-    background: #F9F9F9;
+    color: $headerNavHoverFontColor;
+    background: $headerNavHoverBGcolor;
   }
 }
 
 .isActive {
-  color: $baseColorActiveLink;
-  background: #F9F9F9;
+  color: $headerNavHoverFontColor;
+  background: $headerNavHoverBGcolor;
 }
 
 @include DW {
@@ -35,22 +36,31 @@
 @include smDW {
   .header__nav {
     // display: flex;
-    position: absolute;
-    width: 250px;
-    top: 55px;
+    // flex: 0 0 100%;
+    max-width: 250px;
+    position: fixed;
+    top: 0;
     left: 0;
-    flex-flow: column wrap;;
-    z-index: zIndexNav;
+    padding: 0 2px;
+    width: 250px;
+    height: 100vh;
+    flex-flow: column wrap;
+    justify-content: start;
+    z-index: -1;
   }
   .nav__link {
-    color: $seconaryFontColor;
+    margin: 2px 0px;
+    padding: 15px 15px;
+    font-weight: 500;
+    text-align: start;
+    color: $secondaryHeaderNavFontColor;
   }
   .nav__link:hover {
-    color: $secondaryColorActiveLink;
-    background: $navBGcolor;
+    color: $secondaryNavHoverFontColor;
+    background: $secondaryHeaderNavHoverBGcolor;
   }
   .isActive {
-    color: $secondaryColorActiveLink;
-    background: $navBGcolor;
+    color: $secondaryNavHoverFontColor;
+    background: $secondaryHeaderNavHoverBGcolor;
   }
 }

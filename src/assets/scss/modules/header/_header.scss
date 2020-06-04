@@ -5,13 +5,22 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background: $baseBGcolor;
-  box-shadow: 0px 8px 4px 0px rgba(0,0,0,.1);;
+  
+  background: $headerBGcolor;
+  // z-index: $zIndexHeader;
+  box-shadow: 0px 8px 4px 0px rgba(141, 137, 137, 0.1);
+}
+
+@include smDW {
+  
 }
 
 @import "/_nav.scss";
-@import "/_logo.scss";
+@import "/_logo.scss";  
 @import "/_burger.scss";
+@import "_animatBurger.scss";
+
+
 
 
 

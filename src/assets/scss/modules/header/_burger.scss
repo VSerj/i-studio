@@ -1,36 +1,37 @@
-.menu__burger {
+.menu__btn {
   display: none;
 }
 
 @include smDW {
-  .menu__burger {
+  .menu__btn {
+    // flex: 0 0 50vw;
     padding: 0 15px 0 15px;
     min-width: 55px;
     max-width: 55px;
     height: auto;
     display: block;
   }
-  .btn__burger {
+  .btn__container{
     position: relative;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    background: $baseBGcolor;
+    background: $headerNavBGcolor;
   }
-  .line__burger {
+  .btn__line {
     position: absolute;
     width: 100%;
     height: 4px;
     display: block;
-    background: $baseLineColor;
+    background: $headerNavLineColor;
     &::before {
-      @extend .line__burger;
+      @extend .btn__line;
       content: '';
       top: 8px;
     }
     &::after {
-      @extend .line__burger;
+      @extend .btn__line;
       content: '';
       bottom: 8px;
     }
