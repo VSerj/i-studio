@@ -8,10 +8,19 @@
   max-width: 170px;
 }
 
+@include DW {
+
+  .logo__link {
+    max-width: 150px;
+  }
+  
+}
+
 @include smDW {
+
   .header__logo {
     padding: 7px 0 7px 0;
-    // flex: 0 0 50vw;
     justify-content: start;
+
   }
 }
