@@ -1,6 +1,4 @@
 .header__logo {
-  width: 19vw;
-  padding: 7px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,21 +6,11 @@
 
 .logo__link {
   max-width: 170px;
-  img {
-    width: 100%;
-  }
-}
-
-@include DW {
-  .logo__link {
-    max-width: 140px;
-    min-width: 140px;
-  }
 }
 
 @include smDW {
   .header__logo {
-    padding: 7px 0;
+    padding: 7px 0 7px 0;
     // flex: 0 0 50vw;
     justify-content: start;
   }

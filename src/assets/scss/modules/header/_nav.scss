@@ -1,14 +1,12 @@
 .header__nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   background: $headerNavBGcolor;
 }
+
 .nav__link {
-  width: 100%;
-  padding: 35px 10px;
+  padding: 35px 10px 35px 10px;
   color: $headerNavFontColor;
-  font-size: .95em;
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
@@ -16,10 +14,12 @@
   transition: 
     background .2s ease-in,
     color .2s ease-in;
+
   &:hover {
     color: $headerNavHoverFontColor;
     background: $headerNavHoverBGcolor;
   }
+
 }
 
 .isActive {
@@ -27,40 +27,42 @@
   background: $headerNavHoverBGcolor;
 }
 
+//------------------- respons -------------------------
+
 @include DW {
+
   .nav__link {
-    padding: 25px 0;
+    padding: 25px 10px 25px 10px;
   }
+
 }
 
 @include smDW {
+
   .header__nav {
-    // display: flex;
-    // flex: 0 0 100%;
-    max-width: 250px;
     position: fixed;
-    top: 0;
+    top: 55px;
     left: 0;
-    padding: 0 2px;
-    width: 250px;
-    height: 100vh;
-    flex-flow: column wrap;
-    justify-content: start;
-    z-index: -1;
+    grid-template-columns: 250px;
+    grid-template-rows: repeat(4, 1fr);
   }
+
   .nav__link {
-    margin: 2px 0px;
-    padding: 15px 15px;
+    margin: 2px 0 2px 0;
+    // padding: 15px 15px;
     font-weight: 500;
     text-align: start;
     color: $secondaryHeaderNavFontColor;
   }
+
   .nav__link:hover {
     color: $secondaryNavHoverFontColor;
     background: $secondaryHeaderNavHoverBGcolor;
   }
+
   .isActive {
     color: $secondaryNavHoverFontColor;
     background: $secondaryHeaderNavHoverBGcolor;
   }
+
 }
