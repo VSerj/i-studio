@@ -24,18 +24,37 @@
 .nav_link-selected {
   color: $headerHoverColor;
   background: $headerHoverBGcolor;
-} 
+}
 
 
 @include sm_desktop {
-
   .header_nav {
     position: fixed;
     top: 0;
     left: 0;
-    padding-top: 120px;
-    grid-template-columns: px(250);
-    grid-template-rows: repeat(4, 1fr);
+    height: 100vh;
+    @include p(70,2,0,2);
+    gap: px(4);
+    grid-template-columns: px(260);
+    grid-template-rows: repeat(4, px(50));
+    overflow: auto;
+  }
+  
+  .nav_link {
+    @include p(0,10,0,15);
+    justify-content: start;
+    font-size: px(15);
+    color: $secondaryHeaderColor;
+    border-left: none;
+
+    &:hover{
+      color: $secondaryHoverColor;
+      background: $secondaryHeaderHoverBGcolor;
+    }
   }
 
+  .nav_link-selected {
+    color: $secondaryHoverColor;
+    background: $secondaryHeaderHoverBGcolor;
+  }
 }
