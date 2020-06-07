@@ -1,28 +1,54 @@
-@mixin DW {
+//calc rem
+@function px($px, $context: $baseSize) {
+  @if $px == auto { 
+    @return auto 
+  };
+  @return ($px / $context) * 1rem;
+}
+
+@function setSize($top, $right, $bottom: false, $left: false) {
+  @if $bottom == false or $left == false { 
+    @return #{px($top)} #{px($right)};
+  };
+
+  @return #{px($top)} #{px($right)} #{px($bottom)} #{px($left)};
+}
+
+//padding
+@mixin p($top, $right, $bottom: false, $left: false) {
+  padding: setSize($top, $right, $bottom, $left);
+}
+
+//margin
+@mixin m($top, $right, $bottom: false, $left: false) {
+  margin: setSize($top, $right, $bottom, $left);
+}
+
+@mixin l_desktop {
   @media (max-width: $desktopWidth) {
     @content;
   }
 }
 
-@mixin smDW {
+@mixin sm_desktop {
   @media (max-width: #{$smDesktopWidth}) {
     @content;
   }
 }
 
-@mixin TW {
+@mixin l_table {
   @media (max-width: #{$tableWidth}) {
     @content;
   }
 }
 
-@mixin smTW {
+@mixin sm_table {
   @media (max-width: #{$smtableWidth}) {
     @content;
   }
 }
 
-@mixin PW {
+@mixin phone {
   @media (max-width: #{$phoneWidth}) {
     @content;
   }

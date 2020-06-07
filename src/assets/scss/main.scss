@@ -1,12 +1,15 @@
-@import "utils/_libs.scss";
-@import "utils/_vars.scss";
-@import "utils/_mixins.scss";
-@import "utils/_fonts.scss";
-@import "utils/_reset.scss";
+@import "/utils/_libs.scss";
+@import "/utils/_vars.scss";
+@import "/utils/_mixins.scss";
+@import "/utils/_fonts.scss";
+@import "/utils/_reset.scss";
 
-@import "modules/header/_header.scss";
-@import "modules/_footer.scss";
+@import "/modules/header/_header.scss";
+@import "/modules/_footer.scss";
 
+html {
+  font-size: 16px;
+}
 body {
   background-color: $baseBGcolor;
 }
@@ -16,4 +19,9 @@ body {
 }
 .wrapper {
   height: 2000px;
+  position: relative;
+}
+main {
+  position: relative;
+
 }

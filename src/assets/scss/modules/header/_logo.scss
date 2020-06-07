@@ -1,26 +1,12 @@
-.header__logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.header_logo {
+  max-width: px(170);
 }
 
-.logo__link {
-  max-width: 170px;
-}
+@include l_desktop {
 
-@include DW {
-
-  .logo__link {
-    max-width: 150px;
+  .header_logo {
+    max-width: px(140);
+    min-width: px(140);
   }
-  
-}
 
-@include smDW {
-
-  .header__logo {
-    padding: 7px 0 7px 0;
-    justify-content: start;
-
-  }
 }

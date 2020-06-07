@@ -1,68 +1,41 @@
-.header__nav {
+.header_nav {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background: $headerNavBGcolor;
+  background: $headerBGcolor;
 }
 
-.nav__link {
-  padding: 35px 10px 35px 10px;
-  color: $headerNavFontColor;
-  font-weight: 600;
+.nav_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $headerColor;
   text-transform: uppercase;
-  text-align: center;
-  border-left: 1px solid $headerNavLineColor;
-  transition: 
-    background .2s ease-in,
-    color .2s ease-in;
+  font-weight: 600;
+  letter-spacing: .02rem;
+  border-left: px(1) solid $headerLineColor;
+  transition: background .2s ease-in-out, color .2s ease-in-out;
 
-  &:hover {
-    color: $headerNavHoverFontColor;
-    background: $headerNavHoverBGcolor;
+  &:hover{
+    color: $headerHoverColor;
+    background: $headerHoverBGcolor;
   }
-
 }
 
-.isActive {
-  color: $headerNavHoverFontColor;
-  background: $headerNavHoverBGcolor;
-}
+.nav_link-selected {
+  color: $headerHoverColor;
+  background: $headerHoverBGcolor;
+} 
 
-//------------------- respons -------------------------
 
-@include DW {
+@include sm_desktop {
 
-  .nav__link {
-    padding: 25px 10px 25px 10px;
-  }
-
-}
-
-@include smDW {
-
-  .header__nav {
+  .header_nav {
     position: fixed;
-    top: 55px;
+    top: 0;
     left: 0;
-    grid-template-columns: 250px;
-    grid-auto-rows: max-content;
-    height: 100vh;
-  }
-
-  .nav__link {
-    margin: 2px 0 2px 0;
-    font-weight: 500;
-    text-align: start;
-    color: $secondaryHeaderNavFontColor;
-  }
-
-  .nav__link:hover {
-    color: $secondaryNavHoverFontColor;
-    background: $secondaryHeaderNavHoverBGcolor;
-  }
-
-  .isActive {
-    color: $secondaryNavHoverFontColor;
-    background: $secondaryHeaderNavHoverBGcolor;
+    padding-top: 120px;
+    grid-template-columns: px(250);
+    grid-template-rows: repeat(4, 1fr);
   }
 
 }

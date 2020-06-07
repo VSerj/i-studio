@@ -1,37 +1,42 @@
-.menu__btn {
+.menu_btn {
+  height: 100%;
   display: none;
 }
 
-@include smDW {
+@include sm_desktop {
   
-  .menu__btn {
-    padding: 0 15px 0 15px;
+  .menu_btn {
+    height: 100%;
+    width: 100%;
+    @include p(0, 15, 0, 15);
     display: block;
   }
-
-  .btn__container{
+  
+  .menu_btn_container{
     position: relative;
-    height: 100%;
+    height: inherit;
+    width: inherit;
     display: flex;
     align-items: center;
-    background: $headerNavBGcolor;
+    background: $headerBGcolor;
   }
-
-  .btn__line {
+  
+  .menu_btn_line {
     position: absolute;
+    z-index: $zIndexHeader + 1;
     width: 100%;
     height: 4px;
     display: block;
-    background: $headerNavLineColor;
+    background: $headerLineColor;
 
     &::before {
-      @extend .btn__line;
+      @extend .menu_btn_line;
       content: '';
       top: 8px;
     }
 
     &::after {
-      @extend .btn__line;
+      @extend .menu_btn_line;
       content: '';
       bottom: 8px;
     }

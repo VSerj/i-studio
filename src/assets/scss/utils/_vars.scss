@@ -1,6 +1,7 @@
 //global
+$baseSize: 16;
 $baseFont: "Poppins", Arial, Tahoma, sans-serif;
-$baseFontSize: 15px;
+$baseFontSize: "#{$baseSize}px";
 $baseFontColor: #000000;
 $seconaryFontColor: #C4C4C4;
 $baseBGcolor: #ffffff;
@@ -10,18 +11,15 @@ $baseLineColor: #C4C4C4;
 //*** HEADER***
 $headerBGcolor: $baseBGcolor;
 //******* HEADER nav font***
-$headerNavFontSize: 16px;
-$headerNavFontColor: #262626;
-$secondaryHeaderNavFontColor: #9b9b9b;
-$headerNavHoverFontColor:  #6C69E1;
-$secondaryNavHoverFontColor:  #ffffff;
+$headerColor: #262626;
+$secondaryHeaderColor: #9b9b9b;
+$headerHoverColor:  #6C69E1;
+$secondaryHoverColor:  #ffffff;
 //******** HEADER nav bg***
-$headerNavBGcolor: $baseBGcolor;
-$headerNavHoverBGcolor: #f9f9f9;
-$secondaryHeaderNavHoverBGcolor: #6C69E1;
+$headerHoverBGcolor: #f9f9f9;
+$secondaryHeaderHoverBGcolor: #6C69E1;
 //******** HEADER nav line***
-$headerNavLineColor: $baseLineColor;
-
+$headerLineColor: $baseLineColor;
 
 $desktopWidth            : 1200px;
 $smDesktopWidth          : 1000px;
