@@ -37,6 +37,7 @@
     gap: px(4);
     grid-template-columns: px(260);
     grid-template-rows: repeat(4, px(50));
+    box-shadow: 0 0 10px #00000034;
     overflow: auto;
   }
   

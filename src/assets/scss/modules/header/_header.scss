@@ -8,7 +8,7 @@
   grid-template-columns: 17vw 83vw;
   grid-template-rows: px(90);
   background: $headerBGcolor;
-  border-bottom: px(1) solid $headerLineColor
+  border-bottom: px(1) solid $headerLineColor;
 }
 
 .nav_panel_mobile {
@@ -42,6 +42,7 @@
     grid-template-rows: 100%;
     justify-items: start;
     box-shadow: 0 0 10px #00000034;
+    background: $headerBGcolor;
   }
 
 }

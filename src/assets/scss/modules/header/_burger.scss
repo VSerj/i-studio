@@ -1,6 +1,7 @@
 .menu_btn {
   height: 100%;
   display: none;
+  cursor: pointer;
 }
 
 @include sm_desktop {
