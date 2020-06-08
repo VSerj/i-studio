@@ -26,11 +26,6 @@
   background: $headerHoverBGcolor;
 }
 
-.header_nav.active_menu {
-  left: 0;
-}
-
-
 @include sm_desktop {
   .header_nav {
     position: fixed;
@@ -62,5 +57,9 @@
   .nav_link-selected {
     color: $secondaryHoverColor;
     background: $secondaryHeaderHoverBGcolor;
+  }
+
+  .header_nav.is_active_menu {
+    left: 0;
   }
 }

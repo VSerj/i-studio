@@ -19,7 +19,7 @@
     width: inherit;
     display: flex;
     align-items: center;
-    background: $headerBGcolor;
+    transition: all .4s ease-in-out;
   }
   
   .menu_btn_line {
@@ -29,17 +29,20 @@
     height: 4px;
     display: block;
     background: $headerLineColor;
+    transition: all .4s ease-in-out;
 
     &::before {
       @extend .menu_btn_line;
       content: '';
       top: 8px;
+      transition: all .4s ease-in-out;
     }
 
     &::after {
       @extend .menu_btn_line;
       content: '';
       bottom: 8px;
+      transition: all .4s ease-in-out;
     }
   }
 
