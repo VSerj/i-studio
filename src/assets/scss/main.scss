@@ -5,22 +5,31 @@
 @import "/utils/_reset.scss";
 
 @import "/modules/header/_header.scss";
+@import "/sections-head-page/sections-head-page.scss";
 @import "/modules/_footer.scss";
 
 html {
   font-size: 16px;
 }
+
 body {
   background-color: $baseBGcolor;
 }
+
 #head-page {
   font-family: $baseFont;
   font-size: $baseFontSize;
 }
+
 .wrapper {
   height: 2000px;
   position: relative;
 }
+
+.container {
+  min-width: 1100px;
+}
+
 main {
   position: relative;
 }
