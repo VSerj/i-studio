@@ -1,6 +1,38 @@
 #preview {
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
   height: 90vh;
   background: url(../img/bg-intro-1919x953.jpg);
 }
+
+.preview_title {
+  color: $tertiaryFontColor;
+
+  h1 {
+    font-size: px(30);
+    text-transform: uppercase;
+  }
+
+}
+
+.preview_title_text {
+  // @include m(0, -4, 0, 0);
+  font-size: px(21);
+  font-weight: 500;
+  transform: translateX( - px(10) );
+}
+
+.preview_title_text_big {
+  @include p(0, 0, 0, 20);
+  font-size: px(100);
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.preview_text {
+  font-size: px(18);
+  color: rgba(255, 255, 255, .4);
+  max-width: 50%;
+}
+
 

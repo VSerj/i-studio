@@ -1,25 +1,38 @@
-//global
+//-------------- global -----------------
+
 $baseSize: 16;
 $baseFont: "Poppins", Arial, Tahoma, sans-serif;
 $baseFontSize: "#{$baseSize}px";
+
+$baseLetterSpasing: .01rem;
+
 $baseFontColor: #000000;
 $seconaryFontColor: #C4C4C4;
+$tertiaryFontColor: #ffffff;
+
 $baseBGcolor: #ffffff;
 $secondaryBGcolor: #6c757d;
+
 $baseLineColor: #C4C4C4;
 
-//*** HEADER***
+//-------------- Header ------------------
+
 $headerBGcolor: $baseBGcolor;
-//******* HEADER nav font***
+
+//* Header nav font *
 $headerColor: #262626;
 $secondaryHeaderColor: #9b9b9b;
 $headerHoverColor:  #6C69E1;
 $secondaryHoverColor:  #ffffff;
-//******** HEADER nav bg***
+
+//* Header nav bg *
 $headerHoverBGcolor: #f9f9f9;
 $secondaryHeaderHoverBGcolor: #6C69E1;
-//******** HEADER nav line***
+
+//* Header nav line *
 $headerLineColor: $baseLineColor;
+
+//--------------- Breakpoint ---------------
 
 $desktopWidth            : 1200px;
 $smDesktopWidth          : 1000px;
@@ -27,6 +40,8 @@ $tableWidth              : 768px;
 $smTableWidth            : 640px;
 $phoneWidth              : 480px;
 // $smPhoneWidth            : 320px;
+
+//------------ z-index ----------------------
 
 $zIndexHeader: 4000;
 
