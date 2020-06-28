@@ -9,6 +9,7 @@
   height: px(90);
   background: $headerBGcolor;
   border-bottom: px(1) solid $headerLineColor;
+  transition: height .3s ease-in;
 }
 
 .nav_panel_mobile {
@@ -16,6 +17,10 @@
   grid-template-columns: 1fr;
   justify-items: center;
   align-items: center;
+}
+
+#header.is_scrolling {
+  height: px(70);
 }
 
 @include l_desktop {

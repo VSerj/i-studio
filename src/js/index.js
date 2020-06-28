@@ -1,53 +1,47 @@
-'use strict'
-let menuButton = document.querySelector('.menu_btn')
+"use strict";
+let menuButton = document.querySelector(".menu_btn");
 
-menuButton.addEventListener('click', useNavigation)
+menuButton.addEventListener("click", useNavigation);
 
 function useNavigation() {
-  useAnimationForBurger()
-  showHideNavigation()
+  useAnimationForBurger();
+  showHideNavigation();
 }
 
 function useAnimationForBurger() {
-  menuButton.classList.toggle('is_active_menu')
+  menuButton.classList.toggle("is_active_menu");
 }
 
 function showHideNavigation() {
-  document.querySelector('.header_nav').classList.toggle('is_active_menu')
+  document.querySelector(".header_nav").classList.toggle("is_active_menu");
 }
 
-// window.addEventListener('scroll', function(e) {
-//   if (window.pageYOffset > 10) {
-//     document.querySelector(`.header`).classList
-//   }
-// })
-// let currentElem = null;
+let header = document.getElementById("header");
 
-// document.addEventListener('mouseover', function(e) {
+window.addEventListener("scroll", changeHeightHeader);
+window.addEventListener("resize", adaptiveHeaderForDesktop);
 
-//   let target = e.target.closest('.is_active_menu')
+function changeHeightHeader() {
+  if (window.scrollY) {
+    header.classList.add("is_scrolling");
+  } else {
+    header.classList.remove("is_scrolling");
+  }
+}
 
-//   if(!target) return
+function adaptiveHeaderForDesktop() {
+  const minDesktopWidth = 1200;
+  const currentDesktopWidth = () => document.documentElement.clientWidth;
+  const isDesktopWidth = () => currentDesktopWidth() >= minDesktopWidth;
+  
+  if (!isDesktopWidth()) {
+    window.removeEventListener("scroll", changeHeightHeader);
 
-//   currentElem = target
-//   document.body.classList.add('lock_flow')
+    if (!header.classList.contains("is_scrolling")) return;
+    header.classList.remove("is_scrolling")
 
-// })
+  } else {
+    window.addEventListener("scroll", changeHeightHeader);
+  }
 
-// document.addEventListener('mouseout', function(e) {
-
-//   if(!currentElem) return
-
-//   let relatedTarget = e.relatedTarget
-
-//   while(relatedTarget) {
-
-//     if (relatedTarget == currentElem) return
-//     relatedTarget = relatedTarget.parentNode
-    
-//   }
-
-//   document.body.classList.remove('lock_flow')
-//   currentElem = null
-
-// })
+}
