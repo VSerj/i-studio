@@ -17,6 +17,7 @@ function showHideNavigation() {
 }
 
 let header = document.getElementById("header");
+let isAddedListener;
 
 window.addEventListener("scroll", changeHeightHeader);
 window.addEventListener("resize", adaptiveHeaderForDesktop);
@@ -27,21 +28,24 @@ function changeHeightHeader() {
   } else {
     header.classList.remove("is_scrolling");
   }
+
+  isAddedListener = true;
 }
 
 function adaptiveHeaderForDesktop() {
   const minDesktopWidth = 1200;
   const currentDesktopWidth = () => document.documentElement.clientWidth;
   const isDesktopWidth = () => currentDesktopWidth() >= minDesktopWidth;
-  
+
   if (!isDesktopWidth()) {
     window.removeEventListener("scroll", changeHeightHeader);
-
+    isAddedListener = false;
+    
     if (!header.classList.contains("is_scrolling")) return;
-    header.classList.remove("is_scrolling")
-
-  } else {
+    header.classList.remove("is_scrolling");
+  } else if (!isAddedListener) {
     window.addEventListener("scroll", changeHeightHeader);
-  }
 
+    isAddedListener = true;
+  }
 }
