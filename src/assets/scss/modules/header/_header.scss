@@ -5,8 +5,8 @@
   z-index: $zIndexHeader;
   width: 100%;
   display: grid;
-  grid-template-columns: 17vw 83vw;
-  grid-template-rows: px(90);
+  grid-template-columns: 17% 83%;
+  height: px(90);
   background: $headerBGcolor;
   border-bottom: px(1) solid $headerLineColor;
 }
@@ -21,8 +21,7 @@
 @include l_desktop {
 
   #header {
-    grid-template-rows: px(70);
-    
+    height: px(70);
   }
 
 }
@@ -30,16 +29,14 @@
 @include sm_desktop {
 
   #header {
-    // height: 55px;
     grid-template-columns: 1fr;
-    grid-template-rows: px(55);
+    height: px(55);
     border-bottom: none;
   }
 
   .nav_panel_mobile {
     z-index: $zIndexHeader + 2;
     grid-template-columns: px(55) 1fr;
-    grid-template-rows: 100%;
     justify-items: start;
     box-shadow: 0 0 10px #00000034;
     background: $headerBGcolor;

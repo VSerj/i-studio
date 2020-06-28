@@ -10,7 +10,8 @@
   align-items: center;
   color: $headerColor;
   text-transform: uppercase;
-  font-weight: 500;
+  font-size: $headerFontSize;
+  font-weight: 600;
   letter-spacing: .02rem;
   border-left: px(1) solid $headerLineColor;
   transition: background .2s ease-in-out, color .2s ease-in-out;
@@ -44,7 +45,6 @@
   .nav_link {
     @include p(0,10,0,15);
     justify-content: start;
-    font-size: px(15);
     color: $secondaryHeaderColor;
     border-left: none;
 
