@@ -2,7 +2,7 @@
 
 $baseSize: 16;
 $baseFont: "Poppins", Arial, Tahoma, sans-serif;
-$baseFontSize: "#{$baseSize}px";
+$baseFontSize: #{$baseSize}px;
 
 $baseLetterSpasing: .01rem;
 

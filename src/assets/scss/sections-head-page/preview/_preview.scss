@@ -3,6 +3,9 @@
   align-items: center;
   height: 90vh;
   background: url(../img/bg-intro-1919x953.jpg);
+  background-size: cover;
+  background-position: center center;
+  // background-size: contain;
 }
 
 .preview_title {
@@ -26,13 +29,22 @@
   @include p(0, 0, 0, 20);
   font-size: px(100);
   text-transform: uppercase;
-  font-weight: 900;
+  font-family: "PoppinsBig";
 }
 
 .preview_text {
-  font-size: px(18);
-  color: rgba(255, 255, 255, .4);
   max-width: 50%;
+  font-size: px(18);
+  line-height: 1.36;
+  color: rgba(255, 255, 255, .4);
+}
+
+@include l_desktop {
+
+  .preview_title h1 {
+    font-size: px(25);
+  }
+
 }
 
 

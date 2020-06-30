@@ -1,7 +1,11 @@
 "use strict";
 let menuButton = document.querySelector(".menu_btn");
+let header = document.getElementById("header");
+let isAddedListener;
 
 menuButton.addEventListener("click", useNavigation);
+window.addEventListener("scroll", changeHeightHeader);
+window.addEventListener("resize", adaptiveHeaderForDesktop);
 
 function useNavigation() {
   useAnimationForBurger();
@@ -15,12 +19,6 @@ function useAnimationForBurger() {
 function showHideNavigation() {
   document.querySelector(".header_nav").classList.toggle("is_active_menu");
 }
-
-let header = document.getElementById("header");
-let isAddedListener;
-
-window.addEventListener("scroll", changeHeightHeader);
-window.addEventListener("resize", adaptiveHeaderForDesktop);
 
 function changeHeightHeader() {
   if (window.scrollY) {

@@ -15,6 +15,7 @@ html {
 body {
   background-color: $baseBGcolor;
   letter-spacing: $baseLetterSpasing;
+  line-height: 1.67;
 }
 
 #head-page {
@@ -31,7 +32,17 @@ body {
   max-width: 1199px;
   width: 100%;
   margin: 0 auto;
+  @include p(0, 15, 0, 15);
 }
+
+@include l_desktop {
+
+  .container{
+    max-width: 960px;
+  }
+
+}
+
 
 main {
   position: relative;
