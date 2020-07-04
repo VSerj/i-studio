@@ -25,14 +25,14 @@
   transform: translateX( - px(10) );
 }
 
-.preview_title_text_big {
+.preview_title_big-text {
   @include p(0, 0, 0, 20);
-  font-size: px(100);
+  font-size: px(110);
   text-transform: uppercase;
   font-family: "PoppinsBig";
 }
 
-.preview_text {
+.preview_description {
   max-width: 50%;
   font-size: px(18);
   line-height: 1.36;
