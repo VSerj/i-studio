@@ -10,29 +10,33 @@
 
 .preview_title {
   color: $tertiaryFontColor;
+  line-height: 1;
+  @include m(0, 0, 30, 0);
+}
 
-  h1 {
-    font-size: px(30);
-    text-transform: uppercase;
-  }
-
+.preview_title_main {
+  margin: 0 0 1.5rem 0;
+  font-size: px(29);
+  text-transform: uppercase;
 }
 
 .preview_title_text {
-  // @include m(0, -4, 0, 0);
-  font-size: px(21);
+  margin: 0 0 1.25rem 0;
+  // margin-bottom: px(18);
+  font-size: px(20);
   font-weight: 500;
   transform: translateX( - px(10) );
 }
 
 .preview_title_big-text {
-  @include p(0, 0, 0, 20);
+  @include p(0, 0, 0, 30);
   font-size: px(110);
   text-transform: uppercase;
   font-family: "PoppinsBig";
 }
 
 .preview_description {
+  @include p(0, 0, 10, 0);
   max-width: 50%;
   font-size: px(18);
   line-height: 1.36;
@@ -41,7 +45,7 @@
 
 @include l_desktop {
 
-  .preview_title h1 {
+  .preview_title_main {
     font-size: px(25);
   }
 
