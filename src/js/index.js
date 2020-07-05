@@ -41,6 +41,7 @@ function adaptiveHeaderForDesktop() {
     
     if (!header.classList.contains("is_scrolling")) return;
     header.classList.remove("is_scrolling");
+    
   } else if (!isAddedListener) {
     window.addEventListener("scroll", changeHeightHeader);
 

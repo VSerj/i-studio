@@ -1,7 +1,7 @@
 .preview_title {
+  @include m(0, 0, 30, 0);
   color: $tertiaryFontColor;
   line-height: 1;
-  @include m(0, 0, 30, 0);
 }
   
 .preview_title_main {

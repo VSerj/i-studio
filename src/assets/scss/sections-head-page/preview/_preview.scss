@@ -16,5 +16,13 @@
 
 }
 
+@include sm_desktop {
+
+  #preview {
+    height: 100vh;
+  }
+
+}
+
 @import "/_preview-title.scss";
 @import "/_preview-description.scss";

@@ -36,17 +36,21 @@ body {
 }
 
 @include l_desktop {
-
   .container{
     max-width: 960px;
   }
+}
 
+@include sm_desktop {
+  .container{
+    max-width: 720px;
+  }
 }
 
 main {
   position: relative;
 }
 
-.lock_flow {
-  overflow: hidden;
-}
+// .lock_flow {
+//   overflow: hidden;
+// }
