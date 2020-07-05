@@ -1,0 +1,49 @@
+.preview_title {
+  color: $tertiaryFontColor;
+  line-height: 1;
+  @include m(0, 0, 30, 0);
+}
+  
+.preview_title_main {
+  margin: 0 0 1.5rem 0;
+  font-size: px(29);
+  text-transform: uppercase;
+}
+
+.preview_title_text {
+  margin: 0 0 1.25rem 0;
+  // margin-bottom: px(18);
+  font-size: px(20);
+  font-weight: 500;
+  transform: translateX( - px(10) );
+}
+
+.preview_title_big-text {
+  @include p(0, 0, 0, 30);
+  font-size: px(110);
+  text-transform: uppercase;
+  font-family: "PoppinsBig";
+}
+  
+@include l_desktop {
+
+  .preview_title {
+    @include m(0, 0, 20, 0);
+  }
+
+  .preview_title_main {
+    font-size: px(23);
+    letter-spacing: .027rem;
+  }
+
+  .preview_title_big-text {
+    @include p(0, 0, 0, 0);
+    font-size: px(68);
+    letter-spacing: .13rem;
+  }
+
+  .preview_title_text {
+    transform: none
+  }
+
+}
