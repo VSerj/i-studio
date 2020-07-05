@@ -47,6 +47,12 @@ body {
   }
 }
 
+@include l_table {
+  .container{
+    max-width: 540px;
+  }
+}
+
 main {
   position: relative;
 }

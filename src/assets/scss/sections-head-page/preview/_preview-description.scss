@@ -15,3 +15,12 @@
   }
 
 }
+
+@include l_table {
+
+  .preview_description {
+    max-width: 100%;
+    text-align: center;
+  }
+
+}

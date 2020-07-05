@@ -47,3 +47,14 @@
   }
 
 }
+
+@include l_table {
+
+  .preview_title {
+    text-align: center;
+  }
+  .preview_title_text {
+    font-weight: bold;
+  }
+
+}
