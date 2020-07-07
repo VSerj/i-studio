@@ -34,6 +34,9 @@ body {
   margin: 0 auto;
   @include p(0, 15, 0, 15);
 }
+.container-relative {
+  position: relative;
+}
 
 @include l_desktop {
   .container{
