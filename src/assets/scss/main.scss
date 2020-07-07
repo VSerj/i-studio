@@ -5,6 +5,7 @@
 @import "/utils/_reset.scss";
 
 @import "/modules/header/_header.scss";
+@import "/modules/_inner_container_lines.scss";
 @import "/home-page/home_page.scss";
 @import "/modules/_footer.scss";
 
@@ -33,9 +34,6 @@ body {
   width: 100%;
   margin: 0 auto;
   @include p(0, 15, 0, 15);
-}
-.container-relative {
-  position: relative;
 }
 
 @include l_desktop {
