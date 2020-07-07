@@ -6,8 +6,15 @@
 .inner_container_lines {
   position: absolute;
   height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, calc(100%/3));
 }
 
 .column_line {
+  border-left: 1px $baseLineColor solid;
+}
 
+.column_line:last-child{
+  border-right: 1px $baseLineColor solid;
 }
