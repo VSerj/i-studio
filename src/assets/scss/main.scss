@@ -16,8 +16,8 @@ body {
   font-family: $baseFont;
   font-size: $baseFontSize;
   letter-spacing: $baseLetterSpasing;
-  color: $baseFont;
   line-height: 1.67;
+  color: rgba(0, 0, 0, .75);
   background-color: $baseBGcolor;
 }
 
