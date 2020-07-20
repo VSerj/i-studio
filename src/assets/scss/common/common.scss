@@ -1,6 +1,12 @@
 .title_section {
+  font-family: "PoppinsLight";
   font-size: px(45);
   line-height: 1.13333;
-  font-weight: 100;
+  font-weight: 300;
   text-transform: uppercase;
+}
+
+p {
+  font-size: px(15);
+  color: rgba(0, 0, 0, 0.75);
 }

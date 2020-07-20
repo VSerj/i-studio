@@ -1,3 +1,16 @@
-#project {
 
+.project_container {
+  max-width: 47%;
+  @include p(203, 0, 40, 0);
+}
+
+.project_title {
+  @include p(0, 0, 17, 0);
+}
+
+.project_subtitle {
+  @include p(0, 0, 67, 0);
+  font-size: px(18);
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
 }
