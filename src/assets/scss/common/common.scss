@@ -1,3 +1,24 @@
+body {
+  font-family: $baseFont;
+  font-size: $baseFontSize;
+  letter-spacing: $baseLetterSpasing;
+  line-height: 1.67;
+  color: rgba(0, 0, 0, .75);
+  background-color: $baseBGcolor;
+}
+
+.wrapper {
+  height: 2000px;
+  position: relative;
+}
+
+.container {
+  max-width: 1199px;
+  width: 100%;
+  margin: 0 auto;
+  @include p(0, 15, 0, 15);
+}
+
 .title_section {
   font-family: "PoppinsLight";
   font-size: px(45);
@@ -10,4 +31,26 @@
 p {
   font-size: px(15);
   color: rgba(0, 0, 0, .5);
+}
+
+@include l_desktop {
+  .container{
+    max-width: 960px;
+  }
+}
+
+@include sm_desktop {
+  .container{
+    max-width: 720px;
+  }
+}
+
+@include l_table {
+  .container{
+    max-width: 540px;
+  }
+}
+
+main {
+  position: relative;
 }

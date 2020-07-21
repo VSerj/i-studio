@@ -8,52 +8,9 @@
 @import "/modules/header/_header.scss";
 @import "/modules/_inner_container_lines.scss";
 @import "/home-page/home_page.scss";
+@import "/modules/buttons/_button.scss";
 @import "/modules/_footer.scss";
 
-
-
-body {
-  font-family: $baseFont;
-  font-size: $baseFontSize;
-  letter-spacing: $baseLetterSpasing;
-  line-height: 1.67;
-  color: rgba(0, 0, 0, .75);
-  background-color: $baseBGcolor;
-}
-
-.wrapper {
-  height: 2000px;
-  position: relative;
-}
-
-.container {
-  max-width: 1199px;
-  width: 100%;
-  margin: 0 auto;
-  @include p(0, 15, 0, 15);
-}
-
-@include l_desktop {
-  .container{
-    max-width: 960px;
-  }
-}
-
-@include sm_desktop {
-  .container{
-    max-width: 720px;
-  }
-}
-
-@include l_table {
-  .container{
-    max-width: 540px;
-  }
-}
-
-main {
-  position: relative;
-}
 
 // .lock_flow {
 //   overflow: hidden;
