@@ -4,7 +4,7 @@ mixin inner_container_lines
     .column_line
     .column_line
 
-mixin btn
+mixin btn(href, text)
   .btn
-    a.btn_link
+    a.btn_link(href=href)=text
     
