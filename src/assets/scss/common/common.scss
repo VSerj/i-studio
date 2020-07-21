@@ -3,10 +3,11 @@
   font-size: px(45);
   line-height: 1.13333;
   font-weight: 300;
+  color: $baseFontColor;
   text-transform: uppercase;
 }
 
 p {
   font-size: px(15);
-  color: rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, .5);
 }
