@@ -1,7 +1,9 @@
 
 .project_container {
+  position: relative;
   max-width: 47%;
   @include p(203, 0, 40, 0);
+  z-index: $zIndexSectionContent;
 }
 
 .project_title {
