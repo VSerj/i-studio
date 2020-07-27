@@ -1,6 +1,6 @@
 
 .btn_link {
-  // display: block;
+  display: inline-block;
   position: relative;
   @include p(10, 22, 10, 20);
   border-left: 5px solid #5f5cde;
@@ -12,4 +12,14 @@
   background-color: #1b1b1b;
   cursor: pointer;
   z-index: 4000;
+  transition: 
+    background-color .25s ease-in-out,
+    border-color .25s ease-in-out,
+    color .25s ease-in-out;
+
+  &:hover {
+    color: #000000;
+    background-color: #ffeb38;
+    border-color: #1b1b1b;
+  } 
 }

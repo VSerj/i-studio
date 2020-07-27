@@ -5,16 +5,16 @@
 }
 
 .project_title {
-  @include p(0, 0, 17, 0);
+  @include m(0, 0, 17, 0);
 }
 
 .project_subtitle {
-  @include p(0, 0, 67, 0);
+  @include m(0, 0, 67, 0);
   font-size: px(18);
   color: rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
 }
 
 .project_description {
-  @include p(0, 0, 69, 0);
+  @include m(0, 0, 69, 0);
 }
