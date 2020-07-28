@@ -7,6 +7,10 @@ body {
   background-color: $baseBGcolor;
 }
 
+main {
+  position: relative;
+}
+
 .wrapper {
   height: 2000px;
   position: relative;
@@ -33,9 +37,19 @@ p {
   color: rgba(26, 13, 13, 0.6);
 }
 
+@include large_desktop {
+  .title_section {
+    font-size: px(35);
+  }
+}
+
 @include l_desktop {
   .container{
     max-width: 960px;
+  }
+
+  .title_section {
+    font-size: px(24);
   }
 }
 
@@ -51,12 +65,4 @@ p {
   }
 }
 
-main {
-  position: relative;
-}
 
-@include large_desktop {
-  .title_section {
-    font-size: 35px;
-  }
-}
