@@ -15,6 +15,12 @@
   border-left: 1px $baseLineColor solid;
 }
 
-.column_line:last-child{
+.column_line:last-child {
   border-right: 1px $baseLineColor solid;
+}
+
+@include sm_desktop {
+  .inner_container_lines {
+    display: none;
+  }
 }

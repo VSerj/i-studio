@@ -37,6 +37,7 @@
 
 @include l_desktop {
   .project_container{
+    max-width: 49%;
     @include p(65, 0, 65, 0);
   }
 
