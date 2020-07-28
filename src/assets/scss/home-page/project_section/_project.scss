@@ -56,3 +56,9 @@
     max-width: 57%;
   }
 }
+
+@include l_table {
+  .project_container{
+    max-width: 100%;
+  }
+}
