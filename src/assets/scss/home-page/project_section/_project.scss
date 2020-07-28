@@ -2,7 +2,7 @@
 .project_container {
   position: relative;
   max-width: 47%;
-  @include p(203, 0, 40, 0);
+  @include p(203, 0, 100, 0);
   z-index: $zIndexSectionContent;
 }
 
@@ -13,7 +13,7 @@
 .project_subtitle {
   @include m(0, 0, 67, 0);
   font-size: px(18);
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.23);
   text-transform: uppercase;
 }
 
@@ -23,7 +23,15 @@
 
 @include large_desktop {
   .project_container{
-    @include p(130, 0, 40, 0);
+    @include p(130, 0, 100, 0);
+  }
+
+  .project_description {
+    @include m(0, 0, 45, 0);
+  }
+
+  .project_subtitle {
+    @include m(0, 0, 55, 0);
   }
   
 }
