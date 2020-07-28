@@ -3,7 +3,7 @@ body {
   font-size: $baseFontSize;
   letter-spacing: $baseLetterSpasing;
   line-height: 1.67;
-  color: rgba(0, 0, 0, .75);
+  color: rgba(0, 0, 0, .6);
   background-color: $baseBGcolor;
 }
 
@@ -30,7 +30,7 @@ body {
 
 p {
   font-size: px(15);
-  color: rgba(0, 0, 0, .5);
+  color: rgba(26, 13, 13, 0.75);
 }
 
 @include l_desktop {
@@ -40,7 +40,7 @@ p {
 }
 
 @include sm_desktop {
-  .container{
+  .container {
     max-width: 720px;
   }
 }
@@ -53,4 +53,10 @@ p {
 
 main {
   position: relative;
+}
+
+@include large_desktop {
+  .title_section {
+    font-size: 35px;
+  }
 }

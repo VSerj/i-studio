@@ -24,6 +24,12 @@
   margin: setSize($top, $right, $bottom, $left);
 }
 
+@mixin large_desktop {
+  @media (max-width: $largeDesktopWidth) {
+    @content;
+  }
+}
+
 @mixin l_desktop {
   @media (max-width: $desktopWidth) {
     @content;
