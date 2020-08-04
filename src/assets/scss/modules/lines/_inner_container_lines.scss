@@ -7,15 +7,17 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, calc(100%/3));
+  display: flex;
 }
 
-.column_line {
+.column {
+  flex: 1 1 33.3333333%;
+}
+.col_line {
   border-left: 1px $baseLineColor solid;
 }
 
-.column_line:last-child {
+.col_line:last-child {
   border-right: 1px $baseLineColor solid;
 }
 
