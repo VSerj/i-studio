@@ -6,4 +6,10 @@ mixin inner_container_lines
 
 mixin btn(href, text)
   a.btn_link(href=href)=text
+
+mixin counter(title, number)
+  .counter
+    .counter-number= number
+    .counter-symbol +
+    .counter-title= title
     
