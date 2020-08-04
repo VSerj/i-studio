@@ -27,7 +27,17 @@ block content
       .container.container_lines
         +inner_container_lines
         .awards_container
-          h2.title_section Our Awards
-          p.
-            As a leading web design team, we have received multiple awards over the years.
-          +counter('international awards', '17')
+          .awards_head
+            h2.title_section Our Awards
+            p.
+              As a leading web design team, we have received multiple awards over the years.
+            +counter('international awards', '17')
+          - var n = 1
+          - var text = 'award #'
+          ul.awards-list
+            while n < 6
+              li.awards-list_item
+                a.awards-link
+                  div.awards-link_title #{text}#{n}
+                  img.awards-link_img(src="assets/img/awards/brand-"+ n++ +".png", alt="there was supposed to be a award")
+
