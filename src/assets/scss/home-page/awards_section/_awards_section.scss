@@ -3,6 +3,16 @@
   z-index: $zIndexSectionContent;
 }
 
-.awards_head {
+.awards-head {
   display: flex;
+}
+
+.awards-description{
+  font-family: $seconaryFont;
+  font-size: px(17);
+  color: $baseFontColor;
+
+}
+.awards-head-item {
+  flex: 1 1 33.33333%;
 }

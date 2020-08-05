@@ -16,12 +16,12 @@
   border-left: 1px $baseLineColor solid;
 }
 
-.col_line:last-child {
+.line-column:last-child {
   border-right: 1px $baseLineColor solid;
 }
 
 @include sm_desktop {
-  .inner_container_lines {
+  .container_lines_row {
     display: none;
   }
 }
