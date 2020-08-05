@@ -1,10 +1,11 @@
 .counter {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, min-content);
   color: $baseFontColor;
 }
 
 .counter-number {
+  @include m(0, 10, 0, 0);
   font-family: $seconaryFont;
   font-size: px(100);
   line-height: 1;
@@ -12,6 +13,7 @@
 }
 
 .counter-symbol {
+  @include p(15, 0, 0, 0);
   font-size: px(24);
   line-height: 1;
 }
@@ -19,4 +21,5 @@
 .counter-title {
   font-weight: 400;
   text-transform: uppercase;
+  line-height: 1.3;
 }
