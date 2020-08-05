@@ -11,10 +11,8 @@
   display: flex;
 }
 
-.column {
+.line-column {
   flex: 1 1 33.3333333%;
-}
-.col_line {
   border-left: 1px $baseLineColor solid;
 }
 
