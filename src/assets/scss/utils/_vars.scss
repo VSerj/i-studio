@@ -1,5 +1,4 @@
 //-------------- global -----------------
-
 $baseSize: 16;
 $baseFont: "Poppins", Arial, Tahoma, sans-serif;
 $baseFontSize: #{$baseSize}px;
@@ -17,24 +16,23 @@ $secondaryBGcolor: #6c757d;
 $baseLineColor: #C4C4C4;
 
 //-------------- Header ------------------
-
 $headerBGcolor: $baseBGcolor;
 $headerFontSize: px(14);
-
 //* Header nav font *
 $headerColor: #262626;
 $secondaryHeaderColor: #9b9b9b;
 $headerHoverColor:  #6C69E1;
 $secondaryHoverColor:  #ffffff;
-
 //* Header nav bg *
 $headerHoverBGcolor: #f9f9f9;
 $secondaryHeaderHoverBGcolor: #6C69E1;
-
 //* Header nav line *
 $headerLineColor: $baseLineColor;
 
-//--------------- Breakpoint ---------------
+//------------ padding size ----------------
+$basePadding: 15px;
+
+//------------ Breakpoint ------------------
 
 $largeDesktopWidth: 1600px;   
 $desktopWidth: 1200px;

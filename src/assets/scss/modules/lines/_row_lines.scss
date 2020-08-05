@@ -5,9 +5,9 @@
 .container_lines_row {
   position: absolute;
   top: 0;
-  right: 0;
+  right: $basePadding;
   height: 100%;
-  width: 100%;
+  width: calc(100% - (#{$basePadding} * 2));
   display: flex;
 }
 

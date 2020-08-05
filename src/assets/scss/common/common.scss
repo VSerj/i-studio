@@ -20,7 +20,7 @@ main {
   max-width: 1199px;
   width: 100%;
   margin: 0 auto;
-  @include p(0, 15, 0, 15);
+  padding: 0 $basePadding 0 $basePadding;
 }
 
 .title_section {
