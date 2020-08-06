@@ -1,0 +1,18 @@
+.awards-head {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+.awards-title {
+  justify-self: left;
+}
+
+.awards-description {
+  @include p(0, 10, 0, 10);
+  width: 300px;
+  font-family: $seconaryFont;
+  font-size: px(18);
+  color: $baseFontColor;
+  line-height: 1.7;
+}
