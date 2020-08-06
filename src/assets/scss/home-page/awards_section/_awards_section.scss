@@ -4,16 +4,20 @@
 }
 
 .awards-head {
-  display: flex;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+.awards-title {
+  justify-self: left;
 }
 
-.awards-description{
-  width: 290px;
+.awards-description {
+  @include p(0, 10, 0, 10);
+  width: 300px;
   font-family: $seconaryFont;
-  font-size: px(17);
+  font-size: px(18);
   color: $baseFontColor;
-}
-
-.awards-head-item {
-  flex: 1 1 33.33333%;
+  line-height: 1.7;
 }

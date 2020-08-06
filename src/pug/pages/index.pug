@@ -28,13 +28,10 @@ block content
         +container_lines_row
         .awards_container
           .awards-head
-            .awards-head-item
-              h2.awards-title.title_section Our Awards
-            .awards-head-item
-              p.awards-description.
-                As a leading web design team, we have received multiple awards over the years.
-            .awards-head-item
-              +counter('international awards', '17')
+            h2.awards-title.title_section Our Awards
+            p.awards-description.
+              As a leading web design team, we have received multiple awards over the years.
+            +counter('international awards', '17')
           - var n = 1
           - var text = 'award #'
           ul.awards-list
