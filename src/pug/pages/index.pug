@@ -31,7 +31,8 @@ block content
             h2.awards-title.title_section Our Awards
             p.awards-description.
               As a leading web design team, we have received multiple awards over the years.
-            +counter('international awards', '17')
+            .counter-container
+              +counter('international awards', '17')
           - var n = 1
           - var text = 'award #'
           ul.awards-list

@@ -44,3 +44,15 @@
 .awards-link-img {
   object-fit: contain;
 }
+
+@include sm_desktop {
+  .awards-item-title {
+    top: px(10);
+  }
+}
+
+@include l_table {
+  .awards-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

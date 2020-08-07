@@ -1,7 +1,7 @@
 .counter {
-  @include p(0, 5, 0, 25);
   display: grid;
-  grid-template-columns: repeat(2, min-content);
+  grid-template-columns: repeat(2, 50%);
+  overflow-wrap: break-word;
   color: $baseFontColor;
 }
 
@@ -9,6 +9,7 @@
   @include m(0, 15, 0, 0);
   font-family: $seconaryFont;
   font-size: px(100);
+  text-align: right;
   line-height: 1;
   grid-row: 1 / 3;
 }

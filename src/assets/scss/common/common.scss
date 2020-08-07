@@ -24,6 +24,7 @@ main {
 }
 
 .title_section {
+  width: 100%;
   font-family: "PoppinsLight";
   font-size: px(45);
   line-height: 1.13333;
@@ -34,6 +35,7 @@ main {
 
 p {
   color: rgba(26, 13, 13, 0.6);
+  overflow-wrap: break-word;
 }
 
 @include large_desktop {
