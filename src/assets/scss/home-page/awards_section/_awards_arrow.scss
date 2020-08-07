@@ -1,0 +1,29 @@
+.awards-link-arrow {
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  display: block;
+  border-radius: 0 25% 25% 0;
+  background: $headerLineColor;
+
+
+  &::before {
+    @extend .awards-link-arrow;
+    content: '';
+    top: 0;
+    transform: 
+      rotate(-40deg) 
+      translate(0px, 5px) 
+      scaleX(.6);
+    }
+    
+    &::after {
+      @extend .awards-link-arrow;
+      content: '';
+      bottom: 0;
+      transform: 
+        rotate(40deg) 
+        translate(0px,-5px)
+        scaleX(.6);
+  }
+}
