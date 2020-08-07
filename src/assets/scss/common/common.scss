@@ -29,6 +29,7 @@ main {
   font-size: px(45);
   line-height: 1.13333;
   font-weight: 300;
+  overflow-wrap: break-word;
   color: $baseFontColor;
   text-transform: uppercase;
 }
