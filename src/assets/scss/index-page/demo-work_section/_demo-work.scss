@@ -3,13 +3,13 @@
 }
 
 .demo-work-container {
-  @include p(80, 0, 0, 0);
+  @include p(80, 0, 135, 0);
   position: relative;
   z-index: $zIndexSectionContent;
   width: 42%;
 }
 .demo-work-container .title-secondary {
-  @include m(0, 0, 45, 0);
+  @include m(0, 0, 43, 0);
 }
 
 .demo-work-description {
@@ -18,6 +18,8 @@
 }
 
 .demo-work-container .btn_link {
-  @include m(0, 0, 50, 0);
+  @include m(0, 0, 52, 0);
 }
+
+@import "/_demo-work-social.scss";
 

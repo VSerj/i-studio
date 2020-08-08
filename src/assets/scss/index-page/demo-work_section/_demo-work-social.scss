@@ -1,0 +1,26 @@
+#demo-work {
+
+  .social-list {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+  
+    p {
+      color: rgba($tertiaryFontColor, 0.4);
+    }
+  }
+  
+  .social-item:not(:last-child) {
+    @include m(0, 30, 0, 0);
+
+  }
+
+  .social-link {
+    color: rgba($tertiaryFontColor, 0.1);
+    
+    i {
+      font-size: px(22);
+    }
+  }
+
+}
