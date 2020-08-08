@@ -23,7 +23,7 @@ main {
   padding: 0 $basePadding 0 $basePadding;
 }
 
-.title-section {
+.title-primary {
   width: 100%;
   font-family: "PoppinsLight";
   font-size: px(45);
@@ -34,13 +34,18 @@ main {
   text-transform: uppercase;
 }
 
+.title-secondary {
+  font-size: px(24);
+  color: $tertiaryFontColor;
+}
+
 p {
   color: rgba(26, 13, 13, 0.6);
   overflow-wrap: break-word;
 }
 
 @include large_desktop {
-  .title-section {
+  .title-primary {
     font-size: px(35);
   }
 }
@@ -50,7 +55,7 @@ p {
     max-width: 960px;
   }
 
-  .title-section {
+  .title-primary {
     font-size: px(24);
   }
 }
