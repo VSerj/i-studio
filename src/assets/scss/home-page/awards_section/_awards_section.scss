@@ -1,6 +1,13 @@
 .awards_container {
+  @include p (100, 0, 100, 0);
   position: relative;
   z-index: $zIndexSectionContent;
+}
+
+@include sm_desktop {
+  .awards_container {
+    @include p (50, 0, 65, 0);
+  }
 }
 
 @import "/_awards_head.scss";
