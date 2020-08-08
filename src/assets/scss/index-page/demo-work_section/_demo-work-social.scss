@@ -16,10 +16,12 @@
   }
 
   .social-link {
+    font-size: px(22);
     color: rgba($tertiaryFontColor, 0.1);
+    transition: all .3s ease-in-out;
     
-    i {
-      font-size: px(22);
+    &:hover {
+      color: $linkHoverColor;
     }
   }
 
