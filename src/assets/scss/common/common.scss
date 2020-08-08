@@ -35,7 +35,9 @@ main {
 }
 
 .title-secondary {
+  width: 100%;
   font-size: px(24);
+  line-height: 1.2;
   color: $tertiaryFontColor;
 }
 
@@ -71,5 +73,3 @@ p {
     max-width: 540px;
   }
 }
-
-

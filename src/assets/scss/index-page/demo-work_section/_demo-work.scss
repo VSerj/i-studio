@@ -1,0 +1,23 @@
+#demo-work {
+  background-color: $secondaryBGcolor;
+}
+
+.demo-work-container {
+  @include p(80, 0, 0, 0);
+  position: relative;
+  z-index: $zIndexSectionContent;
+  width: 42%;
+}
+.demo-work-container .title-secondary {
+  @include m(0, 0, 45, 0);
+}
+
+.demo-work-description {
+  @include m(0, 0, 50, 0);
+  color: rgba($tertiaryFontColor, 0.4);
+}
+
+.demo-work-container .btn_link {
+  @include m(0, 0, 50, 0);
+}
+

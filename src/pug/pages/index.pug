@@ -30,7 +30,8 @@ block content
           .awards-head
             h2.awards-title.title-primary Our Awards
             p.awards-description.
-              As a leading web design team, we have received multiple awards over the years.
+              As a leading web design team, we have 
+              received multiple awards over the years.
             .counter-container
               +counter('international awards', '17')
           - var n = 1
@@ -50,8 +51,30 @@ block content
         .works-container
           h2.title-primary Lates works
           +btn("#", "View all projects")
-    section#last
+    section#demo-work
       .container
-        .last_container
+        .demo-work-container
           h3.title-secondary Inter Restaurant
+          p.demo-work-description.
+            We designed and developed an updated website 
+            for the Inter Restaurant as well as their new 
+            interactive menu available on exclusive branded iPads.
+          +btn("#", "View the website")
+          ul.social
+            li.social-item
+              a.social-link(href="#")
+                i
+            li.social-item
+              a.social-link(href="#")
+                i
+            li.social-item
+              a.social-link(href="#")
+                i
+            li.social-item
+              a.social-link(href="#")
+                i
+            li.social-item
+              a.social-link(href="#")
+                i
+            
                 
