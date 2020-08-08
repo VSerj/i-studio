@@ -15,7 +15,7 @@ block content
       .container.container_lines
         +container_lines_row
         .project_container
-          h2.project_title.title_section Every Project
+          h2.project_title.title-section Every Project
           h3.project_subtitle is a challenge to do better
           p.project_description.
             We are a team of talented designers and developers 
@@ -28,7 +28,7 @@ block content
         +container_lines_row
         .awards_container
           .awards-head
-            h2.awards-title.title_section Our Awards
+            h2.awards-title.title-section Our Awards
             p.awards-description.
               As a leading web design team, we have received multiple awards over the years.
             .counter-container
@@ -38,10 +38,16 @@ block content
           ul.awards-list
             while n < 6
               li.awards-list-item
-                a.awards-link
+                a.awards-link(href="#")
                   span.awards-item-title #{text}#{n}
                   img.awards-link-img(src="assets/img/awards/brand-"+ n++ +".png", alt="there was supposed to be a award")
             li.awards-list-item
               a.awards-link
                 span.awards-link-arrow
+    section#works
+      .container.container_lines
+        +container_lines_row
+        .works-container
+          h2.title-section Lsates works
+          +btn("#", "View all projects")
                 

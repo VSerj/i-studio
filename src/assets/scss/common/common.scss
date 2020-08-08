@@ -23,7 +23,7 @@ main {
   padding: 0 $basePadding 0 $basePadding;
 }
 
-.title_section {
+.title-section {
   width: 100%;
   font-family: "PoppinsLight";
   font-size: px(45);
@@ -40,7 +40,7 @@ p {
 }
 
 @include large_desktop {
-  .title_section {
+  .title-section {
     font-size: px(35);
   }
 }
@@ -50,7 +50,7 @@ p {
     max-width: 960px;
   }
 
-  .title_section {
+  .title-section {
     font-size: px(24);
   }
 }
