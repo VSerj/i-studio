@@ -1,6 +1,7 @@
 extend ../layout/base.pug
 block content
   main
+
     section#preview
       .container
         .preview_title
@@ -11,6 +12,7 @@ block content
           With 19+ years’ experience in combining web development, 
           design and marketing, we create award-winning projects and 
           creative campaigns both online and offline.
+
     section#project
       .container.container_lines
         +container_lines_row
@@ -23,6 +25,7 @@ block content
             and timely execution of any web design project. Since day one, 
             we have been delivering creative and unique websites to our clients worldwide.
           +btn('/#','read more about us')
+
     section#awards
       .container.container_lines
         +container_lines_row
@@ -45,12 +48,14 @@ block content
             li.awards-list-item
               a.awards-link
                 span.awards-link-arrow
+
     section#works
       .container.container_lines
         +container_lines_row
         .works-container
           h2.title-primary Lates works
           +btn("#", "View all projects")
+          
     section#demo-work
       .container
         .demo-work-container
@@ -63,17 +68,13 @@ block content
           ul.social-list
             li.social-item
               p Share
-            li.social-item
-              a.social-link(href="#")
-                i.icon-facebook
-            li.social-item
-              a.social-link(href="#")
-                i.icon-instagram
-            li.social-item
-              a.social-link(href="#")
-                i.icon-twitter
-            li.social-item
-              a.social-link(href="#")
-                i.icon-youtube
+            each network in ["facebook", "instagram", "twitter", "youtube"]
+              li.social-item
+                a.social-link(href="#")
+                  i(class="icon-" + network)
+      ul.slider-list
+        each image in ["lw-img1.jpg", "lw-img2.jpg"]
+          li.slider-item
+            img(src="assets/img/lates-work/" + image, alt="there was supposed to be a lates work slide")
             
                 
