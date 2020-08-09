@@ -1,0 +1,75 @@
+#demo-work {
+
+  .slider-btn-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .slider-btn {
+    position: relative;
+    @include m(0, 0, 10, 0);
+    width: px(62);
+    height: px(64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $baseFontColor;
+    background: $baseBGcolor;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .slider-btn-next {
+    border-top-left-radius: px(10);
+  }
+
+  .slider-btn-previous {
+    border-bottom-right-radius: px(10);
+  }
+
+  .slider-arrow {
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    display: block;
+    border-radius: 0 25% 25% 0;
+    background: $baseFontColor;
+    transition: background .3s ease-in-out;
+    
+  
+    &::before {
+      @extend .slider-arrow;
+      content: '';
+      top: 0;
+      transform: 
+        rotate(-40deg) 
+        translate(0px, 5px) 
+        scaleX(.6);
+      }
+      
+    &::after {
+      @extend .slider-arrow;
+      content: '';
+      bottom: 0;
+      transform: 
+        rotate(40deg) 
+        translate(0px,-5px)
+        scaleX(.6);
+    }
+  }
+
+  .slider-arrow-previous {
+    transform: rotate(180deg);
+  }
+
+  .slider-btn:hover .slider-arrow {
+    background: $seconaryFontColor;
+  }
+
+}

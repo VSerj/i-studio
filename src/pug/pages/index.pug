@@ -55,7 +55,7 @@ block content
         .works-container
           h2.title-primary Lates works
           +btn("#", "View all projects")
-          
+
     section#demo-work
       .container
         .demo-work-container
@@ -76,5 +76,11 @@ block content
         each image in ["lw-img1.jpg", "lw-img2.jpg"]
           li.slider-item
             img(src="assets/img/lates-work/" + image, alt="there was supposed to be a lates work slide")
+      .slider-btn-container 
+        .slider-btn.slider-btn-next
+          span.slider-arrow
+        .slider-btn.slider-btn-previous
+          span.slider-arrow.slider-arrow-previous
+      
             
                 
