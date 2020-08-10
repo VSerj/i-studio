@@ -60,6 +60,10 @@ p {
   .title-primary {
     font-size: px(24);
   }
+
+  .title-secondary {
+    font-size: px(20);
+  }
 }
 
 @include sm_desktop {

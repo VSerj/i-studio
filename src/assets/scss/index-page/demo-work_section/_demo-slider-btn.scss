@@ -73,3 +73,9 @@
   }
 
 }
+
+@include l_table {
+  .slider-btn-container {
+    display: none;
+  }
+}

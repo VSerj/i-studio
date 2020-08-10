@@ -9,6 +9,7 @@
   z-index: $zIndexSectionContent;
   width: 42%;
 }
+
 .demo-work-container .title-secondary {
   @include m(0, 0, 43, 0);
 }
@@ -20,6 +21,27 @@
 
 .demo-work-container .btn_link {
   @include m(0, 0, 52, 0);
+}
+
+@include l_desktop {
+  
+  .demo-work-container{
+    @include p(60, 0, 55, 0);
+    width: 40%
+  }
+
+  .demo-work-container .title-secondary {
+    @include m(0, 0, 23, 0);
+  }
+
+  .demo-work-description {
+    @include m(0, 0, 25, 0);
+  }
+
+  .demo-work-container .btn_link {
+    @include m(0, 0, 25, 0);
+  }
+
 }
 
 @import "/_demo-work-social.scss";
