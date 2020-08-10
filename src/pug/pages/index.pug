@@ -73,7 +73,8 @@ block content
                 a.social-link(href="#")
                   i(class="icon-" + network)
       ul.slider-list
-        each image in ["lw-img1.jpg", "lw-img2.jpg"]
+        - var sliderImgList = ["lw-img1.jpg", "lw-img2.jpg"]
+        each image in sliderImgList
           li.slider-item
             img(src="assets/img/lates-work/" + image, alt="there was supposed to be a lates work slide")
       .slider-btn-container 
@@ -81,6 +82,10 @@ block content
           span.slider-arrow
         .slider-btn.slider-btn-previous
           span.slider-arrow.slider-arrow-previous
+      ul.slider-toggles
+        li.slider-toggle.slider-toggle-1
+        li.slider-toggle.slider-toggle-2
+
       
             
                 

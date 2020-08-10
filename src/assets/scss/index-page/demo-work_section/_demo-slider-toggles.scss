@@ -1,0 +1,38 @@
+#demo-work {
+  .slider-toggles {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    display: none;
+    justify-content: center;
+    transform: translateX(-50%);
+    // z-index: 2000;
+  }
+
+  .slider-toggle {
+    @include m(0, 10, 0, 0);
+    width: px(10);
+    height: px(10);
+    border-radius: 50%;
+    background-color: $baseFontColor;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: all .3s;
+    &:hover {
+      opacity: 1;
+      background-color: $linkHoverColor;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+@include l_table {
+  #demo-work {
+    .slider-toggles {
+      display: flex;
+    }
+  }
+}
