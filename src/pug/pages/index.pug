@@ -87,8 +87,21 @@ block content
         li.slider-toggle
       
     section#team
-
-
-      
-            
+      .container.container_lines
+        +container_lines_row
+        .team-container
+          ul.team-members
+            -
+              var members = [
+                {name: "John Smith", position: "Senior designer", photo: "assets/img/photo-members/photo-1.jpg"},
+                {name: "Gary Hughes", position: "Designer", photo: "assets/img/photo-members/photo-2.jpg"},
+                {name: "Sam Lee", position: "Developer", photo: "assets/img/photo-members/photo-3.jpg"},
+                {name: "Sarah Parker", position: "Marketing manager", photo: "assets/img/photo-members/photo-4.jpg"}
+              ]
+            each member in members
+              li.team-member
+                img.member-photo(src=member.photo, alt="there was supposed to be a photo")
+                div.member-info
+                  span.member-name #{member.name}
+                  span.member-position #{member.position}
                 
