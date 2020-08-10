@@ -1,0 +1,21 @@
+.lates-works-container {
+  position: relative;
+  @include p(0, 0, 65, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: $zIndexSectionContent;
+}
+
+@include l_table {
+  .lates-works-container {
+    // display: block;
+    @include p(0, 0, 35, 0);
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+  .lates-works-container h2 {
+    @include m(0, 0, 30, 0);
+    flex: 1 1 60%;
+  }
+}
