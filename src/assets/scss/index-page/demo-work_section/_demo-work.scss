@@ -24,10 +24,9 @@
 }
 
 @include l_desktop {
-  
-  .demo-work-container{
+  .demo-work-container {
     @include p(60, 0, 55, 0);
-    width: 40%
+    width: 40%;
   }
 
   .demo-work-container .title-secondary {
@@ -41,10 +40,14 @@
   .demo-work-container .btn_link {
     @include m(0, 0, 25, 0);
   }
+}
 
+@include l_table {
+  .demo-work-container {
+    width: 100%;
+  }
 }
 
 @import "/_demo-work-social.scss";
 @import "/_demo-work-slider.scss";
 @import "/_demo-slider-btn.scss";
-
