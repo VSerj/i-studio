@@ -4,8 +4,8 @@ let header = document.getElementById("header");
 let isAddedListener;
 
 menuButton.addEventListener("click", useNavigation);
-window.addEventListener("scroll", changeHeightHeader);
-window.addEventListener("resize", adaptiveHeaderForDesktop);
+// window.addEventListener("scroll", changeHeightHeader); // need rework
+// window.addEventListener("resize", adaptiveHeaderForDesktop); //need rework
 
 function useNavigation() {
   useAnimationForBurger();
