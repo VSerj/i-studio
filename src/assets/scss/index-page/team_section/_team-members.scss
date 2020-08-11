@@ -1,4 +1,16 @@
 .team-members {
   display: grid;
-  
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.team-member {
+  position: relative;
+  width: px(385);
+  overflow: hidden;
+}
+
+#team {
+  .member-photo {
+    object-fit: contain;
+  }
 }

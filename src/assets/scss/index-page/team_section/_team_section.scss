@@ -1,8 +1,11 @@
 .team-container {
   position: relative;
+  @include p(100, 0, 100, 0);
   display: flex;
   justify-content: space-between;
   z-index: $zIndexSectionContent;
 }
 
 @import "/_team-members.scss";
+@import "/_team-info.scss";
+@import "/_team-member-info.scss";
