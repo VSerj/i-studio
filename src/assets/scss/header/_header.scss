@@ -1,15 +1,15 @@
 #header {
+  display: grid;
   position: sticky;
   top: 0;
   left: 0;
-  z-index: $zIndexHeader;
-  width: 100%;
-  display: grid;
   grid-template-columns: 17% 83%;
-  height: px(70); //set temporarily , 
-  background: $headerBGcolor;
-  border-bottom: px(1) solid $headerLineColor;
   transition: height .2s ease-in;
+  z-index: $zIndexHeader;
+  background: $headerBGcolor;
+  width: 100%;
+  height: px(70); //set temporarily , 
+  border-bottom: px(1) solid $headerLineColor;
 }
 
 .nav_panel_mobile {
@@ -40,9 +40,9 @@
   }
 
   .nav_panel_mobile {
-    z-index: $zIndexHeader + 2;
     grid-template-columns: px(55) 1fr;
     justify-items: start;
+    z-index: $zIndexHeader + 2;
     box-shadow: 0 0 10px #00000034;
     background: $headerBGcolor;
   }
