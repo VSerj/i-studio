@@ -1,12 +1,12 @@
 .team-container {
-  position: relative;
-  @include p(100, 0, 100, 0);
   display: grid;
+  position: relative;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, min-content);
   justify-items: end;
-  text-align: right;
   z-index: $zIndexSectionContent;
+  @include p(100, 0, 100, 0);
+  text-align: right;
 }
 
 @import "/_team-members.scss";

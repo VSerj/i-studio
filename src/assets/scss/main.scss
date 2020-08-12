@@ -1,10 +1,13 @@
 @import "/utils/_libs.scss";
 @import "/utils/_mixins.scss";
 @import "/utils/_vars.scss";
-@import "/utils/_fonts.scss";
-@import "/utils/_reset.scss";
 
-@import "/common/common.scss";
+@import "/base/_fonts.scss";
+@import "/base/_reset.scss";
+@import "/base/_base.scss";
+
+
+@import "/base/_common.scss";
 @import "/header/_header.scss";
 @import "/modules/lines/_row_lines.scss";
 @import "/index-page/index-page.scss";

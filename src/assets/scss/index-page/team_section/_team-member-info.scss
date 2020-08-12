@@ -3,12 +3,12 @@
     position: absolute;
     right: px(25);
     bottom: px(25);
-    @include p(7, 20, 7, 20);
-    max-width: 75%;
-    background-color: $baseBGcolor;
-    transform: translateX(50%);
     opacity: 0;
     transition: all .3s ease-in-out;
+    transform: translateX(50%);
+    max-width: 75%;
+    background-color: $baseBGcolor;
+    @include p(7, 20, 7, 20);
   }
   .team-member:hover .member-info {
     opacity: 1;
@@ -17,14 +17,14 @@
 
   .member-name {
     @include m(0, 0, 5, 0);
-    font-size: px(18);
     line-height: 1.33;
     color: $baseFontColor;
+    font-size: px(18);
   }
 
   .member-position {
-    font-size: px(13);
     text-transform: uppercase;
+    font-size: px(13);
     font-weight: 400;
   }
 }
