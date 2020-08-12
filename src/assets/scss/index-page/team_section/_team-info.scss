@@ -1,3 +1,12 @@
-.team-info {
-  text-align: right;
+.team-header {
+  max-width: 70%;
+  h2 {
+    @include m(0, 0, 40, 0);
+  }
+
+  p {
+    margin: 0;
+
+  }
+
 }

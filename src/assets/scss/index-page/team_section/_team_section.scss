@@ -1,8 +1,11 @@
 .team-container {
   position: relative;
   @include p(100, 0, 100, 0);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, min-content);
+  justify-items: end;
+  text-align: right;
   z-index: $zIndexSectionContent;
 }
 
