@@ -86,36 +86,38 @@ block content
         li.slider-toggle
         li.slider-toggle
       
-    section#team
+    section.team
       .container.container_lines
         +container_lines_row
-        .team-container
-          ul.team-members
-            -
-              var members = [
-                {name: "John Smith", position: "Senior designer", photo: "assets/img/photo-members/photo-1.jpg"},
-                {name: "Gary Hughes", position: "Designer", photo: "assets/img/photo-members/photo-2.jpg"},
-                {name: "Sam Lee", position: "Developer", photo: "assets/img/photo-members/photo-3.jpg"},
-                {name: "Sarah Parker", position: "Marketing manager", photo: "assets/img/photo-members/photo-4.jpg"}
-              ]
-            each member in members
-              li.team-member
-                img.member-photo(src=member.photo, alt="there was supposed to be a photo")
-                div.member-info
-                  div.member-name #{member.name}
-                  div.member-position #{member.position}
-          //- .team-info
-          .team-header
+        .team-grid.team__container
+          .team-grid__item
+            ul.team-members-grid
+              -
+                var members = [
+                  {name: "John Smith", position: "Senior designer", photo: "assets/img/photo-members/photo-1.jpg"},
+                  {name: "Gary Hughes", position: "Designer", photo: "assets/img/photo-members/photo-2.jpg"},
+                  {name: "Sam Lee", position: "Developer", photo: "assets/img/photo-members/photo-3.jpg"},
+                  {name: "Sarah Parker", position: "Marketing manager", photo: "assets/img/photo-members/photo-4.jpg"}
+                ]
+              each member in members
+                li.member-box
+                  img.member-box__photo(src=member.photo, alt="there was supposed to be a photo")
+                  div.member-box__info.member-info
+                    p.member-info__name #{member.name}
+                    p.member-info__position #{member.position}
+          .team-grid__item
             h2.title-primary Team
             p.team-description.
               We are a dedicated team of web design, 
               development and marketing professionals 
               always ready to help you.
             //- .team-counter
-          +counter("People in team", 20)
-          ul.team-skill-list
-            li.team-skill-item.
-              28 exceptional full-time professionals
-            li.team-skill-item.
-              5-year specialized team member practice
+          .team-grid__item
+            +counter("People in team", 20)
+          .team-grid__item
+            ul.ordered-list
+              li.ordered-list__item.
+                28 exceptional full-time professionals
+              li.ordered-list__item.
+                5-year specialized team member practice
                 

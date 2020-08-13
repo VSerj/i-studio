@@ -1,0 +1,8 @@
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.team-grid__item:first-child {
+  grid-row: 1 / 4;
+}
