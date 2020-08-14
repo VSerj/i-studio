@@ -1,17 +1,17 @@
 @include sm_desktop {
   
-  .menu_btn.is_active_menu .menu_btn_line {
+  .btn-burger.is_active_menu .btn-burger__line {
     transform: rotate(180deg);
     border-radius: 0 25% 25% 0;
   }
 
-  .menu_btn.is_active_menu .menu_btn_line::after{
+  .btn-burger.is_active_menu .btn-burger__line::after{
     transform: rotate(40deg) translate(10px,-4px);
-    border-radius: 0 25% 25% 0;
     width: 15px;
+    border-radius: 0 25% 25% 0;
   }
 
-  .menu_btn.is_active_menu .menu_btn_line::before{
+  .btn-burger.is_active_menu .btn-burger__line::before{
     transform: rotate(-40deg) translate(10px, 4px);
     width: 15px;
     border-radius: 0 25% 25% 0;

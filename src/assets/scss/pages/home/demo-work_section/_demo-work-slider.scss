@@ -1,12 +1,12 @@
-#demo-work {
+.demo-work {
   .slider-list {
     position: absolute;
+    display: flex;
     top: 0;
     left: 50%;
+    overflow: hidden;
     height: 100%;
     max-width: 50%;
-    display: flex;
-    overflow: hidden;
   }
 
   .slider-item {
@@ -21,7 +21,7 @@
 }
 
 @include l_table {
-  #demo-work {
+  .demo-work {
     .slider-list {
       position: relative;
       top: 0;

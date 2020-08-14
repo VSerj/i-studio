@@ -1,10 +1,10 @@
-.header_logo {
+.logo {
   max-width: px(170);
 }
 
 @include l_desktop {
 
-  .header_logo {
+  .logo {
     max-width: px(140);
     min-width: px(140);
   }

@@ -1,4 +1,4 @@
-#header {
+.header {
   display: grid;
   position: sticky;
   top: 0;
@@ -12,20 +12,20 @@
   border-bottom: px(1) solid $headerLineColor;
 }
 
-.nav_panel_mobile {
+.nav-panel-mobile {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
   align-items: center;
 }
 
-#header.is_scrolling {
+.header.is_scrolling {
   height: px(70);
 }
 
 @include l_desktop {
 
-  #header {
+  .header {
     height: px(70);
   }
 
@@ -33,13 +33,13 @@
 
 @include sm_desktop {
 
-  #header {
+  .header {
     grid-template-columns: 1fr;
     height: px(55);
     border-bottom: none;
   }
 
-  .nav_panel_mobile {
+  .nav-panel-mobile {
     grid-template-columns: px(55) 1fr;
     justify-items: start;
     z-index: $zIndexHeader + 2;

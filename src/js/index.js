@@ -1,9 +1,9 @@
 "use strict";
-let menuButton = document.querySelector(".menu_btn");
-let header = document.getElementById("header");
+let btnBurger = document.querySelector(".btn-burger");
+let header = document.querySelector(".header");
 let isAddedListener;
 
-menuButton.addEventListener("click", useNavigation);
+btnBurger.addEventListener("click", useNavigation);
 // window.addEventListener("scroll", changeHeightHeader); // need rework
 // window.addEventListener("resize", adaptiveHeaderForDesktop); //need rework
 
@@ -13,7 +13,7 @@ function useNavigation() {
 }
 
 function useAnimationForBurger() {
-  menuButton.classList.toggle("is_active_menu");
+  btnBurger.classList.toggle("is_active_menu");
 }
 
 function showHideNavigation() {

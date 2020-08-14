@@ -1,4 +1,4 @@
-#demo-work {
+.demo-work{
 
   .slider-btn-container {
     position: absolute;
@@ -75,7 +75,7 @@
 }
 
 @include l_table {
-  #demo-work .slider-btn-container {
+  .demo-work .slider-btn-container {
     display: none;
   }
 }

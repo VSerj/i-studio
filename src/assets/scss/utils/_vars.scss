@@ -2,6 +2,8 @@
 //but I need to learn JS
 
 //-------------- global -----------------wtf
+
+//font
 $baseSize: 16;
 $baseFont: "Poppins", Arial, Tahoma, sans-serif;
 $seconaryFont: "PoppinsLight", Arial, Tahoma, sans-serif;
@@ -10,10 +12,17 @@ $baseFontSize: #{$baseSize}px;
 $baseLetterSpasing: .01rem;
 $secondaryLetterSpasing: .02rem;
 
-$baseFontColor: #000000;
+$baseFontColor: rgb(0, 0, 0);
 $seconaryFontColor: #C4C4C4;
 $tertiaryFontColor: #ffffff;
 
+//font color - start rework
+$color-default:           rgba(0, 0, 0, 0.75);
+$color-default--darkest:  rgb(0, 0, 0);
+$color-default--light:    rgb(255, 255, 255);
+$color-main--lighten:     rgba(255, 255, 255, 0.4);
+
+//bg color
 $baseBGcolor: #ffffff;
 $secondaryBGcolor: #262626;
 
@@ -23,6 +32,10 @@ $hoverLinkBGcolor: #e5e5e5;
 $linkHoverColor: #6C69E1;
 
 $baseLineColor: #C4C4C4;
+
+//bg color - start rework
+$bg-color-default: rgb(255, 255, 255);
+$bg-color-dark: rgb(38, 38, 38);
 
 //-------------- Header ------------------wtf
 $headerBGcolor: $baseBGcolor;
@@ -66,9 +79,9 @@ $zIndexSectionContent: 1000;
 // // На примере вариаций одного главного цвета
 // $color-main--lightest: #CBF3BF;
 // $color-main--lighten:  #ACEF97;
-// $color-main--light:    #74EA4F;
+$color-main--light-alpha: rgba(255, 255, 255, 0.4);
 // $color-main:           #3FD411;
-// $color-main--dark:     #39BA11;
+$color-main--dark-alpha:  rgba(0, 0, 0, 0.75);
 // $color-main--darken:   #329F11;
 // $color-main--darkest:  #184B09;
 
