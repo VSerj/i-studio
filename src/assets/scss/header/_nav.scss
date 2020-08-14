@@ -1,67 +1,65 @@
-
-
-.header_nav {
+.nav {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background: $headerBGcolor;
-}
+  background: $bg-color-default;
 
-.nav_link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background .2s ease-in-out, color .2s ease-in-out;
-  border-left: px(1) solid $headerLineColor;
-  text-transform: uppercase;
-  letter-spacing: .02rem;
-  color: $headerColor;
-  font-size: $headerFontSize;
-  font-weight: 600;
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+    border-left: 1px solid $line-color-default--dark;
+    text-transform: uppercase;
+    letter-spacing: 0.02rem;
+    color: $color-header-link;
+    font-size: px(14);
+    font-weight: 600;
 
-  &:hover{
-    background: $headerHoverBGcolor;
-    color: $headerHoverColor;
+    &:hover {
+      background: $bg-color-header-link;
+      color: $color-header-link-hover;
+    }
+
+    &--selected {
+      background: $bg-color-header-link;
+      color: $color-header-link-hover;
+    }
   }
 }
 
-.nav_link-selected {
-  background: $headerHoverBGcolor;
-  color: $headerHoverColor;
-}
-
 @include sm_desktop {
-  .header_nav {
+  .nav {
     position: fixed;
     top: 0;
     left: -100%;
     grid-template-columns: px(260);
     grid-template-rows: repeat(4, px(50));
-    transition: left .4s ease-in-out;
+    transition: left 0.4s ease-in-out;
     gap: px(4);
     box-shadow: 0 0 10px #00000034;
     height: 100vh;
-    @include p(70,2,0,2);
+    @include p(70, 2, 0, 2);
     overflow: auto;
-  }
-  
-  .nav_link {
-    justify-content: start;
-    border-left: none;
-    @include p(0,10,0,15);
-    color: $secondaryHeaderColor;
 
-    &:hover{
-      background: $secondaryHeaderHoverBGcolor;
-      color: $secondaryHoverColor;
+    &__link {
+      justify-content: start;
+      border-left: none;
+      @include p(0, 10, 0, 15);
+      color: $color-header-link--mobile;
+
+      &:hover {
+        background: $bg-color-header-link-hover--mobile;
+        color: $color-default--light;
+      }
+
+      &--selected {
+        background: $bg-color-header-link-hover--mobile;
+        color: $color-default--light;
+      }
     }
   }
 
-  .nav_link-selected {
-    background: $secondaryHeaderHoverBGcolor;
-    color: $secondaryHoverColor;
-  }
-
-  .header_nav.is_active_menu {
+  .nav.is_active_menu {
     left: 0;
   }
 }

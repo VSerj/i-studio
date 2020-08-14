@@ -17,7 +17,7 @@ function useAnimationForBurger() {
 }
 
 function showHideNavigation() {
-  document.querySelector(".header_nav").classList.toggle("is_active_menu");
+  document.querySelector(".nav").classList.toggle("is_active_menu");
 }
 
 function changeHeightHeader() {

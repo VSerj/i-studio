@@ -9,54 +9,53 @@ $baseFont: "Poppins", Arial, Tahoma, sans-serif;
 $seconaryFont: "PoppinsLight", Arial, Tahoma, sans-serif;
 $baseFontSize: #{$baseSize}px;
 
-$baseLetterSpasing: .01rem;
-$secondaryLetterSpasing: .02rem;
+$baseLetterSpasing: 0.01rem;
+$secondaryLetterSpasing: 0.02rem;
 
 $baseFontColor: rgb(0, 0, 0);
-$seconaryFontColor: #C4C4C4;
+$seconaryFontColor: #c4c4c4;
 $tertiaryFontColor: #ffffff;
 
-//font color - start rework
-$color-default:           rgba(0, 0, 0, 0.75);
-$color-default--darkest:  rgb(0, 0, 0);
-$color-default--light:    rgb(255, 255, 255);
-$color-main--lighten:     rgba(255, 255, 255, 0.4);
-
-//bg color
+//bg color wft
 $baseBGcolor: #ffffff;
 $secondaryBGcolor: #262626;
 
 $linkBGcolor: #f9f9f9;
 $hoverLinkBGcolor: #e5e5e5;
 
-$linkHoverColor: #6C69E1;
+$linkHoverColor: #6c69e1;
 
-$baseLineColor: #C4C4C4;
+$baseLineColor: #c4c4c4;
 
-//bg color - start rework
+//common color
+$color-select-common: rgb(108, 105, 225);
+//font color - start rework-------------------
+$color-default: rgba(0, 0, 0, 0.75);
+$color-default--darkest: rgb(0, 0, 0);
+$color-default--light: rgb(255, 255, 255);
+$color-default-lighten: rgba(255, 255, 255, 0.4);
+
+// header -sratr rework ----------------------
+$color-header-link: rgb(38, 38, 38);
+$color-header-link-hover: $color-select-common;
+$bg-color-header-link: rgb(249, 249, 249);
+$bg-color-header-link-hover--mobile: $color-select-common;
+$color-header-link--mobile: rgb(155, 155, 155);
+
+//line color - star rework --------------------
+$line-color-default: rgb(229, 229, 229);
+$line-color-default--dark: rgb(196, 196, 196);
+
+//bg color - start rework ---------------------
 $bg-color-default: rgb(255, 255, 255);
 $bg-color-dark: rgb(38, 38, 38);
-
-//-------------- Header ------------------wtf
-$headerBGcolor: $baseBGcolor;
-$headerFontSize: px(14);
-//* Header nav font *
-$headerColor: #262626;
-$secondaryHeaderColor: #9b9b9b;
-$headerHoverColor:  #6C69E1;
-$secondaryHoverColor:  #ffffff;
-//* Header nav bg *
-$headerHoverBGcolor: #f9f9f9;
-$secondaryHeaderHoverBGcolor: #6C69E1;
-//* Header nav line *
-$headerLineColor: $baseLineColor;
 
 //------------ padding size ----------------
 $basePadding: 15px;
 
 //------------ Breakpoint ------------------
 
-$largeDesktopWidth: 1600px;   
+$largeDesktopWidth: 1600px;
 $desktopWidth: 1200px;
 $smDesktopWidth: 1000px;
 $tableWidth: 768px;
@@ -81,7 +80,7 @@ $zIndexSectionContent: 1000;
 // $color-main--lighten:  #ACEF97;
 $color-main--light-alpha: rgba(255, 255, 255, 0.4);
 // $color-main:           #3FD411;
-$color-main--dark-alpha:  rgba(0, 0, 0, 0.75);
+$color-main--dark-alpha: rgba(0, 0, 0, 0.75);
 // $color-main--darken:   #329F11;
 // $color-main--darkest:  #184B09;
 
@@ -89,4 +88,3 @@ $color-main--dark-alpha:  rgba(0, 0, 0, 0.75);
 // $btn-main-bg:          @color-success;
 // $btn-main-color:       @color-success--darken;
 // $btn-main-border:      @color-success--darken;
-

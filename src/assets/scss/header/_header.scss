@@ -4,12 +4,12 @@
   top: 0;
   left: 0;
   grid-template-columns: 17% 83%;
-  transition: height .2s ease-in;
+  transition: height 0.2s ease-in;
   z-index: $zIndexHeader;
-  background: $headerBGcolor;
+  background: $bg-color-default;
   width: 100%;
-  height: px(70); //set temporarily , 
-  border-bottom: px(1) solid $headerLineColor;
+  height: px(70); //set temporarily ,
+  border-bottom: 1px solid $line-color-default--dark;
 }
 
 .nav-panel-mobile {
@@ -24,15 +24,12 @@
 }
 
 @include l_desktop {
-
   .header {
     height: px(70);
   }
-
 }
 
 @include sm_desktop {
-
   .header {
     grid-template-columns: 1fr;
     height: px(55);
@@ -44,9 +41,8 @@
     justify-items: start;
     z-index: $zIndexHeader + 2;
     box-shadow: 0 0 10px #00000034;
-    background: $headerBGcolor;
+    background: $bg-color-default;
   }
-
 }
 
 @import "/_logo.scss";
