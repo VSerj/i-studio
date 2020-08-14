@@ -29,13 +29,14 @@ $baseLineColor: #c4c4c4;
 
 //common color
 $color-select-common: rgb(108, 105, 225);
+
 //font color - start rework-------------------
 $color-default: rgba(0, 0, 0, 0.75);
 $color-default--darkest: rgb(0, 0, 0);
 $color-default--light: rgb(255, 255, 255);
 $color-default-lighten: rgba(255, 255, 255, 0.4);
 
-// header -sratr rework ----------------------
+//header -sratr rework ----------------------
 $color-header-link: rgb(38, 38, 38);
 $color-header-link-hover: $color-select-common;
 $bg-color-header-link: rgb(249, 249, 249);
@@ -50,11 +51,11 @@ $line-color-default--dark: rgb(196, 196, 196);
 $bg-color-default: rgb(255, 255, 255);
 $bg-color-dark: rgb(38, 38, 38);
 
-//------------ padding size ----------------
+//padding size ----------------
 $basePadding: 15px;
 $padding-default: 15px;
 
-//------------ Breakpoint ------------------
+//Breakpoint ------------------
 
 $largeDesktopWidth: 1600px;
 $desktopWidth: 1200px;
@@ -79,9 +80,9 @@ $zIndexSectionContent: 1000;
 // // На примере вариаций одного главного цвета
 // $color-main--lightest: #CBF3BF;
 // $color-main--lighten:  #ACEF97;
-$color-main--light-alpha: rgba(255, 255, 255, 0.4);
+// $color-main--light-alpha: rgba(255, 255, 255, 0.4);
 // $color-main:           #3FD411;
-$color-main--dark-alpha: rgba(0, 0, 0, 0.75);
+// $color-main--dark-alpha: rgba(0, 0, 0, 0.75);
 // $color-main--darken:   #329F11;
 // $color-main--darkest:  #184B09;
 

@@ -1,6 +1,7 @@
 .team-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-items: right;
 }
 
 .team-grid__item:first-child {
