@@ -7,7 +7,7 @@
   margin: 0 auto;
   width: 100%;
   max-width: 1199px;
-  padding: 0 $basePadding 0 $basePadding;
+  padding: 0 $padding-default 0 $padding-default;
 }
 
 .context-dark {
@@ -20,7 +20,7 @@
   text-transform: uppercase;
   overflow-wrap: break-word;
   line-height: 1.13333;
-  font-family: "PoppinsLight";
+  // font-family: $font-family-default--light;
   font-size: px(45);
   font-weight: 300;
   color: $color-default--darkest;
@@ -29,6 +29,7 @@
 .title-secondary {
   width: 100%;
   line-height: 1.2;
+  font-family: $font-family-default;
   font-size: px(24);
 }
 
@@ -37,8 +38,8 @@
 }
 
 .text-big {
-  font-size: px(18);
   line-height: 1.77;
+  font-size: px(18);
 }
 
 @include large_desktop {

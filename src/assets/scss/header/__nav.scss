@@ -15,6 +15,7 @@
     text-align: center;
     letter-spacing: 0.02rem;
     color: $color-header-link;
+    font-family: $font-family-default;
     font-size: px(14);
     font-weight: 600;
 
@@ -43,7 +44,7 @@
     height: 100vh;
     @include p(70, 2, 0, 2);
     overflow: auto;
-
+    
     &__link {
       justify-content: start;
       border-left: none;

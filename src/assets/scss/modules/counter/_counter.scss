@@ -1,6 +1,6 @@
 .counter {
   display: grid;
-  grid-template-columns: max-content minmax(60px,min-content);
+  grid-template-columns: max-content minmax(60px, min-content);
   @include p(0, 5, 0, 5);
   text-align: left;
   color: $color-default--darkest;
@@ -14,7 +14,6 @@
   text-overflow: ellipsis;
   text-align: right;
   line-height: 1;
-  font-family: $seconaryFont;
   font-size: px(100);
 }
 
@@ -29,5 +28,5 @@
   text-overflow: ellipsis;
   text-transform: uppercase;
   line-height: 1.3;
-  font-weight: 400;
+  font-family: $font-family-default;
 }

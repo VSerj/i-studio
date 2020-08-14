@@ -1,11 +1,11 @@
 body {
-  font-family: $baseFont;
-  font-size: 15px;
-  font-weight: 300;
-  background-color: $baseBGcolor;
+  background-color: $color-default--light;
   line-height: 1.67;
   letter-spacing: $baseLetterSpasing;
-  color: rgba(0, 0, 0, .75);
+  color: $color-default;
+  font-family: $font-family-default--light;
+  font-size: 15px;
+  font-weight: 300;
 }
 
 p {

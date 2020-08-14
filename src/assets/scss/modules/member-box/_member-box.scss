@@ -21,17 +21,18 @@
 .member-info {
   max-width: 75%;
   overflow: hidden;
-  background-color: $baseBGcolor;
+  background-color: $bg-color-default;
   @include p(7, 20, 7, 20);
+  font-family: $font-family-default;
 
   &__name {
     @include m(0, 0, 5, 0);
     line-height: 1.33;
-    color: $baseFontColor;
+    color: $color-default--darkest;
     font-size: px(18);
   }
 
-  &__postion {
+  &__position {
     text-transform: uppercase;
     font-size: px(13);
     font-weight: 400;

@@ -13,26 +13,32 @@ $baseLetterSpasing: 0.01rem;
 $secondaryLetterSpasing: 0.02rem;
 
 $baseFontColor: rgb(0, 0, 0);
-$seconaryFontColor: #c4c4c4;
+$seconaryFontColor: rgb(196, 196, 196);
 $tertiaryFontColor: #ffffff;
 
 //bg color wft
 $baseBGcolor: #ffffff;
-$secondaryBGcolor: #262626;
+$secondaryBGcolor: rgb(38, 38, 38);
 
-$linkBGcolor: #f9f9f9;
-$hoverLinkBGcolor: #e5e5e5;
+$linkBGcolor: rgb(249, 249, 249);
+$hoverLinkBGcolor: rgb(229, 229, 229);
 
-$linkHoverColor: #6c69e1;
+$linkHoverColor: rgb(108, 105, 225);
 
-$baseLineColor: #c4c4c4;
+$baseLineColor: rgb(196, 196, 196);
+//-----------------------------------------------------------end wtf
 
 //common color
 $color-select-common: rgb(108, 105, 225);
 
+//font
+$font-family-default: "Poppins", Arial, Tahoma, sans-serif;
+$font-family-default--light: "PoppinsLight", Arial, Tahoma, sans-serif;
+
 //font color - start rework-------------------
 $color-default: rgba(0, 0, 0, 0.75);
 $color-default--darkest: rgb(0, 0, 0);
+$color-default--darken: rgb(196, 196, 196);
 $color-default--light: rgb(255, 255, 255);
 $color-default-lighten: rgba(255, 255, 255, 0.4);
 
@@ -50,9 +56,10 @@ $line-color-default--dark: rgb(196, 196, 196);
 //bg color - start rework ---------------------
 $bg-color-default: rgb(255, 255, 255);
 $bg-color-dark: rgb(38, 38, 38);
+$bg-color-link: rgb(249, 249, 249);
+$bg-color-link-hover: rgb(229, 229, 229);
 
 //padding size ----------------
-$basePadding: 15px;
 $padding-default: 15px;
 
 //Breakpoint ------------------
