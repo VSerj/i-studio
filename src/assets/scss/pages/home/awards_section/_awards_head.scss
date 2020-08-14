@@ -8,11 +8,8 @@
 
 .awards-description {
   @include p(0, 40, 0, 45);
-  // width: 310px;
   font-family: $seconaryFont;
-  font-size: px(18);
   color: $baseFontColor;
-  line-height: 1.78;
 }
 
 .counter-container{

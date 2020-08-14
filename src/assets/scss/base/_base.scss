@@ -5,12 +5,12 @@ body {
   background-color: $baseBGcolor;
   line-height: 1.67;
   letter-spacing: $baseLetterSpasing;
-  color: rgba(0, 0, 0, .6);
+  color: rgba(0, 0, 0, .75);
 }
 
 p {
   overflow-wrap: break-word;
-  color: rgba(26, 13, 13, 0.6);
+  // color: rgba(26, 13, 13, 0.6);
 }
 
 main {

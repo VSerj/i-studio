@@ -28,6 +28,29 @@
   color: $tertiaryFontColor;
 }
 
+.title-tertiary {
+  font-size: px(24);
+}
+
+.text-big {
+  font-size: px(18);
+  line-height: 1.77;
+  &--darken-a {
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.36;
+  }
+
+  // &--lightest-a {
+  //   color: rgba(0, 0, 0, 0.3);
+  // }
+
+  // &--black {
+  //   color: rgb(0, 0, 0);
+  // }
+
+}
+
+
 
 @include large_desktop {
   .title-primary {
@@ -47,6 +70,11 @@
   .title-secondary {
     font-size: px(20);
   }
+
+  .text-big {
+    font-size: px(16);
+  }
+
 }
 
 @include sm_desktop {

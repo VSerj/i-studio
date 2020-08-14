@@ -1,4 +1,7 @@
-//-------------- global -----------------
+//I know everything is bad and needs to be redone.
+//but I need to learn JS
+
+//-------------- global -----------------wtf
 $baseSize: 16;
 $baseFont: "Poppins", Arial, Tahoma, sans-serif;
 $seconaryFont: "PoppinsLight", Arial, Tahoma, sans-serif;
@@ -16,11 +19,12 @@ $secondaryBGcolor: #262626;
 
 $linkBGcolor: #f9f9f9;
 $hoverLinkBGcolor: #e5e5e5;
+
 $linkHoverColor: #6C69E1;
 
 $baseLineColor: #C4C4C4;
 
-//-------------- Header ------------------
+//-------------- Header ------------------wtf
 $headerBGcolor: $baseBGcolor;
 $headerFontSize: px(14);
 //* Header nav font *
@@ -51,4 +55,25 @@ $phoneWidth: 480px;
 
 $zIndexHeader: 4000;
 $zIndexSectionContent: 1000;
+
+//color text
+// $gray--lighten:        #DCDCDC;
+// $gray--light:          #BABABA;
+// $gray:                 #808080;
+// $gray--dark:           #585858;
+// $gray--darken:         #333333;
+
+// // На примере вариаций одного главного цвета
+// $color-main--lightest: #CBF3BF;
+// $color-main--lighten:  #ACEF97;
+// $color-main--light:    #74EA4F;
+// $color-main:           #3FD411;
+// $color-main--dark:     #39BA11;
+// $color-main--darken:   #329F11;
+// $color-main--darkest:  #184B09;
+
+// // Цвета главной кнопки
+// $btn-main-bg:          @color-success;
+// $btn-main-color:       @color-success--darken;
+// $btn-main-border:      @color-success--darken;
 
