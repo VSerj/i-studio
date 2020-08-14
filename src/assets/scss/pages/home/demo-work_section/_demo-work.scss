@@ -19,7 +19,7 @@
   color: rgba($tertiaryFontColor, 0.4);
 }
 
-.demo-work-container .btn_link {
+.demo-work-container .btn {
   @include m(0, 0, 52, 0);
 }
 
@@ -37,7 +37,7 @@
     @include m(0, 0, 25, 0);
   }
 
-  .demo-work-container .btn_link {
+  .demo-work-container .btn {
     @include m(0, 0, 25, 0);
   }
 }
