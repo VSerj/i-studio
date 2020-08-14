@@ -9,7 +9,10 @@
     align-items: center;
     transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
     border-left: 1px solid $line-color-default--dark;
+    @include p(5, 10, 5, 10);
+    overflow: hidden;
     text-transform: uppercase;
+    text-align: center;
     letter-spacing: 0.02rem;
     color: $color-header-link;
     font-size: px(14);
@@ -45,6 +48,7 @@
       justify-content: start;
       border-left: none;
       @include p(0, 10, 0, 15);
+      text-align: left;
       color: $color-header-link--mobile;
 
       &:hover {
