@@ -5,6 +5,23 @@
   text-align: right;
 }
 
+.team__title {
+  @include m(0, 0, 37, 0);
+}
+
+.team__description {
+  max-width: px(310);
+}
+
+.team__skill-list {
+  max-width: px(205);
+}
+// .team__counter {
+
+// }
+
+
+
 @import "/__team-grid.scss";
 @import "/__team-members-grid.scss";
 @import "/__team-head.scss";

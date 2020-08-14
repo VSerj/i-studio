@@ -1,0 +1,24 @@
+.ordered-list {
+  @include p(0, 0, 0, 19);
+  text-align: left;
+  line-height: 2.07;
+  color: $color-default--darkest;
+  font-family: $font-family-default;
+  font-weight: 400;
+
+  &__item {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      display: inline-block;
+      left: px(-19);
+      top: px(12);
+      width: px(6);
+      height: px(6);
+      content: "";
+      color: rgb(183, 183, 183);
+      background-color: rgb(95, 92, 222);
+    }
+  }
+}

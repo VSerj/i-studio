@@ -106,15 +106,15 @@ block content
                     p.member-info__name #{member.name}
                     p.member-info__position #{member.position}
           .team-grid__item
-            h2.title-primary Team
-            p.text-big.
+            h2.title-primary.team__title Team
+            p.text-big.team__description.
               We are a dedicated team of web design, 
               development and marketing professionals 
               always ready to help you.
           .team-grid__item
             +counter("People in team", 20)
           .team-grid__item
-            ul.ordered-list
+            ul.ordered-list.team__skill-list
               li.ordered-list__item.
                 28 exceptional full-time professionals
               li.ordered-list__item.
