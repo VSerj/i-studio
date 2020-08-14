@@ -1,6 +1,6 @@
 .counter {
   display: grid;
-  grid-template-columns: max-content minmax(60px, min-content);
+  grid-template-columns: max-content minmax(63px, min-content);
   @include p(0, 5, 0, 5);
   text-align: left;
   color: $color-default--darkest;

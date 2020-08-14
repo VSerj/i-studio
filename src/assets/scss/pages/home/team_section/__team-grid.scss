@@ -1,9 +1,10 @@
 .team-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: right;
+  display: flex;
+  justify-content: space-between;
 }
 
-.team-grid__item:first-child {
-  grid-row: 1 / 4;
+.team-grid__item--do-end {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;;
 }

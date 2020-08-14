@@ -11,18 +11,22 @@
 
 .team__description {
   max-width: px(310);
+  @include m(0, 0, 45, 0);
+
+  &::after {
+    display: inline-block;
+    @include m(60, 0, 0, 0);
+    width: 80%;
+    border-top: 1px solid $line-color-default;
+    content: "";
+  }
 }
 
 .team__skill-list {
+  @include m(45, 0, 0, 0,);
   max-width: px(205);
 }
-// .team__counter {
-
-// }
-
 
 
 @import "/__team-grid.scss";
 @import "/__team-members-grid.scss";
-@import "/__team-head.scss";
-
