@@ -1,27 +1,26 @@
-.container_lines {
+.container-lines {
   position: relative;
-}
 
-.container_lines_row {
-  position: absolute;
-  top: 0;
-  right: $basePadding;
-  height: 100%;
-  width: calc(100% - (#{$basePadding} * 2));
-  display: flex;
-}
+  &__row {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: $padding-default;
+    height: 100%;
+    width: calc(100% - (#{$padding-default} * 2));
+  }
+  &__column {
+    flex: 1 1 33.3333333%;
+    border-left: 1px solid $line-color-default;
 
-.line-column {
-  flex: 1 1 33.3333333%;
-  border-left: 1px $baseLineColor solid;
-}
-
-.line-column:last-child {
-  border-right: 1px $baseLineColor solid;
+    &:last-child {
+      border-right: 1px solid $line-color-default;
+    }
+  }
 }
 
 @include sm_desktop {
-  .container_lines_row {
+  .container-lines__row {
     display: none;
   }
 }
