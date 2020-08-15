@@ -3,15 +3,23 @@
   z-index: $zIndexSectionContent;
   @include p(100, 0, 100, 0);
   text-align: right;
+
+  @include sm_desktop {
+    text-align: left;
+  }
 }
 
 .team__title {
   @include m(0, 0, 37, 0);
+
+  @include l_desktop {
+    @include m(0, 0, 20, 0);
+  }
 }
 
 .team__description {
-  max-width: px(310);
   @include m(0, 0, 45, 0);
+  max-width: px(310);
 
   &::after {
     display: inline-block;
@@ -20,13 +28,32 @@
     border-top: 1px solid $line-color-default;
     content: "";
   }
+
+  @include l_desktop {
+    @include m(0, 0, 20, 0);
+    max-width: px(270);
+
+    &::after {
+      @include m(20, 0, 0, 0);
+    }
+  }
+
+  @include sm_desktop {
+    @include m(0, 0, 15, 0);
+    &::after {
+      content: none;
+    }
+  }
 }
 
 .team__skill-list {
-  @include m(45, 0, 0, 0,);
+  @include m(45, 0, 0, 0);
   max-width: px(205);
+
+  @include l_desktop {
+    @include m(20, 0, 0, 0);
+  }
 }
 
-
 @import "/__team-grid.scss";
-@import "/__team-members-grid.scss";
+@import "/__team-boxes.scss";

@@ -90,22 +90,21 @@ block content
       .container.container-lines
         +grid-bg-lines
         .team-grid.team__container
-          .team-grid__item
-            ul.team-members-grid
-              -
-                var members = [
-                  {name: "John Smith", position: "Senior designer", photo: "assets/img/photo-members/photo-1.jpg"},
-                  {name: "Gary Hughes", position: "Designer", photo: "assets/img/photo-members/photo-2.jpg"},
-                  {name: "Sam Lee", position: "Developer", photo: "assets/img/photo-members/photo-3.jpg"},
-                  {name: "Sarah Parker", position: "Marketing manager", photo: "assets/img/photo-members/photo-4.jpg"}
-                ]
-              each member in members
-                li.member-box
-                  img.member-box__photo(src=member.photo, alt="there was supposed to be a photo")
-                  div.member-box__info.member-info
-                    p.member-info__name #{member.name}
-                    p.member-info__position #{member.position}
-          .team-grid__item.team-grid__item--do-end
+          ul.team__box-members
+            -
+              var members = [
+                {name: "John Smith", position: "Senior designer", photo: "assets/img/photo-members/photo-1.jpg"},
+                {name: "Gary Hughes", position: "Designer", photo: "assets/img/photo-members/photo-2.jpg"},
+                {name: "Sam Lee", position: "Developer", photo: "assets/img/photo-members/photo-3.jpg"},
+                {name: "Sarah Parker", position: "Marketing manager", photo: "assets/img/photo-members/photo-4.jpg"}
+              ]
+            each member in members
+              li.member-box
+                img.member-box__photo(src=member.photo, alt="there was supposed to be a photo")
+                div.member-box__info.member-info
+                  p.member-info__name #{member.name}
+                  p.member-info__position #{member.position}
+          .team__box-info
             h2.title-primary.team__title Team
             p.text-big.team__description.
               We are a dedicated team of web design, 
