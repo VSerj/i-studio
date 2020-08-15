@@ -4,8 +4,9 @@
 
   @include sm_desktop {
     flex-direction: column;
-    // justify-content: center;
+    @include width575 {
+      align-items: center;
+      justify-content: start;
+    }
   }
 }
-
-

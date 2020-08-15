@@ -53,6 +53,11 @@
     @content;
   }
 }
+@mixin width575 {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
 
 @mixin phone {
   @media (max-width: #{$phoneWidth}) {

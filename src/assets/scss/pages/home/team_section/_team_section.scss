@@ -15,6 +15,10 @@
   @include l_desktop {
     @include m(0, 0, 20, 0);
   }
+
+  @include width575 {
+    @include m(0, 0, 20, 0);
+  }
 }
 
 .team__description {
@@ -39,10 +43,21 @@
   }
 
   @include sm_desktop {
+    transform: translateY(-4rem); // its bad :)
     @include m(0, 0, 15, 0);
+    max-width: 100%;
+    @include p(0, 20, 0, 0);
     &::after {
       content: none;
     }
+  }
+  @include l_table {
+    transform: translateY(-6rem);
+  }
+
+  @include width575 {
+    @include m(0, 0, 30, 0);
+    transform: none;
   }
 }
 
@@ -52,6 +67,16 @@
 
   @include l_desktop {
     @include m(20, 0, 0, 0);
+  }
+
+  @include sm_desktop {
+    @include m(0, 0, 0, 0);
+    max-width: 90%;
+  }
+
+  @include width575 {
+    max-width: 100%;
+    @include m(27, 0, 0, 0);
   }
 }
 
