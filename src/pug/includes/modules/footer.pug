@@ -1,22 +1,31 @@
 footer.footer.context-dark
   .container
     .footer-grid
-      .footer-grid__item
+
+      .footer-adress
         h3.title-secondary Location
-        ul.footer__adress
+        ul.footer-adress__list
           li 1418 Riverwood Drive,
           li Suite 3845 Cottonwood,
           li CA 96022
           li United States
-      .footer-grid__item.footer-cotacts
+
+      .footer-cotacts
         h3.title-secondary Contacts
-          .footer-cotacts__item
-            span Ph.
-            a(class="contact-link" href="tel:#") 1-300-123-1234
-          .footer-cotacts__item
-            span Mail.
-            <a class="contakts-link" href="mailto:#">Info@demolink.org</a>
+        .footer-cotacts__item
+          span Ph.
+          a(class="contact-link" href="tel:#") 1-300-123-1234
+        .footer-cotacts__item
+          span Mail.
+          <a class="contacts-link" href="mailto:#">Info@demolink.org</a>
+        .footer-contacts__item
+          ul.social-list
+            each network in ["facebook", "instagram", "twitter", "youtube"]
+              li.social-item
+                a.social-link(href="#")
+                  i(class="icon-" + network)
+
       .footer-grid__item
         h3.title-secondary Newsletter
 
-  
+
