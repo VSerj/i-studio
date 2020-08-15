@@ -20,8 +20,8 @@
   }
 
   @include width575 {
-    grid-template-columns: px(390);
-    grid-auto-rows: px(332);
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
   }
 }
 .team__box-info {

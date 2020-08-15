@@ -11,6 +11,10 @@
     transition: all 0.3s ease-in-out;
     opacity: 0;
   }
+
+  // @include width575 {
+  //   max-width: px(320);
+  // }
 }
 
 .member-box:hover .member-box__info {
