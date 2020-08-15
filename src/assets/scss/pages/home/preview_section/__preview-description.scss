@@ -1,25 +1,21 @@
-.preview_description {
-  @include p(0, 0, 10, 0);
+.preview__description {
   max-width: 50%;
-  font-size: px(18);
+  @include p(0, 0, 10, 0);
   line-height: 1.36;
-  color: rgba(255, 255, 255, .4);
+  color: $color-default-lighten;
+  font-size: px(18);
 }
 
 @include l_desktop {
-
-  .preview_description {
+  .preview__description {
     max-width: 65%;
     @include p(0, 0, 0, 0);
   }
-
 }
 
 @include l_table {
-
-  .preview_description {
+  .preview__description {
     max-width: 100%;
     text-align: center;
   }
-
 }

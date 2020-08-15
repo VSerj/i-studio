@@ -1,4 +1,4 @@
-#preview {
+.preview {
   display: flex;
   align-items: center;
   height: 90vh;
@@ -9,19 +9,19 @@
 }
 
 @include l_desktop {
-  #preview {
+  .preview {
     height: 79vh;
   }
 }
 
 @include sm_desktop {
-  #preview {
-    height: 100vh;
+  .preview {
+    height: 90vh;
   }
 }
 
 @include l_table {
-  #preview {
+  .preview {
     @include p(50, 0, 0, 0);
     background-image: 
       linear-gradient(to bottom, rgba(27, 27, 27, 0.4) -30%, 
@@ -29,5 +29,5 @@
   }
 }
 
-@import "/_preview-title.scss";
-@import "/_preview-description.scss";
+@import "/__preview-title.scss";
+@import "/__preview-description.scss";

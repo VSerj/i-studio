@@ -1,63 +1,61 @@
-
-.project_container {
+.project__container {
   position: relative;
+  z-index: $zIndexSectionContent;
   max-width: 47%;
   @include p(203, 0, 100, 0);
-  z-index: $zIndexSectionContent;
 }
 
-.project_title {
+.project__title {
   @include m(0, 0, 17, 0);
 }
 
-.project_subtitle {
+.project__subtitle {
   @include m(0, 0, 67, 0);
-  color: rgba(0, 0, 0, 0.23);
   text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.3);
 }
 
-.project_description {
+.project__description {
   @include m(0, 0, 69, 0);
 }
 
 @include large_desktop {
-  .project_container{
+  .project__container {
     @include p(130, 0, 100, 0);
   }
 
-  .project_subtitle {
+  .project__subtitle {
     @include m(0, 0, 55, 0);
-  } 
+  }
 
-  .project_description {
+  .project__description {
     @include m(0, 0, 45, 0);
   }
 }
 
 @include l_desktop {
-  .project_container{
+  .project__container {
     max-width: 49%;
     @include p(65, 0, 65, 0);
   }
 
-  .project_subtitle {
+  .project__subtitle {
     @include m(0, 0, 25, 0);
-    font-size: px(16);
   }
 
-  .project_description {
+  .project__description {
     @include m(0, 0, 25, 0);
   }
 }
 
 @include sm_desktop {
-  .project_container{
+  .project__container {
     max-width: 57%;
   }
 }
 
 @include l_table {
-  .project_container{
+  .project__container {
     max-width: 100%;
   }
 }
