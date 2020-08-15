@@ -42,8 +42,9 @@
   }
 }
 
+//768px;
 @mixin l_table {
-  @media (max-width: #{$tableWidth}) {
+  @media (max-width: #{$tableWidth}) { 
     @content;
   }
 }
