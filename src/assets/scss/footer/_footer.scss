@@ -1,5 +1,5 @@
-footer {
-  margin-top: 80px;;
-  width: 100%;
-  background: $secondaryBGcolor;
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  @include p(130, 0, 130, 0)
 }
