@@ -1,13 +1,33 @@
-
 .footer {
   font-size: px(18);
 }
 .footer-grid {
   display: flex;
   justify-content: space-between;
-  @include p(130, 0, 130, 0)
+  @include p(130, 0, 130, 0);
 }
 
-.footer-adress__list {
-  color: $color-default-lighten;
+.footer-box {
+  &__title {
+    @include m(0, 0, 48, 0);
+  }
+
+  &__body {
+    color: $color-default-lighten;
+  }
 }
+
+.footer-location__item:not(:last-child) {
+  @include m(0, 0, 5, 0);
+}
+
+.footer-contact {
+  &__text {
+    display: inline-block;
+    min-width: px(57);
+  }
+  &__link {
+    color: $color-default--light;
+  }
+}
+
