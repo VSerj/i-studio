@@ -1,4 +1,6 @@
 .footer-box {
+  overflow-wrap: break-word;
+  
   &__title {
     @include m(0, 0, 48, 0);
   }
@@ -7,6 +9,6 @@
     color: $color-default-lighten;
   }
   &__bottom {
-    @include m(0,0,0,0)
+    @include m(30, 0, 0, 0);
   }
 }

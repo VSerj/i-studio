@@ -1,7 +1,7 @@
 footer.footer.context-dark
   .container
     .footer-grid
-      .footer-box
+      .footer-box.footer-grid__item
         h3.title-secondary.footer-box__title Location
         ul.footer-location.footer-box__body
           li.footer-location__item 1418 Riverwood Drive,
@@ -9,7 +9,7 @@ footer.footer.context-dark
           li.footer-location__item CA 96022
           li.footer-location__item United States
 
-      .footer-box
+      .footer-box.footer-grid__item
         h3.title-secondary.footer-box__title Contacts
         .footer-box__body.footer-contacts
           .footer-contacts__item
@@ -22,9 +22,9 @@ footer.footer.context-dark
         ul.footer-social.footer-box__bottom
           each network in ["facebook", "instagram", "twitter", "youtube"]
             li.footer-social__item
-              a(class="footer-social__link " + "icon-" + network, href="#")
+              a(class="footer-social__btn " + "icon-" + network, href="#")
 
-      .footer-box.serv-padding
+      .footer-box.footer-grid__item.serv-padding
         h3.title-secondary Newsletter
         input(type="email", class=".serv-padding", name="serv-padding")
 
