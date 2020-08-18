@@ -1,33 +1,9 @@
 .footer {
   font-size: px(18);
 }
-.footer-grid {
-  display: flex;
-  justify-content: space-between;
-  @include p(130, 0, 130, 0);
-}
 
-.footer-box {
-  &__title {
-    @include m(0, 0, 48, 0);
-  }
-
-  &__body {
-    color: $color-default-lighten;
-  }
-}
-
-.footer-location__item:not(:last-child) {
-  @include m(0, 0, 5, 0);
-}
-
-.footer-contact {
-  &__text {
-    display: inline-block;
-    min-width: px(57);
-  }
-  &__link {
-    color: $color-default--light;
-  }
-}
-
+@import "/__footer-grid.scss";
+@import "/__footer-box.scss";
+@import "/__footer-location.scss";
+@import "/__footer-contacts.scss";
+@import "/__footer-social-link.scss";

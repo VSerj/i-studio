@@ -1,0 +1,5 @@
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  @include p(130, 0, 130, 0);
+}

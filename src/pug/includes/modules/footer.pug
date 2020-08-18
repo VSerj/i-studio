@@ -11,21 +11,21 @@ footer.footer.context-dark
 
       .footer-box
         h3.title-secondary.footer-box__title Contacts
-        .footer-box__body
-          .footer-contact
-            span.footer-contact__text Ph.
-            a(class="footer-contact__link" href="tel:#") 1-300-123-1234
-          .footer-contact
-            span.footer-contact__text Mail.
-            a(class="footer-contact__link" href="mailto:#") Info@demolink.org
+        .footer-box__body.footer-contacts
+          .footer-contacts__item
+            span.footer-contacts__text Ph.
+            a(class="footer-contacts__link" href="tel:#") 1-300-123-1234
+          .footer-contacts__item
+            span.footer-contacts__text Mail.
+            a(class="footer-contacts__link" href="mailto:#") Info@demolink.org
         
-          ul.footer-social
-            each network in ["facebook", "instagram", "twitter", "youtube"]
-              li.footer-social__item
-                a.footer-social__link(href="#")
-                  i(class="icon-" + network)
+        ul.footer-social.footer-box__bottom
+          each network in ["facebook", "instagram", "twitter", "youtube"]
+            li.footer-social__item
+              a(class="footer-social__link " + "icon-" + network, href="#")
 
-      .footer-box
+      .footer-box.serv-padding
         h3.title-secondary Newsletter
+        input(type="email", class=".serv-padding", name="serv-padding")
 
 

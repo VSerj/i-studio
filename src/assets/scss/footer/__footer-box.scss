@@ -1,0 +1,12 @@
+.footer-box {
+  &__title {
+    @include m(0, 0, 48, 0);
+  }
+
+  &__body {
+    color: $color-default-lighten;
+  }
+  &__bottom {
+    @include m(0,0,0,0)
+  }
+}

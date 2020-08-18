@@ -1,0 +1,24 @@
+.footer-social {
+  display: flex;
+  justify-content: center;
+
+  &__item:not(:last-child) {
+    @include m(0, 12, 0, 0);
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    width: px(47);
+    height: px(47);
+    color: $color-default--light;
+    font-size: px(22);
+  }
+}
+
+.serv-padding {
+  width: 356px;
+}
