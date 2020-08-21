@@ -6,9 +6,9 @@ To remember how to do markup using html and css.
 Learn How to make an interactive page using javascript
 
 ### Run project
-To run a project with a module devServer: `npm run dev`. 
-To run a project with an assembly in the source directory dist: `npm run start`. 
-You also need to download npm packages.
+1. To run a project with a module devServer: `npm run dev`. 
+2. To run a project with an assembly in the source directory dist: `npm run start`. 
+> You also need to download `npm packages`.
 
 ### Tools and technologies
 * html 
