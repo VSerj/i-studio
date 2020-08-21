@@ -3,16 +3,21 @@
   display: inline-block;
   position: relative;
   z-index: 4000;
+  
   border-left: 5px solid #5f5cde;
-  @include p(8, 24, 8, 22);
   border-color: #5f5cde;
   background-color: #1b1b1b;
+  cursor: pointer;
+
+  @include p(8, 24, 8, 22);
+  // overflow: hidden;
   text-transform: uppercase;
+  // text-overflow: ellipsis;
   white-space: nowrap;
   letter-spacing: 0.05em;
   color: #ffffff;
   font-family: $font-family-default;
-  cursor: pointer;
+
   transition: 
     border-color .25s ease-in-out,
     background-color .25s ease-in-out,
