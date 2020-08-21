@@ -4,7 +4,7 @@
   position: relative;
   z-index: 4000;
   
-  border-left: 5px solid #5f5cde;
+  border-left: px(5) solid #5f5cde;
   border-color: #5f5cde;
   background-color: #1b1b1b;
   cursor: pointer;
@@ -17,6 +17,7 @@
   letter-spacing: 0.05em;
   color: #ffffff;
   font-family: $font-family-default;
+  font-size: px(15);
 
   transition: 
     border-color .25s ease-in-out,
