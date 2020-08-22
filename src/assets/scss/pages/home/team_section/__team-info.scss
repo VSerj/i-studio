@@ -1,52 +1,19 @@
 .team-info {
   display: grid;
-  grid-template-columns: 1fr;
-  // align-items: end;
   justify-items: end;
   @include p(0, 0, 0, 10);
-}
-
-.team-info__title {
-  @include m(0, 0, 37, 0);
-
-  @include l_desktop {
-    @include m(0, 0, 20, 0);
+  
+  @include sm_desktop {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    gap: px(15);
+    @include p(0, 0, 0, 0);
   }
 
-}
-
-.team-info__description {
-  @include m(0, 0, 45, 0);
-  max-width: px(310);
-
-  &::after {
-    display: inline-block;
-    @include m(60, 0, 0, 0);
-    width: 80%;
-    border-top: 1px solid $line-color-default;
-    content: "";
-  }
-
-  @include l_desktop {
-    @include m(0, 0, 20, 0);
-    max-width: px(270);
-
-    &::after {
-      @include m(20, 0, 0, 0);
-    }
-  }
-
-}
-.team-info__counter {
-  max-width: 67%;
-  overflow: hidden;
-}
-
-.team-info__list {
-  @include m(45, 0, 0, 0);
-  max-width: px(205);
-
-  @include l_desktop {
-    @include m(20, 0, 0, 0);
+  @include width575 {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 }
+
+

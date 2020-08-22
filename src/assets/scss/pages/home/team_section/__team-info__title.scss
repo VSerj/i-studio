@@ -1,0 +1,7 @@
+.team-info__title {
+  @include m(0, 0, 37, 0);
+
+  @include l_desktop {
+    @include m(0, 0, 20, 0);
+  }
+}

@@ -36,6 +36,7 @@
   }
 }
 
+// 1000px
 @mixin sm_desktop {
   @media (max-width: #{$smDesktopWidth}) {
     @content;

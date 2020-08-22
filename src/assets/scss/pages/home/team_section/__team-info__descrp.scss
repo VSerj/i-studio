@@ -1,0 +1,28 @@
+.team-info__description {
+  max-width: px(310);
+  @include m(0, 0, 45, 0);
+
+  &::after {
+    display: inline-block;
+    @include m(60, 0, 0, 0);
+    width: 80%;
+    border-top: 1px solid $line-color-default;
+    content: "";
+  }
+
+  @include l_desktop {
+    @include m(0, 0, 20, 0);
+    max-width: px(270);
+
+    &::after {
+      @include m(20, 0, 0, 0);
+    }
+  }
+
+  @include sm_desktop {
+    max-width: 100%;
+    &::after {
+      display: none;
+    }
+  }
+}

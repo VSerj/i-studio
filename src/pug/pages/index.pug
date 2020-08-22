@@ -105,15 +105,17 @@ block content
                   p.member-info__name #{member.name}
                   p.member-info__position #{member.position}
           .team-info
-            h2.title-primary.team-info__title Team
-            p.text-big.team-info__description.
-              We are a dedicated team of web design, 
-              development and marketing professionals 
-              always ready to help you.
-            +counter("People in team", 20, "team-info__counter")
-            ul.ordered-list.team-info__list
-              li.ordered-list__item.
-                28 exceptional full-time professionals
-              li.ordered-list__item.
-                5-year specialized team member practice
+            .team-info__box
+              h2.title-primary.team-info__title Team
+              p.text-big.team-info__description.
+                We are a dedicated team of web design, 
+                development and marketing professionals 
+                always ready to help you.
+            .team-info__box
+              +counter("People in team", 20, "team-info__counter")
+              ul.ordered-list.team-info__list
+                li.ordered-list__item.
+                  28 exceptional full-time professionals
+                li.ordered-list__item.
+                  5-year specialized team member practice
                 

@@ -1,0 +1,14 @@
+.team-info__counter {
+  overflow: hidden;
+  @include m(0, 0, 45, 0);
+  max-width: px(215);
+
+  @include l_desktop {
+    @include m(0, 0, 20, 0);
+    max-width: px(230);
+  }
+  
+  @include sm_desktop {
+    max-width: 100%;
+  }
+}

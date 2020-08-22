@@ -1,0 +1,11 @@
+.team-info__list {
+  max-width: px(205);
+
+  @include l_desktop {
+    max-width: px(230);
+  }
+
+  @include sm_desktop {
+    max-width: 100%;
+  }
+}
