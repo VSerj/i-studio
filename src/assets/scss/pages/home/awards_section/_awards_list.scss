@@ -27,9 +27,9 @@
   position: relative;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   height: 100%;
   @include p(43, 10, 43, 10);
-  cursor: pointer;
   color: $color-default--darken;
 }
 
