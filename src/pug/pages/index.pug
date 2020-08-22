@@ -26,7 +26,7 @@ block content
             we have been delivering creative and unique websites to our clients worldwide.
           +btn('/#','read more about us')
 
-    section#awards
+    section.awards
       .container.container-lines
         +grid-bg-lines
         .awards_container
@@ -35,8 +35,7 @@ block content
             p.awards-description.text-big.
               As a leading web design team, we have 
               received multiple awards over the years.
-            .counter-container
-              +counter('international awards', '17')
+            +counter('international awards', '17', "awards__counter")
           - var n = 1
           - var text = 'award #'
           ul.awards-list
