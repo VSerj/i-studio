@@ -1,0 +1,82 @@
+.team-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  // align-items: end;
+  justify-items: end;
+  @include p(0, 0, 0, 10);
+}
+
+.team-info__title {
+  @include m(0, 0, 37, 0);
+
+  @include l_desktop {
+    @include m(0, 0, 20, 0);
+  }
+
+  @include width575 {
+    @include m(0, 0, 20, 0);
+  }
+}
+
+.team-info__description {
+  @include m(0, 0, 45, 0);
+  max-width: px(310);
+
+  &::after {
+    display: inline-block;
+    @include m(60, 0, 0, 0);
+    width: 80%;
+    border-top: 1px solid $line-color-default;
+    content: "";
+  }
+
+  @include l_desktop {
+    @include m(0, 0, 20, 0);
+    max-width: px(270);
+
+    &::after {
+      @include m(20, 0, 0, 0);
+    }
+  }
+
+  @include sm_desktop {
+    transform: translateY(-4rem); // its bad :)
+    @include m(0, 0, 15, 0);
+    max-width: 100%;
+    @include p(0, 20, 0, 0);
+    &::after {
+      content: none;
+    }
+  }
+  @include l_table {
+    transform: translateY(-6rem);
+  }
+
+  @include width575 {
+    @include m(0, 0, 30, 0);
+    transform: none;
+  }
+}
+.team-info__counter {
+  overflow: hidden;
+  max-width: 70%;
+}
+
+.team-info__list {
+  @include m(45, 0, 0, 0);
+  max-width: px(205);
+
+  @include l_desktop {
+    @include m(20, 0, 0, 0);
+  }
+
+  @include sm_desktop {
+    @include m(0, 0, 0, 0);
+    max-width: 90%;
+  }
+
+  @include width575 {
+    max-width: 100%;
+    @include m(27, 0, 0, 0);
+  }
+}
