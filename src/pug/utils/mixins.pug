@@ -7,8 +7,15 @@ mixin grid-bg-lines
 mixin btn(href, text)
   a.btn(href=href)=text
 
-mixin counter(title, number)
-  .counter
-    div.counter__number= number
-    div.counter__symbol +
-    div.counter__title= title
+mixin counter(title, number, newClass)
+  mixin counter-inner(title, number)
+    .counter__number= number
+    .counter__box
+      .counter__symbol +
+      .counter__title= title
+  if newClass == undefined
+    div(class="counter")
+      +counter-inner(title, number)
+  else 
+    div(class="counter" + " " + newClass)
+      +counter-inner(title, number)
