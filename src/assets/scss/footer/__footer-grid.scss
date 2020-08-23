@@ -8,26 +8,24 @@
   @include sm_desktop {
     flex-wrap: wrap;
   }
+}
 
-  &__item {
-    flex: 0 1 $col3-width;
-    max-width: $col3-width;
-  }
-
-  &__item:not(:last-child) {
-    @include m(0, 30, 0, 0);
-    @include sm_desktop {
-      @include m(0, 0, 0, 0);
-    }
+.footer-grid__item-col1,
+.footer-grid__item-col2,
+.footer-grid__item-col3 {
+  flex: 0 1 $col3-width;
+  max-width: $col3-width;
+  @include sm_desktop {
+    @include m(0, 0, 0, 0);
   }
 }
 
 .footer-grid__item-col1 {
+  @include m(0, 30, 0, 0);
   @include l_desktop {
     flex: 0 1 25%;
     max-width: 25%;
   }
-
   @include sm_desktop {
     flex: 0 0 50%;
     max-width: 50%;
@@ -35,6 +33,7 @@
 }
 
 .footer-grid__item-col2 {
+  @include m(0, 30, 0, 0);
   @include sm_desktop {
     flex: 0 0 50%;
     max-width: 50%;
@@ -43,9 +42,22 @@
 }
 
 .footer-grid__item-col3 {
+  @include m(0, 0, 0, 0);
   @include sm_desktop {
     flex: 0 1 100%;
-    max-width: 100%;
     @include m(30, 0, 0, 0);
+    max-width: 100%;
   }
 }
+
+// &__item {
+//   flex: 0 1 $col3-width;
+//   max-width: $col3-width;
+// }
+
+// &__item:not(:last-child) {
+//   @include m(0, 30, 0, 0);
+//   @include sm_desktop {
+//     @include m(0, 0, 0, 0);
+//   }
+// }
