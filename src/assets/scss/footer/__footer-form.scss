@@ -2,4 +2,8 @@
   &__text {
     color: $color-default--light;
   }
+
+  &__btn {
+    @include m(40, 0, 0, 0);
+  }
 }

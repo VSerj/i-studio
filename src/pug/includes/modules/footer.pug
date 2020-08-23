@@ -1,7 +1,7 @@
 footer.footer.context-dark
   .container
     .footer-grid
-      .footer-box.footer-grid__item
+      .footer-grid__item.footer-box
         h3.title-secondary.footer-box__title Location
         ul.footer-location.footer-box__body
           li.footer-location__item 1418 Riverwood Drive,
@@ -9,7 +9,7 @@ footer.footer.context-dark
           li.footer-location__item CA 96022
           li.footer-location__item United States
 
-      .footer-box.footer-grid__item
+      .footer-grid__item.footer-box
         h3.title-secondary.footer-box__title Contacts
         .footer-box__body.footer-contacts
           .footer-contacts__item
@@ -24,14 +24,15 @@ footer.footer.context-dark
             li.footer-social__item
               a(class="footer-social__btn " + "icon-" + network, href="#")
 
-      .footer-box.footer-grid__item.footer-grid__item--wide
+      .footer-grid__item.footer-grid__item--wide.footer-box
         h3.title-secondary Newsletter
 
-        form(class="footer-form", action="#", method="post")
-          .input-wrap
-            .ico-mail.form-input__icon.
-            input(class="form-input footer-form__text", type="email", name="email" id="footer-email")
-            label(class="form-input__text" for="footer-mail") E-mail
-          +btn("#", "Subscribe")
+        form(class="footer-form footer-box__form", action="#", method="post")
+          .input-box
+            .input-box__icon.ico-mail
+            input(class="input-box__input footer-form__text", type="email", name="email" id="footer-email")
+            label(class="input-box__placeholder input-box__placeholder--focus footer-form__text" for="footer-mail") E-mail
+          .footer-form__btn
+            +btn("#", "Subscribe")
 
 

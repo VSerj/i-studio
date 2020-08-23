@@ -8,7 +8,12 @@
   &__body {
     color: $color-default-lighten;
   }
+
   &__bottom {
     @include m(30, 0, 0, 0);
+  }
+
+  &__form {
+    @include m(37, 0, 0, 0);
   }
 }
