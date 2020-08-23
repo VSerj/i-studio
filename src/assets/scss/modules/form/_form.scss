@@ -1,4 +1,4 @@
-.form-box {
+.input-wrap {
   position: relative;
 }
 
@@ -14,7 +14,7 @@
   border-radius: 0;
   border-bottom: 1px solid $line-color-default--dark;
   @include p(12,19,12,19);
-  line-height: 24px;
+  line-height: px(24);
   letter-spacing: 0.03em;
   font-family: $font-family-default--light;
   font-size: px(18);
@@ -23,18 +23,20 @@
 
 .form-input__icon {
   position: absolute;
+  line-height: px(24);
 }
 
 .form-input__placeholder {
   position: absolute;
-  top: px(25);
-  left: 0;
-  right: 0;
+  // top: px(25);
+  // left: 0;
+  // right: 0;
   transform: translateY(-50%);
   transition: 0.25s;
   // padding-left: 19px;
   // padding-right: 19px;
   text-align: left;
+  line-height: px(24);
   letter-spacing: 0.03em;
   font-size: px(18);
   font-weight: 300;

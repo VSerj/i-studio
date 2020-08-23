@@ -28,10 +28,10 @@ footer.footer.context-dark
         h3.title-secondary Newsletter
 
         form(class="footer-form", action="#", method="post")
-          .form-box
-            .ico-mail
-            input(class="form-input footer-form__input", type="email", name="email" id="footer-email")
-            label(for="footer-mail") E-mail
+          .input-wrap
+            .ico-mail.form-input__icon.
+            input(class="form-input footer-form__text", type="email", name="email" id="footer-email")
+            label(class="form-input__text" for="footer-mail") E-mail
           +btn("#", "Subscribe")
 
 

@@ -1,7 +1,7 @@
 .footer-social {
   display: flex;
   &__item:not(:last-child) {
-    @include m(0, 12, 0, 0);
+    @include m(0, 15, 0, 0);
   }
 
   &__btn {

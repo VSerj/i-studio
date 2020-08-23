@@ -4,23 +4,22 @@
   @include p(130, 0, 130, 0);
 
   &__item {
-    @include m(0, -15, 0, -15);
-    @include p(0, 15, 0, 15);
-    max-width: 25%;
+    flex: 0 1 $col3-width;
+    // @include m(0, -15, 0, -15);
+    max-width: $col3-width;
+    // @include p(0, 15, 0, 15);
   }
 
   &__item--wide {
-    max-width: 50%;
+    flex: 0 1 $col3-width;
+    max-width: $col3-width;
   }
-  
+
+  &__item:not(:last-child) {
+    @include m(0, 30, 0, 0);
+  }
+
   @include width575 {
     flex-direction: column;
   }
 }
-
-
-
-
-
-
-
