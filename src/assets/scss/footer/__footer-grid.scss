@@ -12,7 +12,13 @@
   &__item--wide {
     max-width: 50%;
   }
+  
+  @include width575 {
+    flex-direction: column;
+  }
 }
+
+
 
 
 

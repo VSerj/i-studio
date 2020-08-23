@@ -24,8 +24,11 @@ footer.footer.context-dark
             li.footer-social__item
               a(class="footer-social__btn " + "icon-" + network, href="#")
 
-      .footer-box.footer-grid__item.footer-grid__item--wide.serv-padding
+      .footer-box.footer-grid__item.footer-grid__item--wide
         h3.title-secondary Newsletter
-        +btn("#", "Subscribe")
+        form(action="#", method="post")
+          .ico-mail
+          input(type="email", name="")
+          +btn("#", "Subscribe")
 
 
