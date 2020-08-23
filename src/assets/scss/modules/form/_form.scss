@@ -1,0 +1,42 @@
+.form-box {
+  position: relative;
+}
+
+.form-input {
+  display: block;
+  transition: .3s ease-in-out;
+  width: 100%;
+  min-height: px(50);
+  // background-color: transparent; 
+  background-color: red; 
+  background-image: none;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid $line-color-default--dark;
+  @include p(12,19,12,19);
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  font-family: $font-family-default--light;
+  font-size: px(18);
+  font-weight: 300;
+}
+
+.form-input__icon {
+  position: absolute;
+}
+
+.form-input__placeholder {
+  position: absolute;
+  top: px(25);
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  transition: 0.25s;
+  // padding-left: 19px;
+  // padding-right: 19px;
+  text-align: left;
+  letter-spacing: 0.03em;
+  font-size: px(18);
+  font-weight: 300;
+  pointer-events: none;
+}

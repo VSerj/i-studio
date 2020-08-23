@@ -26,9 +26,12 @@ footer.footer.context-dark
 
       .footer-box.footer-grid__item.footer-grid__item--wide
         h3.title-secondary Newsletter
-        form(action="#", method="post")
-          .ico-mail
-          input(type="email", name="")
+
+        form(class="footer-form", action="#", method="post")
+          .form-box
+            .ico-mail
+            input(class="form-input footer-form__input", type="email", name="email" id="footer-email")
+            label(for="footer-mail") E-mail
           +btn("#", "Subscribe")
 
 
