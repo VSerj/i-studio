@@ -18,6 +18,11 @@
   @include sm_desktop {
     @include m(0, 0, 0, 0);
   }
+  @include width575 {
+    flex: 0 1 100%;
+    @include m(0, 0, 35, 0);
+    max-width: 100%;
+  }
 }
 
 .footer-grid__item-col1 {
@@ -39,6 +44,9 @@
     max-width: 50%;
     @include p(0, 0, 0, 15);
   }
+  @include width575 {
+    @include p(0, 0, 0, 0);
+  }
 }
 
 .footer-grid__item-col3 {
@@ -47,6 +55,9 @@
     flex: 0 1 100%;
     @include m(30, 0, 0, 0);
     max-width: 100%;
+  }
+  @include width575 {
+    @include m(0, 0, 0, 0);
   }
 }
 
