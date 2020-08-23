@@ -12,7 +12,7 @@
   background-image: none;
   border: 0;
   border-radius: 0;
-  border-bottom: 1px solid $line-color-default--dark;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   @include p(12, 19, 12, 38);
   line-height: px(24);
   letter-spacing: 0.03em;
@@ -26,6 +26,7 @@
   @include p(0, 0, 0, 3);
   line-height: px(24);
   font-size: px(15);
+  color: $color-default--darken;
 }
 
 .input-box__placeholder {

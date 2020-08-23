@@ -1,6 +1,9 @@
 .footer-contacts {
   &__item:not(:last-child) {
     @include m(0, 0, 15, 0);
+    @include l_desktop {
+      @include m(0, 0, 12, 0);
+    }
   }
 
   &__text {

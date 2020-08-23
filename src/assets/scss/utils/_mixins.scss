@@ -30,6 +30,7 @@
   }
 }
 
+// 1200px
 @mixin l_desktop {
   @media (max-width: $desktopWidth) {
     @content;

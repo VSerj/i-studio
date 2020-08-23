@@ -1,5 +1,9 @@
 .footer {
   font-size: px(18);
+
+  @include l_desktop {
+    font-size: px(15);
+  }
 }
 
 @import "/__footer-grid.scss";
@@ -8,4 +12,3 @@
 @import "/__footer-contacts.scss";
 @import "/__footer-social-link.scss";
 @import "/__footer-form.scss";
-

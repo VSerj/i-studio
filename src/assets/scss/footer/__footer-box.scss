@@ -1,8 +1,11 @@
 .footer-box {
   overflow-wrap: break-word;
-  
+
   &__title {
     @include m(0, 0, 48, 0);
+    @include l_desktop {
+      @include m(0, 0, 20, 0);
+    }
   }
 
   &__body {
@@ -11,9 +14,15 @@
 
   &__bottom {
     @include m(30, 0, 0, 0);
+    @include l_desktop {
+      @include m(20, 0, 0, 0);
+    }
   }
 
   &__form {
     @include m(37, 0, 0, 0);
+    @include l_desktop {
+      @include m(20, 0, 0, 0);
+    }
   }
 }

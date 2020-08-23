@@ -5,13 +5,6 @@
 
   &__item {
     flex: 0 1 $col3-width;
-    // @include m(0, -15, 0, -15);
-    max-width: $col3-width;
-    // @include p(0, 15, 0, 15);
-  }
-
-  &__item--wide {
-    flex: 0 1 $col3-width;
     max-width: $col3-width;
   }
 
@@ -21,5 +14,16 @@
 
   @include width575 {
     flex-direction: column;
+  }
+
+  @include l_desktop {
+    @include p(50, 0, 50, 0);
+  }
+}
+
+.footer-grid__item-col1 {
+  @include l_desktop {
+    flex: 0 1 25%;
+    max-width: 25%;
   }
 }
