@@ -15,6 +15,11 @@
   color: $color-default--light;
 }
 
+.context-darkest {
+  background-color: $bg-color-darkest;
+  color: $color-default-lighten;
+}
+
 .title-primary {
   width: 100%;
   text-transform: uppercase;

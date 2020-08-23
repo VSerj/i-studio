@@ -1,0 +1,48 @@
+.footer-bottom-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include p(50, 0, 50, 0);
+  
+  &__column {
+    flex: 0 0 50%;
+    @include sm_desktop {
+      flex: 0 0 100%;
+    }
+  }
+}
+
+.right {
+  @include sm_desktop {
+    @include m(0, 0, 15 , 0);
+    text-align: center;
+  }
+}
+
+.footer-bottom {
+  font-size: px(15);
+
+  &__link {
+    transition: color 0.3s;
+    color: $color-default-lighten;
+
+    &:hover {
+      color: $color-link--hover;
+    }
+  }
+}
+
+.footer-bottom-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .footer-bottom-nav__item {
+    @include p(0, 10, 0, 10);
+  }
+
+  a {
+    text-transform: uppercase;
+  }
+}
