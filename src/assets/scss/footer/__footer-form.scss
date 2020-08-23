@@ -5,5 +5,6 @@
 
   &__btn {
     @include m(40, 0, 0, 0);
+    min-width: px(165);
   }
 }
