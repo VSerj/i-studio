@@ -3,7 +3,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   @include p(50, 0, 50, 0);
-  
+  @include l_desktop {
+    @include p(40, 0, 40, 0);
+  }
+
   &__column {
     flex: 0 0 50%;
     @include sm_desktop {
