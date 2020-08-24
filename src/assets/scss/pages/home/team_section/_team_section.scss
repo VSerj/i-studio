@@ -1,3 +1,8 @@
+.team {
+  position: relative;
+  z-index: $zIndexSectionContent;
+}
+
 @import "/__team-grid.scss";
 @import "/__team-members.scss";
 @import "/__team-container.scss"; 

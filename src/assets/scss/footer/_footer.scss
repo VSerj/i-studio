@@ -1,4 +1,6 @@
 .footer {
+  position: relative;
+  z-index: $zIndexSectionContent;
   font-size: px(18);
 
   @include l_desktop {
