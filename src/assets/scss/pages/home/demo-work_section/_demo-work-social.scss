@@ -1,28 +1,24 @@
 .demo-work {
-
   .social-list {
     display: flex;
-    // justify-content: center;
     align-items: center;
-  
+
     p {
       color: rgba($tertiaryFontColor, 0.4);
     }
   }
-  
+
   .social-item:not(:last-child) {
     @include m(0, 30, 0, 0);
-
   }
 
   .social-link {
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     color: rgba($tertiaryFontColor, 0.1);
     font-size: px(22);
-    
+
     &:hover {
       color: $linkHoverColor;
     }
   }
-
 }

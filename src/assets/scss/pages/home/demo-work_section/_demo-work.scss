@@ -4,10 +4,10 @@
 }
 
 .demo-work-container {
-  @include p(80, 0, 135, 0);
   position: relative;
   z-index: $zIndexSectionContent;
   width: 42%;
+  @include p(80, 0, 135, 0);
 }
 
 .demo-work-container .title-secondary {

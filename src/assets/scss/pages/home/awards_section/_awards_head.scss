@@ -1,8 +1,8 @@
 .awards-head {
   display: grid;
   grid-template-columns: repeat(3, 33.33333%);
-  align-items: center;
   justify-items: center;
+  align-items: center;
   @include m(0, 0, 65, 0);
 
   @include sm_desktop {
@@ -11,8 +11,8 @@
   }
 
   @include width575 {
-    justify-items: start;
     grid-template-columns: 1fr;
+    justify-items: start;
   }
 }
 

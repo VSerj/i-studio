@@ -1,6 +1,6 @@
 .awards_container {
-  z-index: $zIndexSectionContent;
   position: relative;
+  z-index: $zIndexSectionContent;
   @include p(100, 0, 100, 0);
 }
 

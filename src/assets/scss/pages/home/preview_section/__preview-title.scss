@@ -6,15 +6,15 @@
   color: $color-default--light;
   line-height: 1;
 }
-  
-.preview-title__main  {
+
+.preview-title__main {
   margin: 0 0 1.5rem 0;
   text-transform: uppercase;
   font-size: px(29);
 }
 
-.preview-title__text{
-  transform: translateX( - px(10) );
+.preview-title__text {
+  transform: translateX(-px(10));
   margin: 0 0 1.25rem 0;
   font-size: px(20);
   font-weight: 500;
@@ -26,37 +26,33 @@
   font-family: "PoppinsBig";
   font-size: px(110);
 }
-  
-@include l_desktop {
 
+@include l_desktop {
   .preview__title {
     @include m(0, 0, 20, 0);
   }
 
-  .preview-title__main  {
+  .preview-title__main {
     font-size: px(23);
-    letter-spacing: .027rem;
+    letter-spacing: 0.027rem;
   }
 
   .preview_title__text-big {
     @include p(0, 0, 0, 0);
     font-size: px(68);
-    letter-spacing: .13rem;
+    letter-spacing: 0.13rem;
   }
 
-  .preview-title__text{
-    transform: none
+  .preview-title__text {
+    transform: none;
   }
-
 }
 
 @include l_table {
-
   .preview-title {
     text-align: center;
   }
-  .preview-title__text{
+  .preview-title__text {
     font-weight: bold;
   }
-
 }

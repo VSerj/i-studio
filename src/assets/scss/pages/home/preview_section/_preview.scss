@@ -23,9 +23,12 @@
 @include l_table {
   .preview {
     @include p(50, 0, 0, 0);
-    background-image: 
-      linear-gradient(to bottom, rgba(27, 27, 27, 0.4) -30%, 
-    rgba(27, 27, 27, 0.8)), url(../img/bg-intro-1919x953.jpg);
+    background-image: linear-gradient(
+        to bottom,
+        rgba(27, 27, 27, 0.4) -30%,
+        rgba(27, 27, 27, 0.8)
+      ),
+      url(../img/bg-intro-1919x953.jpg);
   }
 }
 

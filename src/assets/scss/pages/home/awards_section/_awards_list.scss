@@ -7,8 +7,8 @@
 }
 
 .awards-list-item {
-  height: 100%;
   transition: background-color 0.3s ease-in-out;
+  height: 100%;
   border-left: 1px solid $line-color-default;
   border-bottom: 1px solid $line-color-default;
   overflow: hidden;
@@ -27,8 +27,8 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   height: 100%;
+  cursor: pointer;
   @include p(43, 10, 43, 10);
   color: $color-default--darken;
 }

@@ -1,24 +1,23 @@
-.demo-work{
-
+.demo-work {
   .slider-btn-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
   }
 
   .slider-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     @include m(0, 0, 10, 0);
     width: px(62);
     height: px(64);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $baseFontColor;
     background: $baseBGcolor;
-    cursor: pointer;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    color: $baseFontColor;
 
     &:last-child {
       margin: 0;
@@ -34,33 +33,26 @@
   }
 
   .slider-arrow {
+    display: block;
     position: absolute;
+    transition: background 0.3s ease-in-out;
     width: 16px;
     height: 2px;
-    display: block;
     border-radius: 0 25% 25% 0;
     background: $baseFontColor;
-    transition: background .3s ease-in-out;
-    
-  
+
     &::before {
       @extend .slider-arrow;
-      content: '';
       top: 0;
-      transform: 
-        rotate(-40deg) 
-        translate(0px, 5px) 
-        scaleX(.6);
-      }
-      
+      transform: rotate(-40deg) translate(0px, 5px) scaleX(0.6);
+      content: "";
+    }
+
     &::after {
       @extend .slider-arrow;
-      content: '';
       bottom: 0;
-      transform: 
-        rotate(40deg) 
-        translate(0px,-5px)
-        scaleX(.6);
+      transform: rotate(40deg) translate(0px, -5px) scaleX(0.6);
+      content: "";
     }
   }
 
@@ -71,7 +63,6 @@
   .slider-btn:hover .slider-arrow {
     background: $seconaryFontColor;
   }
-
 }
 
 @include l_table {

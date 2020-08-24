@@ -11,12 +11,12 @@
 
   .slider-toggle {
     opacity: 0.4;
-    transition: all .3s;
+    transition: all 0.3s;
     @include m(0, 10, 0, 0);
-    background-color: $baseFontColor;
     width: px(10);
     height: px(10);
     border-radius: 50%;
+    background-color: $baseFontColor;
     cursor: pointer;
     &:hover {
       opacity: 1;

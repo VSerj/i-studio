@@ -1,9 +1,9 @@
 .awards-link-arrow {
   display: block;
   position: absolute;
-  background: $line-color-default--dark;
   width: 16px;
   height: 2px;
+  background: $line-color-default--dark;
   border-radius: 0 25% 25% 0;
 
   &::before {
