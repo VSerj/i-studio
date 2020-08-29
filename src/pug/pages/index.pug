@@ -43,7 +43,7 @@ block content
               li.awards-list-item
                 a.awards-link(href="#")
                   span.awards-item-title #{text}#{n}
-                  img.awards-link-img(src="assets/img/awards/brand-"+ n++ +".png", alt="there was supposed to be a award")
+                  img.awards-link-img(src="./assets/img/awards/brand-"+ n++ +".png", alt="there was supposed to be a award")
             li.awards-list-item
               a.awards-link
                 span.awards-link-arrow
@@ -75,7 +75,7 @@ block content
         - var sliderImgList = ["lw-img1.jpg", "lw-img2.jpg"]
         each image in sliderImgList
           li.slider-item
-            img(src="assets/img/lates-work/" + image, alt="there was supposed to be a lates work slide")
+            img(src="./assets/img/lates-work/" + image, alt="there was supposed to be a lates work slide")
       .slider-btn-container 
         .slider-btn.slider-btn-next
           span.slider-arrow

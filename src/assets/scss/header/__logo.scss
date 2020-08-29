@@ -1,12 +1,8 @@
 .logo {
   max-width: px(170);
-}
 
-@include l_desktop {
-
-  .logo {
+  @include l_desktop {
     max-width: px(140);
     min-width: px(140);
   }
-
 }

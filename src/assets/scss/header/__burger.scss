@@ -1,4 +1,4 @@
-.btn-burger{
+.btn-burger {
   box-sizing: content-box;
   display: none;
   cursor: pointer;
@@ -9,7 +9,6 @@
 }
 
 @include sm_desktop {
-  
   .btn-burger {
     display: block;
 
@@ -19,34 +18,31 @@
       width: inherit;
       height: inherit;
       align-items: center;
-      transition: all .4s ease-in-out;
+      transition: all 0.4s ease-in-out;
     }
-    
+
     &__line {
       display: block;
       position: absolute;
-      transition: all .4s ease-in-out;
+      transition: all 0.4s ease-in-out;
       z-index: $zIndexHeader + 1;
       background: $line-color-default--dark;
       width: 100%;
       height: 4px;
-  
+
       &::before {
         @extend .btn-burger__line;
-        content: '';
+        content: "";
         top: 8px;
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
       }
-  
+
       &::after {
         @extend .btn-burger__line;
-        content: '';
+        content: "";
         bottom: 8px;
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
       }
     }
   }
-  
-  
-
 }
