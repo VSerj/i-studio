@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   height: 90vh;
-  background-image: url("./../img/bg-intro-1919x953.jpg");
+  background-image: url("/assets/img/bg-intro-1919x953.jpg");
   background-size: cover;
   background-position: center center;
   // background-size: contain;
@@ -28,7 +28,7 @@
         rgba(27, 27, 27, 0.4) -30%,
         rgba(27, 27, 27, 0.8)
       ),
-      url("./../img/bg-intro-1919x953.jpg");
+      url("/assets/img/bg-intro-1919x953.jpg");
   }
 }
 

@@ -4,9 +4,8 @@ const baseWebpackConfig = require('./webpack.base.conf')
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const devWebpackConfig = merge(baseWebpackConfig, {
-  // DEV config
   mode: 'development',
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-eval-source-map',         //показывает имя scss для свойства 
   devServer: {
     contentBase: baseWebpackConfig.externals.paths.dist,
     port: 4200,
@@ -15,6 +14,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       errors: true
     }
   },
+  //webpack.SourceMapDevToolPlugin - карта сайта
   plugins: [
     // new CleanWebpackPlugin(),
     new webpack.SourceMapDevToolPlugin({

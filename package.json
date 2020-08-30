@@ -20,8 +20,7 @@
     "bable",
     "bable7",
     "scss",
-    "pug",
-    "vue"
+    "pug"
   ],
   "private": true,
   "devDependencies": {
