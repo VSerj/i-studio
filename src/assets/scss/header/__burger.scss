@@ -18,13 +18,13 @@
       width: inherit;
       height: inherit;
       align-items: center;
-      transition: all 0.4s ease-in-out;
+      transition: all 0.3s linear;
     }
 
     &__line {
       display: block;
       position: absolute;
-      transition: all 0.4s ease-in-out;
+      transition: all 0.3s linear;
       z-index: $zIndexHeader + 1;
       background: $line-color-default--dark;
       width: 100%;
@@ -34,14 +34,14 @@
         @extend .btn-burger__line;
         content: "";
         top: 8px;
-        transition: all 0.4s ease-in-out;
+        transition: all 0.3s linear;
       }
 
       &::after {
         @extend .btn-burger__line;
         content: "";
         bottom: 8px;
-        transition: all 0.4s ease-in-out;
+        transition: all 0.3s linear;
       }
     }
   }

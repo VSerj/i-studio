@@ -4,11 +4,11 @@
   top: 0;
   left: 0;
   grid-template-columns: 16% 84%;
-  transition: height 0.2s ease-in;
+  transition: height 0.2s linear;
   z-index: $zIndexHeader;
   background: $bg-color-default;
   width: 100%;
-  height: px(70); //set temporarily ,
+  height: px(90);
   border-bottom: 1px solid $line-color-default--dark;
 }
 
@@ -19,7 +19,7 @@
   align-items: center;
 }
 
-.header.is_scrolling {
+.header--lower {
   height: px(70);
 }
 
