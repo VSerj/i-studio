@@ -2,19 +2,19 @@
 
 let header = {
   elem: document.querySelector("header"),
-  selectorLowerHeight: "header--lower",
-  addLowerHeight: function () {
-    this.elem.classList.add(this.selectorLowerHeight)
+  selectorLowHeight: "header--lower",
+  addLowHeight: function () {
+    this.elem.classList.add(this.selectorLowHeight)
   },
-  removeLowerHeight: function () {
-    this.elem.classList.remove(this.selectorLowerHeight)
+  removeLowHeight: function () {
+    this.elem.classList.remove(this.selectorLowHeight)
   },
   checkScrolling: isWindowScrolling,
   changeHeightWhenScroliing: function () {
     if (this.checkScrolling()) {
-      this.addLowerHeight()
+      this.addLowHeight()
     } else {
-      this.removeLowerHeight()
+      this.removeLowHeight()
     }
   },
 }
