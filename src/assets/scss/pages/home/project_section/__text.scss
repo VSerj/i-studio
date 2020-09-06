@@ -2,7 +2,7 @@
   position: relative;
   z-index: $zIndexSectionContent;
   max-width: 47%;
-  @include p(203, 0, 100, 0);
+  @include p(203, 0, 209, 0);
 }
 
 .project__title {
@@ -36,7 +36,7 @@
 @include l_desktop {
   .project__container {
     max-width: 49%;
-    @include p(65, 0, 65, 0);
+    @include p(65, 0, 120, 0);
   }
 
   .project__subtitle {
@@ -51,6 +51,7 @@
 @include sm_desktop {
   .project__container {
     max-width: 57%;
+    @include p(65, 0, 65, 0);
   }
 }
 
