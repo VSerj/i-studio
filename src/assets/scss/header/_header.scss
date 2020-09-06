@@ -8,7 +8,7 @@
   z-index: $zIndexHeader;
   background: $bg-color-default;
   width: 100%;
-  height: px(90);
+  height: px(78);
   border-bottom: 1px solid $line-color-default--dark;
 }
 
@@ -19,15 +19,15 @@
   align-items: center;
 }
 
-.header--lower {
-  height: px(70);
+.header--stretch {
+  height: px(95);
 }
 
-@include l_desktop {
-  .header {
-    height: px(70);
-  }
-}
+// @include l_desktop {
+//   .header {
+//     height: px(78);
+//   }
+// }
 
 @include sm_desktop {
   .header {
