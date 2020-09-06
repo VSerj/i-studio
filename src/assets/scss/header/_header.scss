@@ -23,12 +23,6 @@
   height: px(95);
 }
 
-// @include l_desktop {
-//   .header {
-//     height: px(78);
-//   }
-// }
-
 @include sm_desktop {
   .header {
     grid-template-columns: 1fr;
