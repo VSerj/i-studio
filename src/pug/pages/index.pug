@@ -25,6 +25,20 @@ block content
             and timely execution of any web design project. Since day one, 
             we have been delivering creative and unique websites to our clients worldwide.
           +btn('/#','read more about us')
+      ul.project__img-box.project-img-box
+        - 
+          var projectImg = [
+            "image-custom-1.jpg", 
+            "image-custom-2.jpg", 
+            "image-custom-3.jpg", 
+            "image-custom-4.jpg", 
+            "image-custom-5.jpg", 
+            "image-custom-6.jpg"
+          ]
+        each image, index in projectImg
+          li(class=`project-img-box__item project-img-box__item${index + 1}`)
+            img(class="project_img" src="/assets/img/project-img/" + image, alt="there was supposed to be a project image")
+
 
     section.awards
       .container.container-lines
