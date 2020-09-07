@@ -1,5 +1,15 @@
 .project {
   position: relative;
+  overflow: hidden;
+  @include l_table {
+    @include p(0, 0, 100, 0)
+  }
+  @include l_table {
+    @include p(0, 0, 65, 0)
+  }
 }
+
+
+
 @import "/__text.scss";
 @import "/__image.scss";

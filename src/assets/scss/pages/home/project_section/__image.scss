@@ -5,8 +5,10 @@
   right: 0;
   bottom: 0;
   z-index: $zIndexSectionContent;
-  overflow: hidden;
   max-width: px(850);
+  @include l_table {
+    position: static;
+  }
 }
 
 .project-images {
@@ -17,11 +19,10 @@
     position: absolute;
     width: 50%;
   }
-}
-
-.project-images__img {
-  border-radius: px(6);
-  box-shadow: 0 0 px(35) 0 rgba(0, 0, 0, 0.4);
+  &__img {
+    border-radius: px(6);
+    box-shadow: 0 0 px(35) 0 rgba(0, 0, 0, 0.4);
+  }
 }
 
 .project-images__item1 {
