@@ -9,7 +9,7 @@ function changeHeaderHeight() {
   if (!window.scrollY && !checkStretch()) {
     header.classList.add(headerStretch)
   } 
-  else if (checkStretch()) {
+  if (window.scrollY && checkStretch()) {
     header.classList.remove(headerStretch)
   }
 

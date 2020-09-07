@@ -4,14 +4,15 @@ block content
 
     section.preview
       .container
-        .preview__title.preview-title
-          h1.preview-title__main Digital production
-          .preview-title__text of the
-          .preview_title__text-big Future
-        p.preview__description.
-          With 19+ years’ experience in combining web development, 
-          design and marketing, we create award-winning projects and 
-          creative campaigns both online and offline.
+        .move-to-left
+          .preview__title.preview-title
+            h1.preview-title__main Digital production
+            .preview-title__text of the
+            .preview_title__text-big Future
+          p.preview__description.
+            With 19+ years’ experience in combining web development, 
+            design and marketing, we create award-winning projects and 
+            creative campaigns both online and offline.
 
     section.project
       .container.container-lines
@@ -72,7 +73,7 @@ block content
 
     section.demo-work.context-dark
       .container
-        .demo-work-container
+        .demo-work-container.move-to-right
           h3.title-secondary Inter Restaurant
           p.demo-work-description.
             We designed and developed an updated website 
@@ -107,13 +108,13 @@ block content
           ul.team__box-members
             -
               var members = [
-                {name: "John Smith", position: "Senior designer", photo: "assets/img/photo-members/photo-1.jpg"},
-                {name: "Gary Hughes", position: "Designer", photo: "assets/img/photo-members/photo-2.jpg"},
-                {name: "Sam Lee", position: "Developer", photo: "assets/img/photo-members/photo-3.jpg"},
-                {name: "Sarah Parker", position: "Marketing manager", photo: "assets/img/photo-members/photo-4.jpg"}
+                {name: "John Smith", position: "Senior designer", photo: "assets/img/photo-members/photo-1.jpg", animeSide: "right"},
+                {name: "Gary Hughes", position: "Designer", photo: "assets/img/photo-members/photo-2.jpg", animeSide: "left"}, 
+                {name: "Sam Lee", position: "Developer", photo: "assets/img/photo-members/photo-3.jpg", animeSide: "right"},
+                {name: "Sarah Parker", position: "Marketing manager", photo: "assets/img/photo-members/photo-4.jpg", animeSide: "left"}
               ]
             each member in members
-              li.member-box
+              li(class=`member-box move-to-${member.animeSide}`)
                 img.member-box__photo(src=member.photo, alt="there was supposed to be a photo")
                 div.member-box__info.member-info
                   p.member-info__name #{member.name}

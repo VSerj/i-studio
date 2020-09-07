@@ -1,0 +1,29 @@
+@keyframes move-to-right {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes move-to-left {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.move-to-right {
+  animation: move-to-right 1s linear;
+}
+
+.move-to-left {
+  animation: move-to-left 1s linear;
+}
