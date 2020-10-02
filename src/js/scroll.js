@@ -4,17 +4,14 @@ const header = document.querySelector('header')
 const headerStretch = 'header--stretch'
 const listMovingItems = document.querySelectorAll('[data-move-side]')
 
-changeHeaderHeight()
-moveItems()
+window.addEventListener('DOMContentLoaded', throttleScroll)
 window.addEventListener('scroll', throttleScroll)
 
-function throttleScroll(e) {
+function throttleScroll() {
 
-  window.requestAnimationFrame(function () {
-
+  window.requestAnimationFrame(function() {
     changeHeaderHeight()
     moveItems()
-
   })
 
 }
@@ -61,13 +58,12 @@ function moveItems() {
         case 'left':
           el.classList.add('move-to-left')
           break
-          
+
         case 'top':
           el.classList.add('move-to-top')
           break
 
       }
-      // el.dataset.moveSide === 'right' ? el.classList.add('move-to-right') : el.classList.add('move-to-left')
     }
 
   });
