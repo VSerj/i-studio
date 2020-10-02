@@ -4,7 +4,7 @@ block content
 
     section.preview
       .container
-        .move-to-left
+        div(data-move-side="left")
           .preview__title.preview-title
             h1.preview-title__main Digital production
             .preview-title__text of the
@@ -73,7 +73,7 @@ block content
 
     section.demo-work.context-dark
       .container
-        .demo-work-container.move-to-right
+        div(class="demo-work-container" data-move-side="right")
           h3.title-secondary Inter Restaurant
           p.demo-work-description.
             We designed and developed an updated website 
@@ -114,7 +114,7 @@ block content
                 {name: "Sarah Parker", position: "Marketing manager", photo: "assets/img/photo-members/photo-4.jpg", animeSide: "left"}
               ]
             each member in members
-              li(class=`member-box move-to-${member.animeSide}`)
+              li(class="member-box" data-move-side=member.animeSide)
                 img.member-box__photo(src=member.photo, alt="there was supposed to be a photo")
                 div.member-box__info.member-info
                   p.member-info__name #{member.name}
