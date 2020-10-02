@@ -54,7 +54,7 @@ block content
             +counter('international awards', '17', "awards__counter")
           - var n = 1
           - var text = 'award #'
-          ul.awards-list
+          ul(class="awards-list" data-move-side="top")
             while n < 6
               li.awards-list-item
                 a.awards-link(href="#")

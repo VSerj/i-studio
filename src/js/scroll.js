@@ -61,6 +61,10 @@ function moveItems() {
         case 'left':
           el.classList.add('move-to-left')
           break
+          
+        case 'top':
+          el.classList.add('move-to-top')
+          break
 
       }
       // el.dataset.moveSide === 'right' ? el.classList.add('move-to-right') : el.classList.add('move-to-left')
