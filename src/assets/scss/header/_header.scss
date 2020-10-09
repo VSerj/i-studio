@@ -8,7 +8,7 @@
   z-index: $zIndexHeader;
   background: $bg-color-default;
   width: 100%;
-  height: px(78);
+  height: px(70);
   border-bottom: 1px solid $line-color-default--dark;
 }
 
@@ -20,9 +20,9 @@
 }
 
 .header--stretch {
-  height: px(95);
+  height: px(90);
 }
-
+  
 @include sm_desktop {
   .header {
     grid-template-columns: 1fr;

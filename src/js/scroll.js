@@ -2,13 +2,67 @@
 
 const header = document.querySelector('header')
 const headerStretch = 'header--stretch'
-const observerElems = document.querySelectorAll('.fade')
+const checkHeaderStretch = () => header.classList.contains(headerStretch)
+let isListenerStretchHeader
+
+const fadeElems = document.querySelectorAll('.fade')
 
 window.addEventListener('load', () => {
 
-  addObserver(observerElems)
-  
+  rollIn(fadeElems)
+  stretchHeader()
+
+  isListenerStretchHeader = true
+
+  window.addEventListener('scroll', stretchHeader)
+  window.addEventListener('resize', optimazeHeader)
+
 })
+
+function optimazeHeader() {
+
+  let checkSmallScreen = () => window.innerWidth <= 1000
+
+  let removeListenerStretchHeader = () => {
+
+    window.removeEventListener('scroll', stretchHeader)
+
+    if (checkHeaderStretch()) {
+
+      header.classList.remove(headerStretch)
+
+    }
+
+    isListenerStretchHeader = false
+
+  }
+
+  let addListenerStretchHeader = () => {
+    
+    stretchHeader()
+    window.addEventListener('scroll', stretchHeader)
+
+    isListenerStretchHeader = true
+
+  }
+
+  if (checkSmallScreen() && isListenerStretchHeader) {
+
+    removeListenerStretchHeader()
+
+  }
+
+  if (!checkSmallScreen() && !isListenerStretchHeader)
+    addListenerStretchHeader()
+}
+
+function stretchHeader() {
+
+  (!checkHeaderStretch() && !window.scrollY) ?
+    header.classList.add(headerStretch) :
+    header.classList.remove(headerStretch)
+
+}
 
 let optionsObs = {
 
@@ -18,14 +72,13 @@ let optionsObs = {
 
 }
 
-let observer = new IntersectionObserver( (entries, observer) => {
+let observerRollIn = new IntersectionObserver((entries, observer) => {
 
-  entries.forEach( (entry) => {
+  entries.forEach((entry) => {
 
     if (entry.isIntersecting) {
-      
-      entry.target.classList.add('rollUp')
 
+      entry.target.classList.add('rollUp')
       observer.unobserve(entry.target)
 
     }
@@ -34,14 +87,12 @@ let observer = new IntersectionObserver( (entries, observer) => {
 
 }, optionsObs)
 
-function addObserver(observerList) {
+function rollIn(elemsList) {
 
-  observerList.forEach(el => {
+  elemsList.forEach(el => {
 
-    observer.observe(el)
+    observerRollIn.observe(el)
 
   });
 
 }
-
-
