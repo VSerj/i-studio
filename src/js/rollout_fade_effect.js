@@ -1,31 +1,29 @@
 'user strict'
 
 export function rollOut(elemsList = null, rootMargin = "0px 0px 0px 0px") {
-  
   if (!elemsList) return
 
-  let rollOutOptions = {
+  const rollOutOptions = {
     root: null,
     rootMargin,
-    threshold: 0
+    threshold: 0,
   }
 
-  let rollOutObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('rollOut')
-        observer.unobserve(entry.target)
-      }
-    })
+  const rollOutObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      const { target, isIntersecting } = entry
 
+      if (!isIntersecting) return
+
+      target.classList.add('rollOut')
+      observer.unobserve(target)
+
+    })
   }, rollOutOptions)
 
-  function observeRollOut(elemsList) {
-    elemsList.forEach(elem => {
-      rollOutObserver.observe(elem)
-    })
+  addObserverRollOut(elemsList)
+
+  function addObserverRollOut(elemsList) {
+    elemsList.forEach(elem => rollOutObserver.observe(elem))
   }
-
-  observeRollOut(elemsList)
-
 }

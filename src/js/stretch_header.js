@@ -1,49 +1,50 @@
 'use strict'
 
-const stetchSelector = 'header--stretch'
-const header = document.querySelector('.header')
-const BREAKPOINT_SM_DESKTOP = 1000
-let isHandlerExist = false
+// Использвал API window.matchMedia : https://www.w3schools.com/jsref/met_win_matchmedia.asp
 
-stretchHeader()
-stretchHeader = establishExistHandler(stretchHeader)
+export const stretchHeader = () => {
+  const STRETCH_SELECTOR = 'header--stretch' //меняет высоту header`а
+  const header = document.querySelector('.header')
+  //обьект медиазапроса (API window.matchMedia)
+  const BREAKPOINT_SM_DESKTOP = window.matchMedia('(max-width: 1000px)') 
+  let isHandlerStretch = false //указывает на существование слушателя скрола
+  
+  stretch()
 
-window.addEventListener('scroll', stretchHeader)
-window.addEventListener('resize', () => {
+  window.addEventListener('scroll', stretch)
+  
+  // "Включает" прослушку на изменение ширины экрана используя метод API window.matchMedia
+  BREAKPOINT_SM_DESKTOP.addListener(changesExistenceListener)
+  
+  // Обработчик,который убирает/добавляет слушатель и STRETCH_SELECTOR
+  // при изменениии ширины экрана. 
+  // При ширины экрана 1000 и меньше, нам не нужно "растягивать" хеадер
+  function changesExistenceListener() {
+    if (BREAKPOINT_SM_DESKTOP.matches && isHandlerStretch) {
+      window.removeEventListener('scroll', stretch)
+  
+      if (header.classList.contains(STRETCH_SELECTOR)) {
+        header.classList.remove(STRETCH_SELECTOR)
+      }
 
-  if (window.innerWidth <= BREAKPOINT_SM_DESKTOP && isHandlerExist) {
-
-    window.removeEventListener('scroll', stretchHeader)
-
-    if (header.classList.contains(stetchSelector)) {
-      header.classList.remove(stetchSelector)
+      isHandlerStretch = false
     }
-
-    isHandlerExist = false
+  
+    if (!BREAKPOINT_SM_DESKTOP.matches && !isHandlerStretch) {
+      stretch()
+      window.addEventListener('scroll', stretch)
+      isHandlerStretch = true
+    }
   }
 
-  if (window.innerWidth > BREAKPOINT_SM_DESKTOP && !isHandlerExist) {
-    window.addEventListener('scroll', stretchHeader)
-    isHandlerExist = true
+  // меняет высоту header`а добавляя STRETCH_SELECTOR в зависимости от уловий
+  function stretch() {
+    (
+      !header.classList.contains(STRETCH_SELECTOR) &&
+      !window.scrollY &&
+      !BREAKPOINT_SM_DESKTOP.matches
+    )
+    ? header.classList.add(STRETCH_SELECTOR)
+    : header.classList.remove(STRETCH_SELECTOR)
   }
-
-})
-
-function establishExistHandler(handler) {
-
-  if (!isHandlerExist) {
-    isHandlerExist = true
-    return handler
-  }
-
-  return handler
-
-}
-
-function stretchHeader() {
-
-  (!header.classList.contains(stetchSelector) && !window.scrollY && window.innerWidth > BREAKPOINT_SM_DESKTOP)
-    ? header.classList.add(stetchSelector)
-    : header.classList.remove(stetchSelector)
-
 }
