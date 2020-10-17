@@ -20,8 +20,8 @@ export function rollOut(elemsList = null, rootMargin = "0px 0px 0px 0px") {
 
   }, rollOutOptions)
 
-  function observeRollOut(elemsForObserver) {
-    elemsForObserver.forEach(elem => {
+  function observeRollOut(elemsList) {
+    elemsList.forEach(elem => {
       rollOutObserver.observe(elem)
     })
   }
