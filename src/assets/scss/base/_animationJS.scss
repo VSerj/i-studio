@@ -1,11 +1,9 @@
 .fade-left {
-  // transition: transform 0.3s ease-in;
   transform: translateX(50%);
 }
 
 .fade-right {
   transform: translateX(-50%);
-  // transition: transform 0.3s ease-in;
 }
 
 .fade-down {
@@ -17,7 +15,7 @@
   opacity: 0;
 }
 
-.rollUp {
+.rollOut {
   transform: translate(0);
   transition: transform 0.4s ease-in, opacity 0.5s ease-in;
   opacity: 1;
