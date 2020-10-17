@@ -1,7 +1,7 @@
 'user strict'
 
 export function rollOut(elemsList = null, rootMargin = "0px 0px 0px 0px") {
-  console.log(`${elemsList} -- ${rootMargin}`);
+  
   if (!elemsList) return
 
   let rollOutOptions = {
