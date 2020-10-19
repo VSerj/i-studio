@@ -1,17 +1,20 @@
-"use strict"
-let btnBurger = document.querySelector('.btn-burger')
+'use strict'
 
-btnBurger.addEventListener('click', useNavigation)
+export const runBurger = () => {
+  const burger = document.querySelector('.btn-burger')
+  const nav = document.querySelector('.nav')
 
-function useNavigation() {
-  useAnimationForBurger()
-  showHideNavigation()
-}
+  document.addEventListener('click', function (e) {
+    const { target } = e
 
-function useAnimationForBurger() {
-  btnBurger.classList.toggle('is_active_menu')
-}
+    if (target.closest('.btn-burger')) {
+      burger.classList.toggle('is_active_menu')
+      nav.classList.toggle('is_active_menu')
+    }
 
-function showHideNavigation() {
-  document.querySelector('.nav').classList.toggle('is_active_menu')
+    if (!target.closest('.nav-panel-mobile') && !target.closest('.nav')) {
+      burger.classList.remove('is_active_menu')
+      nav.classList.remove('is_active_menu')
+    }
+  })
 }

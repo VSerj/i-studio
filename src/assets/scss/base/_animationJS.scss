@@ -1,0 +1,32 @@
+.fade-left {
+  transform: translateX(50%);
+}
+
+.fade-right {
+  transform: translateX(-50%);
+}
+
+.fade-down {
+  transform: translateY(40%);
+}
+
+.fade {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.rollOut {
+  transform: translate(0);
+  transition: transform 0.5s ease-in, opacity 0.6s ease-in;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.t-delay-4 {
+  transition-delay: 0.4s;
+}
+
+.t-delay-2 {
+  transition-delay: 0.2s;
+}

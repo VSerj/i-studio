@@ -1,6 +1,6 @@
 .header {
   display: grid;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   grid-template-columns: 16% 84%;
@@ -8,8 +8,13 @@
   z-index: $zIndexHeader;
   background: $bg-color-default;
   width: 100%;
-  height: px(78);
+  height: px(70);
   border-bottom: 1px solid $line-color-default--dark;
+}
+
+.header__wrapper {
+  padding-top: $height-stretch-header;
+  background-color: rgb(78,77,119);
 }
 
 .nav-panel-mobile {
@@ -20,13 +25,16 @@
 }
 
 .header--stretch {
-  height: px(95);
+  height: $height-stretch-header;
 }
 
 @include sm_desktop {
+  .header__wrapper {
+    padding-top: $height-mobile-header;
+  }
   .header {
     grid-template-columns: 1fr;
-    height: px(55);
+    height: $height-mobile-header;
     border-bottom: none;
   }
 
