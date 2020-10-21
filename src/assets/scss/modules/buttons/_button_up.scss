@@ -1,0 +1,36 @@
+.button-up {
+  display: flex;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100px);
+  transition: all 0.45s ease-in-out;
+  visibility: hidden;
+  z-index: 5000;
+  width: px(50);
+  height: px(50);
+  background-color: $linkHoverColor;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(0, 0, 0);
+  }
+
+  @include l_table {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+.button-up__arrow {
+  width: 15px;
+  height: 15px;
+  fill: rgb(255, 255, 255);
+}
+
+.button-up--isActive {
+  transform: translateY(0);
+  visibility: visible;
+}
