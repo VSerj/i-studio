@@ -28,19 +28,18 @@ block content
           +btn('/#','read more about us')
       .project__images
         ul.project-images
-          - 
-            var projectImg = [
-              "image-custom-1.jpg", 
-              "image-custom-2.jpg", 
-              "image-custom-3.jpg", 
-              "image-custom-4.jpg", 
-              "image-custom-5.jpg", 
-              "image-custom-6.jpg"
-            ]
-          each image, index in projectImg
-            li(class=`project-images__item project-images__item${ index + 1 } fade-left fade t-delay-${ index > 2 ? 4 : 2 }`)
-              img(class="project-images__img" src="/assets/img/project-img/" + image, alt="there was supposed to be a project image")
-
+          li(class="project-images__item project-images__item1 fade-left fade t-delay-2")
+            img(class="project-images__img" src="/assets/img/project-img/image-custom-1.jpg", alt="there was supposed to be a project image1")
+          li(class="project-images__item project-images__item2 fade-left fade t-delay-2")
+            img(class="project-images__img" src="/assets/img/project-img/image-custom-2.jpg", alt="there was supposed to be a project image2")
+          li(class="project-images__item project-images__item3 fade-left fade t-delay-4")
+            img(class="project-images__img" src="/assets/img/project-img/image-custom-3.jpg", alt="there was supposed to be a project image3")
+          li(class="project-images__item project-images__item4 fade-left fade t-delay-2")
+            img(class="project-images__img" src="/assets/img/project-img/image-custom-4.jpg", alt="there was supposed to be a project image4")
+          li(class="project-images__item project-images__item5 fade-left fade t-delay-6")
+            img(class="project-images__img" src="/assets/img/project-img/image-custom-5.jpg", alt="there was supposed to be a project image5")
+          li(class="project-images__item project-images__item6 fade-left fade t-delay-2")
+            img(class="project-images__img" src="/assets/img/project-img/image-custom-6.jpg", alt="there was supposed to be a project image6")
 
     section.awards.overflow-h
       .container.container-lines
