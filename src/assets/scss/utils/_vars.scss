@@ -12,20 +12,7 @@ $baseFontSize: #{$baseSize}px;
 $baseLetterSpasing: 0.01rem;
 $secondaryLetterSpasing: 0.02rem;
 
-$baseFontColor: rgb(0, 0, 0);
-$seconaryFontColor: rgb(196, 196, 196);
-$tertiaryFontColor: #ffffff;
-
-//bg color wft
-$baseBGcolor: #ffffff;
-$secondaryBGcolor: rgb(38, 38, 38);
-
-$linkBGcolor: rgb(249, 249, 249);
-$hoverLinkBGcolor: rgb(229, 229, 229);
-
-$linkHoverColor: rgb(108, 105, 225);
-
-//-----------------------------------------------------------end
+//----------------------------------------------------------- end not googd name var
 
 //header-size
 $height-stretch-header: px(90);
@@ -39,45 +26,44 @@ $color-link--hover: rgb(108, 105, 225);
 $font-family-default: "Poppins", Arial, Tahoma, sans-serif;
 $font-family-default--light: "PoppinsLight", Arial, Tahoma, sans-serif;
 
-//font color - start rework-------------------
+//font color
 $color-default: rgba(0, 0, 0, 0.75);
 $color-default--darkest: rgb(0, 0, 0);
 $color-default--darken: rgb(196, 196, 196);
 $color-default--light: rgb(255, 255, 255);
 $color-default-lighten: rgba(255, 255, 255, 0.4);
 
-//header -sratr rework ----------------------
+//header color
 $color-header-link: rgb(38, 38, 38);
 $color-header-link-hover: $color-select-common;
 $bg-color-header-link: rgb(249, 249, 249);
 $bg-color-header-link-hover--mobile: $color-select-common;
 $color-header-link--mobile: rgb(155, 155, 155);
 
-//line color - star rework --------------------
+//line color
 $line-color-default: rgb(229, 229, 229);
 $line-color-default--dark: rgb(196, 196, 196);
 
-//bg color - start rework ---------------------
+//bg color
 $bg-color-default: rgb(255, 255, 255);
 $bg-color-darkest: rgb(27, 27, 27);
 $bg-color-dark: rgb(38, 38, 38);
 $bg-color-link: rgb(249, 249, 249);
 $bg-color-link-hover: rgb(229, 229, 229);
 
-//padding size ----------------
+//padding size
 $padding-default: 15px;
 $col3-width: 33.33333%;
-//Breakpoint ------------------
 
+//Breakpoint
 $largeDesktopWidth: 1600px;
 $desktopWidth: 1200px;
 $smDesktopWidth: 1000px;
 $tableWidth: 768px;
 $smTableWidth: 640px;
 $phoneWidth: 480px;
-// $smPhoneWidth            : 320px;
 
-//------------ z-index ----------------------
-
-$zIndexHeader: 4000;
-$zIndexSectionContent: 1000;
+//z-index
+$zIndexHeader: 150;
+$zIndexButton: 100;
+$zIndexSectionContent: 50;

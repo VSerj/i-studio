@@ -2,7 +2,7 @@
 .btn {
   display: inline-block;
   position: relative;
-  z-index: 4000;
+  z-index: $zIndexButton;
   
   border-left: px(5) solid #5f5cde;
   border-color: #5f5cde;

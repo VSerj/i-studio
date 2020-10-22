@@ -6,7 +6,6 @@
     left: 50%;
     justify-content: center;
     transform: translateX(-50%);
-    // z-index: 2000;
   }
 
   .slider-toggle {
@@ -16,11 +15,11 @@
     width: px(10);
     height: px(10);
     border-radius: 50%;
-    background-color: $baseFontColor;
+    background-color: $color-default--darkest;
     cursor: pointer;
     &:hover {
       opacity: 1;
-      background-color: $linkHoverColor;
+      background-color: $color-link--hover;
     }
 
     &:last-child {

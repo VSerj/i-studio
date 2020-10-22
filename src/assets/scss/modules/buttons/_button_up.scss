@@ -8,10 +8,10 @@
   transform: translateY(100px);
   transition: all 0.45s ease-in-out;
   visibility: hidden;
-  z-index: 5000;
+  z-index: $zIndexButton;
   width: px(50);
   height: px(50);
-  background-color: $linkHoverColor;
+  background-color: $color-link--hover;
   cursor: pointer;
 
   &:hover {

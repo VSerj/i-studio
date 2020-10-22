@@ -14,10 +14,10 @@
     @include m(0, 0, 10, 0);
     width: px(62);
     height: px(64);
-    background: $baseBGcolor;
+    background: $bg-color-default;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
     cursor: pointer;
-    color: $baseFontColor;
+    color: $color-default--darkest;
 
     &:last-child {
       margin: 0;
@@ -39,7 +39,7 @@
     width: 16px;
     height: 2px;
     border-radius: 0 25% 25% 0;
-    background: $baseFontColor;
+    background: $color-default--darkest;
 
     &::before {
       @extend .slider-arrow;
@@ -61,7 +61,7 @@
   }
 
   .slider-btn:hover .slider-arrow {
-    background: $seconaryFontColor;
+    background: $color-default--darken;
   }
 }
 

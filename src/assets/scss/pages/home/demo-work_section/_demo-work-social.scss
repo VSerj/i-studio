@@ -4,7 +4,7 @@
     align-items: center;
 
     p {
-      color: rgba($tertiaryFontColor, 0.4);
+      color: $color-default-lighten;
     }
   }
 
@@ -14,11 +14,11 @@
 
   .social-link {
     transition: all 0.3s ease-in-out;
-    color: rgba($tertiaryFontColor, 0.1);
+    color: rgba($color-default--light, 0.1);
     font-size: px(22);
 
     &:hover {
-      color: $linkHoverColor;
+      color: $color-link--hover;
     }
   }
 }

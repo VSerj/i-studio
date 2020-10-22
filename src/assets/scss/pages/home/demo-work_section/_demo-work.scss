@@ -1,6 +1,6 @@
 .demo-work {
   position: relative;
-  background-color: $secondaryBGcolor;
+  background-color: $bg-color-dark;
 }
 
 .demo-work-container {
@@ -16,7 +16,7 @@
 
 .demo-work-description {
   @include m(0, 0, 50, 0);
-  color: rgba($tertiaryFontColor, 0.4);
+  color: $color-default-lighten;
 }
 
 .demo-work-container .btn {
