@@ -1,53 +1,82 @@
 section.footer.context-dark
   .container
+  
     .footer-grid
+
       .footer-grid__item-col1.footer-box
-        h3.title-secondary.footer-box__title Location
+
+        h3.title-secondary.footer-box__title
+          | Location
         ul.footer-location.footer-box__body
-          li.footer-location__item 1418 Riverwood Drive,
-          li.footer-location__item Suite 3845 Cottonwood,
-          li.footer-location__item CA 96022
-          li.footer-location__item United States
+          li.footer-location__item
+            | 1418 Riverwood Drive,
+          li.footer-location__item
+            | Suite 3845 Cottonwood,
+          li.footer-location__item
+            | CA 96022
+          li.footer-location__item
+            | United States
 
       .footer-grid__item-col2.footer-box
-        h3.title-secondary.footer-box__title Contacts
+
+        h3.title-secondary.footer-box__title
+          | Contacts
         .footer-box__body.footer-contacts
           .footer-contacts__item
-            span.footer-contacts__text Ph.
-            a(class="footer-contacts__link" href="tel:#") 1-300-123-1234
+            span.footer-contacts__text 
+              | Ph.
+            a.footer-contacts__link(href="tel:#")
+              | 1-300-123-1234
           .footer-contacts__item
-            span.footer-contacts__text Mail.
-            a(class="footer-contacts__link" href="mailto:#") Info@demolink.org
-        
+            span.footer-contacts__text 
+              | Mail.
+            a.footer-contacts__link(href="mailto:#")
+              | Info@demolink.org
         ul.footer-social.footer-box__bottom
           each network in ["facebook", "instagram", "twitter", "youtube"]
             li.footer-social__item
               a(class="footer-social__btn " + "icon-" + network, href="#")
 
       .footer-grid__item-col3.footer-box
-        h3.title-secondary Newsletter
 
-        form(class="footer-form footer-box__form", action="#", method="post")
+        h3.title-secondary
+          | Newsletter
+        form.footer-form.footer-box__form(action="#" method="post")
           .input-box
             .input-box__icon.ico-mail
-            input(class="input-box__input footer-form__text", type="email", name="email" id="footer-email")
-            label(class="input-box__placeholder input-box__placeholder--focus footer-form__text" for="footer-mail") E-mail
-          button(class="btn footer-form__btn" type="submit") Subscribe
+            input.input-box__input.footer-form__text(
+              type="email"
+              name="email"
+              id="footer-email"
+            )
+            label.input-box__placeholder.input-box__placeholder--focus.footer-form__text(for="footer-mail")
+              | E-mail
+          button.btn.footer-form__btn(type="submit")
+            | Subscribe
   
 footer.footer-bottom.context-darkest
   .container
+
     .footer-bottom-grid
+
       .footer-bottom-grid__column
+
         p.right
           span ©&nbsp;
           span 2020
           |. All Rights Reserved. Design by 
-          a(class="footer-bottom__link" href="https://www.templatemonster.com") TemplateMonster
+          a.footer-bottom__link(href="https://www.templatemonster.com")
+            | TemplateMonster
+
       .footer-bottom-grid__column
+      
         ul.footer-bottom-nav
           li.footer-bottom-nav__item
-            a(class="footer-bottom__link" href="#") About us
+            a.footer-bottom__link(href="#")
+              | About us
           li.footer-bottom-nav__item
-            a(class="footer-bottom__link" href="#") Our Team
+            a.footer-bottom__link(href="#")
+              | Our Team
           li.footer-bottom-nav__item
-            a(class="footer-bottom__link" href="#") Blog
+            a.footer-bottom__link(href="#")
+              | Blog
