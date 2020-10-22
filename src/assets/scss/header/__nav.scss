@@ -38,7 +38,7 @@
     left: -100%;
     grid-template-columns: px(260);
     grid-template-rows: repeat(4, px(50));
-    transition: left 0.3s linear;
+    transition: left 0.4s ease-in-out;
     gap: px(4);
     box-shadow: 0 0 10px #00000034;
     height: 100vh;
