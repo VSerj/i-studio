@@ -4,10 +4,7 @@ export function runButtonUp() {
   const buttonUp = document.querySelector('.button-up')
 
   buttonUp.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    window.scrollTo({top: 0, behavior: "smooth"});
   })
 
   showHideButtonUp()
@@ -26,5 +23,3 @@ export function runButtonUp() {
       : buttonUp.classList.remove('button-up--isActive')
   }
 }
-
-
