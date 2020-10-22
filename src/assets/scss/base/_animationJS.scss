@@ -7,7 +7,7 @@
 }
 
 .fade-down {
-  transform: translateY(40%);
+  transform: translateY(35%);
 }
 
 .fade {
@@ -17,7 +17,7 @@
 
 .rollOut {
   transform: translate(0);
-  transition: transform 0.5s ease-in, opacity 0.6s ease-in;
+  transition: transform 0.7s ease-in-out, opacity 0.6s ease-in-out;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
