@@ -40,42 +40,13 @@ block content
 
       .project__images
         ul.project-images
-          li.project-images__item.project-images__item1.fade-left.fade.t-delay-2
-            img(
-              class="project-images__img"
-              src="/assets/img/project-img/image-custom-1.jpg"
-              alt="there was supposed to be a project image1"
-            )
-          li.project-images__item.project-images__item2.fade-left.fade.t-delay-2
-            img(
-              class="project-images__img"
-              src="/assets/img/project-img/image-custom-2.jpg"
-              alt="there was supposed to be a project image2"
-            )
-          li.project-images__item.project-images__item3.fade-left.fade.t-delay-4
-            img(
-              class="project-images__img"
-              src="/assets/img/project-img/image-custom-3.jpg"
-              alt="there was supposed to be a project image3"
-            )
-          li.project-images__item.project-images__item4.fade-left.fade.t-delay-2
-            img(
-              class="project-images__img"
-              src="/assets/img/project-img/image-custom-4.jpg"
-              alt="there was supposed to be a project image4"
-            )
-          li.project-images__item.project-images__item5.fade-left.fade.t-delay-6
-            img(
-              class="project-images__img"
-              src="/assets/img/project-img/image-custom-5.jpg"
-              alt="there was supposed to be a project image5"
-            )
-          li.project-images__item.project-images__item6.fade-left.fade.t-delay-2
-            img(
-              class="project-images__img"
-              src="/assets/img/project-img/image-custom-6.jpg"
-              alt="there was supposed to be a project image6"
-            )
+          each time, i in [null,"4","4","2","2","6"]
+            +project-images__item({
+              index: i + 1,
+              delay: time ? `t-delay-${time}` : '',
+              img: `/assets/img/project-img/image-custom-${i + 1}.jpg`,
+              alt: `project image${i + 1}`,
+            })
     
     //Our Awards
     section.awards.overflow-h
