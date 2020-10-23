@@ -19,3 +19,13 @@ mixin counter(title, number, newClass)
   else 
     div(class="counter" + " " + newClass)
       +counter-inner(title, number)
+
+//миксин для секции Every Project
+mixin project-images__item(options)
+  li(class=`project-images__item project-images__item${options.index} ` +
+    `fade-left fade ${options.delay}`
+    )
+    img.project-images__img(
+      src=options.img
+      alt=`there was supposed to be a ${options.alt}`
+    )
