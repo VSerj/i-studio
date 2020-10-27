@@ -1,6 +1,10 @@
 extend ../layout/base.pug
 block content
   main
+    - 
+      var sliderImg = [
+        "lw-img1.jpg", "lw-img2.jpg", "lw-img1.jpg", "lw-img2.jpg"
+      ]
 
     //Preview
     section.preview.overflow-h
@@ -104,7 +108,7 @@ block content
             | interactive menu available on exclusive branded iPads.
 
           +btn("#", "View the website")
-
+          
           ul.social-list
             li.social-item
               p Share
@@ -112,23 +116,27 @@ block content
               li.social-item
                 a.social-link(href="#")
                   i(class="icon-" + network)
-
-      ul.slider-list
-        each image in ["lw-img1.jpg", "lw-img2.jpg"]
-          li.slider-item
-            img(
-              src="./assets/img/lates-work/" + image
-              alt="there was supposed to be a lates work slide"
-            )
-
-      .slider-btn-container 
-        .slider-btn.slider-btn-next
-          span.slider-arrow
-        .slider-btn.slider-btn-previous
-          span.slider-arrow.slider-arrow-previous
-      ul.slider-toggles
-        li.slider-toggle
-        li.slider-toggle
+      
+      .slider-wrapper
+        ul.slider
+          each image, index in sliderImg
+            - var activeFirstSlide = index ? "" : "slider__item--active"
+            li.slider__item(class=`${activeFirstSlide}`)
+              .slider__overlay
+              img(
+                src=`./assets/img/lates-work/${image}`
+                alt="there was supposed to be a lates work slide"
+              )
+        
+        .slider__btn-container
+          .slider__btn.slider-btn.slider-btn__next
+            span.slider-btn__arrow
+          .slider__btn.slider-btn.slider-btn__previous
+            span.slider-btn__arrow.slider-btn__arrow--previous
+        
+        ul.slider-toggles
+          li.slider-toggle
+          li.slider-toggle
 
     //Team
     section.team.overflow-h
