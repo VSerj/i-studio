@@ -3,7 +3,7 @@ block content
   main
     - 
       var sliderImg = [
-        "lw-img1.jpg", "lw-img2.jpg", "lw-img1.jpg", "lw-img2.jpg"
+        "lw-img1.jpg", "lw-img2.jpg", "lw-img3.jpg", "lw-img4.jpg"
       ]
 
     //Preview
@@ -119,6 +119,12 @@ block content
       
       .slider-wrapper
         ul.slider
+          li.slider__item.slider__copy.slider__copyFirst
+            .slider__overlay
+            img(
+              src=`./assets/img/lates-work/lw-img-start.jpg`
+              alt="start block"
+            )
           each image, index in sliderImg
             - var activeFirstSlide = index ? "" : "slider__item--active"
             li.slider__item(class=`${activeFirstSlide}`)
@@ -127,6 +133,12 @@ block content
                 src=`./assets/img/lates-work/${image}`
                 alt="there was supposed to be a lates work slide"
               )
+          li.slider__item.slider__copy.slider__copyLast
+            .slider__overlay
+            img(
+              src=`./assets/img/lates-work/lw-img-end.jpg`
+              alt="start block"
+            )
         
       .slider__btn-container
         .slider__btn.slider-btn.slider-btn__next

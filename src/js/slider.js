@@ -10,7 +10,7 @@ export const runSlider = () => {
   const activeSlide = document.querySelector('.slider-item--active')
 
   const setting = {
-    infinite: true,   //зацикленный
+    loop: true,   //зацикленный
     auto: true,
     slidesInArea: 2,  //колисество слайдов в области просмотра
     slideWidth: 70,   //проценты
@@ -27,24 +27,26 @@ export const runSlider = () => {
 
   class Slider {
     constructor(sliderElems, options) {
-      this.sliderElems = sliderElems;
 
-      this.slider = sliderElems.slider;
-      this.slides = sliderElems.slides;
-      this.currentSlide = sliderElems.currentSlide;
-      this.nextBtn = this.sliderElems.nextBtn;
-      this.prevBtn = this.sliderElems.btnPrev;
-      this.numberOfSlides = this.slides.length || 0; //количество слайдов
-
+      //научится делать пробросы ошибок для неверных параметров(потом)
       this.options = options;
-
-      this.infinite = this.options.infinite;
+      this.loop = this.options.infinite;
       this.auto = this.options.auto;
-      this.slidesInArea = this.options.slidesInArea || 0;
+      this.slidesInArea = this.options.slidesInArea;
       this.slideWidth = this.options.slideWidth;
       this.activeSelector = this.options.activeSelector
 
-      this.currentIndex = 0;
+      this.sliderElems = sliderElems;
+      this.slider = sliderElems.slider;
+      this.slides = sliderElems.slides;
+      this.currentSlide = sliderElems.currentSlide;
+      this.nextBtn = sliderElems.nextBtn;
+      this.prevBtn = sliderElems.btnPrev;
+      this.numberOfSlides = sliderElems.slides.length;
+      //если будут блоки для дублирования крайних слайдов, то откидаем
+      this.startBoundaryIndex = this.slidesInArea - 1;
+      this.endBoundaryIndex = this.numberOfSlides - this.slidesInArea - 1;
+      this.currentIndex = this.slidesInArea - 1; 
       this.currentShiftTranslate = 0; //shift transform: translateX
     }
 
@@ -52,18 +54,27 @@ export const runSlider = () => {
       return this.slider.style.transform = `translateX(${step}%)`
     }
 
-    setActiveSlide() {
+    setSelectorCurrentSlide() {
+      return this.slides[this.currentIndex].classList.add(this.activeSelector)
+    }
+
+    removeSelectorCurrentSlide() {
+      return this.currentSlide.classList.remove(this.activeSelector)
+    }
+
+    setCurrentSlide() {
       if (this.currentSlide.matches(`.${this.activeSelector}`)) {
-        this.currentSlide.classList.remove(this.activeSelector)
+        this.removeSelectorCurrentSlide()
       }
 
-      this.slides[this.currentIndex].classList.add(this.activeSelector)
+      this.setSelectorCurrentSlide()
       this.currentSlide = this.slides[this.currentIndex]
     }
 
+    
+
     nextSlide() {
-      const endBoundaryIndex = this.numberOfSlides - this.slidesInArea
-      if (this.currentIndex > endBoundaryIndex) {
+      if (this.currentIndex > this.endBoundaryIndex) {
         return console.log('Листайте в другую сторону'); //temp
       }
 
@@ -72,12 +83,11 @@ export const runSlider = () => {
 
       this.currentIndex++
 
-      this.setActiveSlide()
+      this.setCurrentSlide()
     }
 
     previousSlide() {
-      const startBoundaryIndex = 0
-      if (this.currentIndex <= startBoundaryIndex) {
+      if (this.currentIndex <= this.startBoundaryIndex) {
         return console.log('Листайте в другую сторону'); //temp
       }
 
@@ -86,7 +96,7 @@ export const runSlider = () => {
 
       this.currentIndex--
 
-      this.setActiveSlide()
+      this.setCurrentSlide()
     }
 
     test() {
