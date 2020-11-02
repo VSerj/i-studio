@@ -5,12 +5,12 @@ import { runButtonUp } from './button_up.js'
 import { runSlider } from './slider'
 
 window.addEventListener('load', () => {
-  stretchHeader()
-  rollOut(
-    document.querySelectorAll('.fade'),
-    `${document.querySelector('.header').offsetHeight + 'px'} 0px 0px 30px`
-  )
-  runBurger()
-  runButtonUp()
+  // stretchHeader()
+  // rollOut(
+  //   document.querySelectorAll('.fade'),
+  //   `${document.querySelector('.header').offsetHeight + 'px'} 0px 0px 30px`
+  // )
+  // runBurger()
+  // runButtonUp()
   runSlider()
 })

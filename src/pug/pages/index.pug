@@ -3,8 +3,9 @@ block content
   main
     - 
       var sliderImg = [
-        "lw-img1.jpg", "lw-img2.jpg", "lw-img3.jpg", "lw-img4.jpg"
+        "lw-img1.jpg", "lw-img4.jpg"
       ]
+      //- "lw-img2.jpg", "lw-img3.jpg",
 
     //Preview
     section.preview.overflow-h
@@ -127,7 +128,7 @@ block content
             )
           each image, index in sliderImg
             - var activeFirstSlide = index ? "" : "slider__item--active"
-            li.slider__item(class=`${activeFirstSlide}`)
+            li.slider__item.carusel(class=`${activeFirstSlide}`)
               .slider__overlay
               img(
                 src=`./assets/img/lates-work/${image}`
