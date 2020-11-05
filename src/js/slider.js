@@ -10,8 +10,8 @@ export const runSlider = () => {
   }
 
   const sliderElems = {
-    slider: document.querySelector('.slider'),
-    slides: document.querySelectorAll('.carusel'),
+    slider: document.querySelector('.slider__slideList'),
+    slides: document.querySelectorAll('.slider__slideList > .slider__item'),
     prevBtn: document.querySelector('.slider-btn__previous'),
     nextBtn: document.querySelector('.slider-btn__next'),
     activeSlide: document.querySelector('.slider__item--active'),
@@ -20,44 +20,51 @@ export const runSlider = () => {
   class Slider {
     constructor(sliderElems, options) {
       //научится делать пробросы ошибок для неверных параметров(потом)
+
+      //Options
       this.options = options;
       this.loop = this.options.loop;
       this.slidesInArea = this.options.slidesInArea;
       this.slideWidth = this.options.slideWidth;
       this.activeSelector = this.options.activeSelector
-
+      //DOM elements
       this.sliderElems = sliderElems;
       this.slider = sliderElems.slider;
       this.slides = sliderElems.slides;
       this.nextBtn = sliderElems.nextBtn;
       this.prevBtn = sliderElems.prevBtn;
-      this.amountSlides = sliderElems.slides.length;
-
       this.activeSlides = [sliderElems.activeSlide];
-
-      this.minIndex = -1;
-      this.maxIndex = this.amountSlides + 1;
+      //Counters and boundary
+      this.amountSlides = sliderElems.slides.length;
+      this.minIndex = this.amountSlides * -1;
+      this.maxIndex = this.amountSlides - this.slidesInArea;
       this.currentIndex = 0;
-      this.shift = 0; //shift transform: translateX
-
-      this.firstCopySlide = document.querySelector('.slider__copyFirst') //temp
-      this.lastCopySlide = document.querySelector('.slider__copyLast') //temp
+      this.prevIndex = 0;
+      this.currentShift = 0; //Slider - transform: translateX
+      this.positionSlider = 0;
+      //temp
+      this.positionStartBox = this.slideWidth * this.slidesInArea * -1;
+      this.positionEndBox = this.slideWidth * this.slidesInArea;
+      this.startBox = document.querySelector('.slider__gluingBoxStart');
+      this.endBox = document.querySelector('.slider__gluingBoxEnd');
     }
 
     increaseShift(value) {
-      return this.shift += value
+      return this.currentShift += value
     }
 
     reduceShift(value) {
-      return this.shift += value * -1
+      return this.currentShift += value * -1
     }
 
-    setSliderTranslateX(value) {
-      return this.slider.style.transform = `translateX(${value}%)`
+    move(element, step) {
+      // if (!step && !element) return
+
+      return element.style.transform = `translateX(${step}%)`
     }
 
-    setActiveSlide(slide) {
-      return this.activeSlides.push[slide]
+    addActiveSlide(slide) {
+      return this.activeSlides.push(slide)
     }
 
     isActiveSelector(slide) {
@@ -67,11 +74,11 @@ export const runSlider = () => {
     addActiveSelector(slide) {
       if (this.isActiveSelector(slide)) return
 
-      this.setActiveSlide(slide)
+      this.addActiveSlide(slide)
       return slide.classList.add(this.activeSelector)
     }
 
-    removeActiveSelector() {
+    removeActiveAll() {
       if (!this.activeSlides.length) return
 
       this.activeSlides.forEach(
@@ -80,58 +87,50 @@ export const runSlider = () => {
       return this.activeSlides.length = 0
     }
 
-    move(step, direction) {
-      if (!step && !direction) return
-
-      if (direction === 'forward') {
-        return this.setSliderTranslateX(this.increaseShift(step))
-      }
-
-      if (direction === 'backward') {
-        return this.setSliderTranslateX(this.reduceShift(step))
-      }
-    }
-
-    carusel() {
+    gluing() {
       if (this.currentIndex === 0) {
-        this.addActiveSelector(this.slides[0])
-        this.lastCopySlide.style.transform = `translateX(-100%)`
-
-        return console.log('carusel === 0')
+        this.startBox.hidden = true
+        this.endBox.hidden = true
+        this.move(this.endBox, this.positionEndBox)
+        this.move(this.startBox, this.positionStartBox)
       }
-
-      if (this.currentIndex === this.minIndex) {
-        this.removeActiveSelector()
-        this.setSliderTranslateX((this.amountSlides - 1) * this.slideWidth * -1)
-        this.addActiveSelector(this.lastCopySlide)
-
-        this.firstCopySlide.style
-          .transform = `translateX(${100 * this.amountSlides}%)`
-        this.lastCopySlide.style
-          .transform = `translateX(${100 * (this.amountSlides - 1)}%)`
-        this.currentIndex = this.amountSlides - 1
-        this.addActiveSelector(this.slides[this.amountSlides - 1])
-        return console.log('carusel === minIndex')
+      
+      if (
+        this.currentIndex > 0 
+        && this.currentIndex <= this.slidesInArea
+        ) {
+        this.startBox.hidden = false
+        this.endBox.hidden = true
+        this.move(this.endBox, this.positionEndBox)
+        const step = this.positionStartBox + (this.currentIndex * this.slideWidth)
+        this.move(this.startBox, step)
       }
-
-      // if (this.currentIndex === this.minIndex) {
-
-      //   return console.log('carusel === minIndex + 1')
-      // }
-
-      // if (!this.currentIndex && !this.maxIndex) {
-      // }
-
+      
+      if (this.currentIndex < 0 && this.currentIndex >= -this.slidesInArea) {
+        this.startBox.hidden = true
+        this.endBox.hidden = false
+        this.move(this.startBox, this.positionStartBox)
+        const step = this.positionEndBox + (this.currentIndex * this.slideWidth)
+        this.move(this.endBox, step)
+      }
     }
 
     nextSlide() {
-      this.move(this.slideWidth, 'forward')
-      this.currentIndex--
-      this.carusel()
+      this.currentIndex++
+      this.gluing()
+      const step = this.positionSlider + (this.currentIndex * this.slideWidth)
+      if (this.currentIndex <= this.maxIndex) {
+        this.move(this.slider, step)
+      }
     }
-
+    
     previousSlide() {
-
+      this.currentIndex--
+      this.gluing()
+      const step = this.positionSlider + (this.currentIndex * this.slideWidth)
+      if (this.currentIndex >= this.minIndex) {
+        this.move(this.slider, step)
+      }
     }
     //Создание клонов для крайних слайдов
     // makeGluingSlides() {
@@ -151,12 +150,13 @@ export const runSlider = () => {
     // }
 
     test() {
+
     }
 
     run() {
-      if (this.loop) {
-        this.carusel() //temp
-      }
+      // if (this.loop) {
+      //   // this.carusel() //temp
+      // }
       this.nextBtn.addEventListener('click', this.nextSlide.bind(this))
       this.prevBtn.addEventListener('click', this.previousSlide.bind(this))
     }

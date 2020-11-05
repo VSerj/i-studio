@@ -3,7 +3,7 @@ block content
   main
     - 
       var sliderImg = [
-        "lw-img1.jpg", "lw-img4.jpg"
+        "lw-img-start.jpg", "lw-img2.jpg", "lw-img-end.jpg"
       ]
       //- "lw-img2.jpg", "lw-img3.jpg",
 
@@ -118,29 +118,44 @@ block content
                 a.social-link(href="#")
                   i(class="icon-" + network)
       
-      .slider-wrapper
-        ul.slider
-          li.slider__item.slider__copy.slider__copyFirst
-            .slider__overlay
-            img(
-              src=`./assets/img/lates-work/lw-img-start.jpg`
-              alt="start block"
-            )
-          each image, index in sliderImg
-            - var activeFirstSlide = index ? "" : "slider__item--active"
-            li.slider__item.carusel(class=`${activeFirstSlide}`)
+      .demo-work__slider
+        .slider
+          .slider__gluingBox.slider__gluingBoxStart
+            .slider__item
               .slider__overlay
               img(
-                src=`./assets/img/lates-work/${image}`
-                alt="there was supposed to be a lates work slide"
+                src=`./assets/img/lates-work/lw-img-start.jpg`
+                alt="start block"
               )
-          li.slider__item.slider__copy.slider__copyLast
-            .slider__overlay
-            img(
-              src=`./assets/img/lates-work/lw-img-end.jpg`
-              alt="start block"
-            )
-        
+            .slider__item
+              .slider__overlay
+              img(
+                src=`./assets/img/lates-work/lw-img-end.jpg`
+                alt="start block"
+              )
+          .slider__gluingBox.slider__gluingBoxEnd
+            .slider__item
+              .slider__overlay
+              img(
+                src=`./assets/img/lates-work/lw-img-start.jpg`
+                alt="start block"
+              )
+            .slider__item
+              .slider__overlay
+              img(
+                src=`./assets/img/lates-work/lw-img-end.jpg`
+                alt="start block"
+              )
+          ul.slider__slideList
+            each image, index in sliderImg
+              - var activeFirstSlide = index ? "" : "slider__item--active"
+              li.slider__item(class=`${activeFirstSlide}`)
+                .slider__overlay
+                img(
+                  src=`./assets/img/lates-work/${image}`
+                  alt="there was supposed to be a lates work slide"
+                )
+          
       .slider__btn-container
         .slider__btn.slider-btn.slider-btn__next
           span.slider-btn__arrow
