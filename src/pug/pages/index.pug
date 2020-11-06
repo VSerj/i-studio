@@ -1,12 +1,6 @@
 extend ../layout/base.pug
 block content
   main
-    - 
-      var sliderImg = [
-        "lw-img-start.jpg", "lw-img2.jpg", "lw-img-end.jpg"
-      ]
-      //- "lw-img2.jpg", "lw-img3.jpg",
-
     //Preview
     section.preview.overflow-h
       .container
@@ -120,32 +114,10 @@ block content
       
       .demo-work__slider
         .slider
-          .slider__gluingBox.slider__gluingBoxStart
-            .slider__item
-              .slider__overlay
-              img(
-                src=`./assets/img/lates-work/lw-img-start.jpg`
-                alt="start block"
-              )
-            .slider__item
-              .slider__overlay
-              img(
-                src=`./assets/img/lates-work/lw-img-end.jpg`
-                alt="start block"
-              )
-          .slider__gluingBox.slider__gluingBoxEnd
-            .slider__item
-              .slider__overlay
-              img(
-                src=`./assets/img/lates-work/lw-img-start.jpg`
-                alt="start block"
-              )
-            .slider__item
-              .slider__overlay
-              img(
-                src=`./assets/img/lates-work/lw-img-end.jpg`
-                alt="start block"
-              )
+          -
+            var sliderImg = [
+              "lw-img-start.jpg", "lw-img2.jpg", "lw-img-end.jpg"
+            ]
           ul.slider__slideList
             each image, index in sliderImg
               - var activeFirstSlide = index ? "" : "slider__item--active"

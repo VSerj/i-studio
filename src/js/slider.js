@@ -11,7 +11,7 @@ export const runSlider = () => {
 
   const sliderElems = {
     slider: document.querySelector('.slider__slideList'),
-    slides: document.querySelectorAll('.slider__slideList > .slider__item'),
+    slides: document.querySelectorAll('.slider__item'),
     prevBtn: document.querySelector('.slider-btn__previous'),
     nextBtn: document.querySelector('.slider-btn__next'),
     activeSlide: document.querySelector('.slider__item--active'),
@@ -25,7 +25,7 @@ export const runSlider = () => {
       this.options = options;
       this.loop = this.options.loop;
       this.slidesInArea = this.options.slidesInArea;
-      this.slideWidth = this.options.slideWidth;
+      this.step = this.options.slideWidth;
       this.activeSelector = this.options.activeSelector
       //DOM elements
       this.sliderElems = sliderElems;
@@ -36,31 +36,25 @@ export const runSlider = () => {
       this.activeSlides = [sliderElems.activeSlide];
       //Counters and boundary
       this.amountSlides = sliderElems.slides.length;
-      this.minIndex = this.amountSlides * -1;
-      this.maxIndex = this.amountSlides - this.slidesInArea;
-      this.currentIndex = 0;
-      this.prevIndex = 0;
+      this.counterShiftSlider = 0;
+      this.counterSwipeSlide = 0;
       this.currentShift = 0; //Slider - transform: translateX
-      this.positionSlider = 0;
       //temp
-      this.positionStartBox = this.slideWidth * this.slidesInArea * -1;
-      this.positionEndBox = this.slideWidth * this.slidesInArea;
-      this.startBox = document.querySelector('.slider__gluingBoxStart');
-      this.endBox = document.querySelector('.slider__gluingBoxEnd');
+      this.counterReverse = 1
     }
 
-    increaseShift(value) {
-      return this.currentShift += value
-    }
+    // increaseShift(value) {
+    //   return this.counterShiftSlider * value
+    // }
 
-    reduceShift(value) {
-      return this.currentShift += value * -1
-    }
+    // reduceShift(value) {
+    //   return this.counterShiftSlider *value * -1
+    // }
 
     move(element, step) {
       // if (!step && !element) return
-
-      return element.style.transform = `translateX(${step}%)`
+      const value = this.counterShiftSlider * step
+      return element.style.transform = `translateX(${value}%)`
     }
 
     addActiveSlide(slide) {
@@ -87,70 +81,40 @@ export const runSlider = () => {
       return this.activeSlides.length = 0
     }
 
-    gluing() {
-      if (this.currentIndex === 0) {
-        this.startBox.hidden = true
-        this.endBox.hidden = true
-        this.move(this.endBox, this.positionEndBox)
-        this.move(this.startBox, this.positionStartBox)
-      }
-      
-      if (
-        this.currentIndex > 0 
-        && this.currentIndex <= this.slidesInArea
-        ) {
-        this.startBox.hidden = false
-        this.endBox.hidden = true
-        this.move(this.endBox, this.positionEndBox)
-        const step = this.positionStartBox + (this.currentIndex * this.slideWidth)
-        this.move(this.startBox, step)
-      }
-      
-      if (this.currentIndex < 0 && this.currentIndex >= -this.slidesInArea) {
-        this.startBox.hidden = true
-        this.endBox.hidden = false
-        this.move(this.startBox, this.positionStartBox)
-        const step = this.positionEndBox + (this.currentIndex * this.slideWidth)
-        this.move(this.endBox, step)
-      }
-    }
+
 
     nextSlide() {
-      this.currentIndex++
-      this.gluing()
-      const step = this.positionSlider + (this.currentIndex * this.slideWidth)
-      if (this.currentIndex <= this.maxIndex) {
-        this.move(this.slider, step)
+      this.counterShiftSlider++
+      this.counterSwipeSlide++ //для одної ітерації зміщення слайдів
+
+      if (this.counterSwipeSlide > this.amountSlides) {
+        this.counterSwipeSlide = 1
+        this.counterReverse++
       }
+
+      this.move(this.slider, this.step)
+
+      let slideInd = this.amountSlides - this.counterSwipeSlide
+      this.slides[slideInd].style.transform = `translateX(-${this.amountSlides * 100 * this.counterReverse}%)`
+
     }
     
     previousSlide() {
-      this.currentIndex--
-      this.gluing()
-      const step = this.positionSlider + (this.currentIndex * this.slideWidth)
-      if (this.currentIndex >= this.minIndex) {
-        this.move(this.slider, step)
-      }
+      // this.counterShiftSlider--
+      
+      // if (this.counterSwipeSlide > this.amountSlides - 1) {
+      //   this.counterSwipeSlide = 0
+      //   this.counterReverse--
+      // }
+      
+      // this.move(this.slider, this.step)
+      
+      // let slideInd = this.counterSwipeSlide
+      // this.slides[slideInd].style.transform = `translateX(${300 * this.counterReverse}%)`
+      // this.counterSwipeSlide++ //для одної ітерації зміщення слайдів
     }
-    //Создание клонов для крайних слайдов
-    // makeGluingSlides() {
-    //   this.gluingSlides = {
-    //     first: this.slides[0].cloneNode(true),
-    //     lastCopySlide: this.slides[this.amountSlides - 1].cloneNode(true),
-    //   }
-    // }
-
-    // addGluingSlides() {
-    //   this.makeGluingSlides()
-
-    //   s.prepend(this.gluingSlides.first)
-    //   s.append(this.gluingSlides.lastCopySlide)
-    //   s.firstChild.classList.add('slider__copy', 'slider__copyFirst')
-    //   s.lastChild.classList.add('slider__copy', 'slider__copyLast')
-    // }
 
     test() {
-
     }
 
     run() {

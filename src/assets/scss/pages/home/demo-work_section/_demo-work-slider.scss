@@ -12,23 +12,6 @@
   height: inherit;
 }
 
-.slider__gluingBox {
-  display: flex;
-  position: absolute;
-  z-index: 1;
-  transition: all 0.5s ease-in-out;
-  height: inherit;
-  width: 100%;
-}
-
-.slider__gluingBoxStart {
-  transform: translateX(-140%);
-}
-
-.slider__gluingBoxEnd {
-  transform: translateX(140%);
-}
-
 .slider__slideList {
   display: flex;
   position: absolute;
@@ -40,6 +23,8 @@
 
 .slider__item {
   position: relative;
+  transition: transform;
+  transition-delay: 50ms;
   flex: 0 0 70%;
   img {
     width: 100%;
@@ -64,19 +49,6 @@
     opacity: 0;
   }
 }
-
-// .slider__copyItem {
-//   height: 100%;
-//   width: 70%;
-//   // opacity: 0.7;
-// }
-// .slider__copyFirst {
-//   // transform: translateX(30%);
-// }
-
-// .slider__copyLast {
-//   // transform: translateX(-100%);
-// }
 
 @include l_table {
   .slider__item {
