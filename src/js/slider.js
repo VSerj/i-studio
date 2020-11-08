@@ -1,10 +1,9 @@
 'use strict'
 
 export const runSlider = () => {
-
   const setting = {
     loop: true,   //зацикленный
-    slidesInArea: 2,  //колисество слайдов в области просмотра
+    amountInArea: 2,  //колисество слайдов в области просмотра
     slideWidth: 70,   //проценты от области слайдера
     activeSelector: 'slider__item--active',
   }
@@ -19,12 +18,10 @@ export const runSlider = () => {
 
   class Slider {
     constructor(sliderElems, options) {
-      //научится делать пробросы ошибок для неверных параметров(потом)
-
       //Options
       this.options = options;
       this.loop = this.options.loop;
-      this.slidesInArea = this.options.slidesInArea;
+      this.amountInArea = this.options.amountInArea;
       this.step = this.options.slideWidth;
       this.activeSelector = this.options.activeSelector
       //DOM elements
@@ -33,85 +30,86 @@ export const runSlider = () => {
       this.slides = sliderElems.slides;
       this.nextBtn = sliderElems.nextBtn;
       this.prevBtn = sliderElems.prevBtn;
-      this.activeSlides = [sliderElems.activeSlide];
+      this.startSlidesInArea = [...this.slides].splice(0,2);
       //Counters and boundary
       this.amountSlides = sliderElems.slides.length;
       this.counterShiftSlider = 0;
-      this.counterSwipeSlide = 0;
-      this.currentShift = 0; //Slider - transform: translateX
+      this.counterShiftSlide = 0;
       //temp
-      this.counterReverse = 1
     }
 
-    // increaseShift(value) {
-    //   return this.counterShiftSlider * value
-    // }
-
-    // reduceShift(value) {
-    //   return this.counterShiftSlider *value * -1
-    // }
-
     move(element, step) {
-      // if (!step && !element) return
       const value = this.counterShiftSlider * step
       return element.style.transform = `translateX(${value}%)`
     }
 
-    addActiveSlide(slide) {
-      return this.activeSlides.push(slide)
+    moveSlidesToEndOfSlider(slides) {
+      slides.forEach(slide => {
+        slide.style.transform = `translateX(${this.amountSlides * 100}%)`
+      })
     }
 
-    isActiveSelector(slide) {
-      return slide.matches(`.${this.activeSelector}`)
+    moveSliderToAmountSlides() {
+      return this.slider.style.transform = `translateX(-${this.amountSlides * this.step}%)`
+    }
+    
+    setTranslateX(element, value) {
+      element.style.transform = `translateX(${value}%)`
     }
 
-    addActiveSelector(slide) {
-      if (this.isActiveSelector(slide)) return
-
-      this.addActiveSlide(slide)
-      return slide.classList.add(this.activeSelector)
+    startMovingSlider() {
+      this.addTransitionSlider()
+      this.move(this.slider, this.step)
     }
 
-    removeActiveAll() {
-      if (!this.activeSlides.length) return
-
-      this.activeSlides.forEach(
-        slide => slide.classList.remove(this.activeSelector)
-      )
-      return this.activeSlides.length = 0
+    clearTransitionSlider() {
+      this.slider.classList.remove('moving')
     }
 
-
+    addTransitionSlider() {
+      this.slider.classList.add('moving')
+    }
 
     nextSlide() {
-      this.counterShiftSlider++
-      this.counterSwipeSlide++ //для одної ітерації зміщення слайдів
-
-      if (this.counterSwipeSlide > this.amountSlides) {
-        this.counterSwipeSlide = 1
-        this.counterReverse++
+      switch (this.counterShiftSlider) {
+        case 0:
+          this.counterShiftSlider = -this.amountSlides
+          this.clearTransitionSlider()
+          this.moveSliderToAmountSlides()
+          this.moveSlidesToEndOfSlider(this.startSlidesInArea)
+          break;
+        case -this.amountInArea:
+          this.setTranslateX(this.startSlidesInArea[1], 0)
+          break;
+        case -this.amountInArea + 1: 
+          this.setTranslateX(this.startSlidesInArea[0], 0)
+          break;
       }
 
-      this.move(this.slider, this.step)
-
-      let slideInd = this.amountSlides - this.counterSwipeSlide
-      this.slides[slideInd].style.transform = `translateX(-${this.amountSlides * 100 * this.counterReverse}%)`
+      this.counterShiftSlider++
+      setTimeout(() => this.startMovingSlider(), 50)
 
     }
     
     previousSlide() {
-      // this.counterShiftSlider--
-      
-      // if (this.counterSwipeSlide > this.amountSlides - 1) {
-      //   this.counterSwipeSlide = 0
-      //   this.counterReverse--
-      // }
-      
-      // this.move(this.slider, this.step)
-      
-      // let slideInd = this.counterSwipeSlide
-      // this.slides[slideInd].style.transform = `translateX(${300 * this.counterReverse}%)`
-      // this.counterSwipeSlide++ //для одної ітерації зміщення слайдів
+      switch (this.counterShiftSlider) {
+        case -this.amountSlides:
+          this.counterShiftSlider = 0
+          this.clearTransitionSlider()
+          this.setTranslateX(this.slider, 0)
+          this.setTranslateX(this.startSlidesInArea[0], 0)
+          this.setTranslateX(this.startSlidesInArea[1], 0)
+          break;
+        case -this.amountInArea + 1:
+          this.setTranslateX(this.startSlidesInArea[0], this.amountSlides * 100)
+          break;
+        case -this.amountInArea: 
+          this.setTranslateX(this.startSlidesInArea[1], this.amountSlides * 100)
+          break;
+      }
+
+      this.counterShiftSlider--
+      setTimeout(() => this.startMovingSlider(), 50)
     }
 
     test() {
