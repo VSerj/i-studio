@@ -30,53 +30,60 @@ export const runSlider = () => {
       this.slides = sliderElems.slides;
       this.nextBtn = sliderElems.nextBtn;
       this.prevBtn = sliderElems.prevBtn;
-      this.startSlidesInArea = [...this.slides].splice(0,2);
+      this.startSlidesInArea = [...this.slides].splice(0, this.amountInArea);
       //Counters and boundary
       this.amountSlides = sliderElems.slides.length;
       this.counterShiftSlider = 0;
       this.counterShiftSlide = 0;
-      //temp
+      //state
+      this.isTrottled = false;
     }
 
-    move(element, step) {
+    moveToCounterShiftSlider(element, step) {
       const value = this.counterShiftSlider * step
       return element.style.transform = `translateX(${value}%)`
-    }
-
-    moveSlidesToEndOfSlider(slides) {
-      slides.forEach(slide => {
-        slide.style.transform = `translateX(${this.amountSlides * 100}%)`
-      })
-    }
-
-    moveSliderToAmountSlides() {
-      return this.slider.style.transform = `translateX(-${this.amountSlides * this.step}%)`
     }
     
     setTranslateX(element, value) {
       element.style.transform = `translateX(${value}%)`
     }
 
-    startMovingSlider() {
+    moveSlider() {
       this.addTransitionSlider()
-      this.move(this.slider, this.step)
+      this.moveToCounterShiftSlider(this.slider, this.step)
     }
 
     clearTransitionSlider() {
-      this.slider.classList.remove('moving')
+      this.slider.classList.remove('slider__slideList--moveTransition')
     }
 
     addTransitionSlider() {
-      this.slider.classList.add('moving')
+      if (this.slider.closest('.slider__slideList--moveTransition')) return
+      this.slider.classList.add('slider__slideList--moveTransition')
+    }
+
+    setStartPositionElements() {
+      this.counterShiftSlider = 0
+      this.clearTransitionSlider()
+      this.setTranslateX(this.slider, 0)
+      this.startSlidesInArea.forEach(slide => {
+        slide.style.transform = `translateX(${0}%)`
+      })
+    }
+
+    setEndPositionElements() {
+      this.counterShiftSlider = -this.amountSlides
+      this.clearTransitionSlider()
+      this.slider.style.transform = `translateX(-${this.amountSlides * this.step}%)`
+      this.startSlidesInArea.forEach(slide => {
+        slide.style.transform = `translateX(${this.amountSlides * 100}%)`
+      })
     }
 
     nextSlide() {
       switch (this.counterShiftSlider) {
         case 0:
-          this.counterShiftSlider = -this.amountSlides
-          this.clearTransitionSlider()
-          this.moveSliderToAmountSlides()
-          this.moveSlidesToEndOfSlider(this.startSlidesInArea)
+          this.setEndPositionElements()
           break;
         case -this.amountInArea:
           this.setTranslateX(this.startSlidesInArea[1], 0)
@@ -87,18 +94,14 @@ export const runSlider = () => {
       }
 
       this.counterShiftSlider++
-      setTimeout(() => this.startMovingSlider(), 50)
-
+      //затримка - для непомітного виконання setEndPositionElements()
+      setTimeout(() => this.moveSlider(), 50)
     }
-    
+
     previousSlide() {
       switch (this.counterShiftSlider) {
         case -this.amountSlides:
-          this.counterShiftSlider = 0
-          this.clearTransitionSlider()
-          this.setTranslateX(this.slider, 0)
-          this.setTranslateX(this.startSlidesInArea[0], 0)
-          this.setTranslateX(this.startSlidesInArea[1], 0)
+          this.setStartPositionElements()
           break;
         case -this.amountInArea + 1:
           this.setTranslateX(this.startSlidesInArea[0], this.amountSlides * 100)
@@ -109,23 +112,34 @@ export const runSlider = () => {
       }
 
       this.counterShiftSlider--
-      setTimeout(() => this.startMovingSlider(), 50)
+      //затримка - для непомітного виконання setStartPositionElements()
+      setTimeout(() => this.moveSlider(), 50)
     }
 
-    test() {
+    //trottledSlideSwitch - затримка зміни слайда для уникнення дефектів.
+    //delayMs = duration в .slider__slideList--moveTransition.
+    trottledSlideSwitch(func, delayMs) {
+      if (this.isTrottled) return
+
+      func.call(this)
+
+      setTimeout(() => this.isTrottled = false, delayMs)
+      this.isTrottled = true
     }
 
     run() {
-      // if (this.loop) {
-      //   // this.carusel() //temp
-      // }
-      this.nextBtn.addEventListener('click', this.nextSlide.bind(this))
-      this.prevBtn.addEventListener('click', this.previousSlide.bind(this))
+      this.nextBtn.addEventListener(
+        'click',
+        this.trottledSlideSwitch.bind(this, this.nextSlide, 500)
+      )
+      
+      this.prevBtn.addEventListener(
+        'click',
+        this.trottledSlideSwitch.bind(this, this.previousSlide, 500)
+      )
     }
   }
 
   const projectSlider = new Slider(sliderElems, setting)
   projectSlider.run()
-
-  projectSlider.test()
 }
