@@ -1,26 +1,25 @@
-"use strict";
+'use strict';
 
 export const runSlider = () => {
   const setting = {
     loop: true, //зацикленный
     inVisibleArea: 2, //колисество слайдов в области просмотра
     slideWidth: 70, //проценты от области слайдера
-    activeSelector: "slider__item--active",
+    activeSelector: 'slider__item--active',
   };
 
   const sliderElems = {
-    slider: document.querySelector(".slider__slideList"),
-    slides: document.querySelectorAll(".slider__item"),
-    prevBtn: document.querySelector(".slider-btn__previous"),
-    nextBtn: document.querySelector(".slider-btn__next"),
-    activeSlide: document.querySelector(".slider__item--active"),
+    slider: document.querySelector('.slider__slideList'),
+    slides: document.querySelectorAll('.slider__item'),
+    prevBtn: document.querySelector('.slider-btn__previous'),
+    nextBtn: document.querySelector('.slider-btn__next'),
+    activeSlide: document.querySelector('.slider__item--active'),
   };
 
   class Slider {
     constructor(sliderElems, options) {
       //Options
       this.options = options;
-      this.loop = this.options.loop;
       this.inVisibleArea = this.options.inVisibleArea;
       this.step = this.options.slideWidth;
       this.activeSelector = this.options.activeSelector;
@@ -30,6 +29,7 @@ export const runSlider = () => {
       this.slides = sliderElems.slides;
       this.nextBtn = sliderElems.nextBtn;
       this.prevBtn = sliderElems.prevBtn;
+      this.activeSlide = sliderElems.activeSlide;
       this.helperCaruselSlides = [...this.slides].splice(0, this.inVisibleArea);
       //Counters and boundary
       this.amountSlides = sliderElems.slides.length;
@@ -52,44 +52,37 @@ export const runSlider = () => {
 
     clearTransitionSlider() {
       //для непомітного зміщення слайдера в інший кінець
-      this.slider.classList.remove("slider__slideList--moveTransition");
+      this.slider.classList.remove('slider__slideList--moveTransition');
     }
 
     addTransitionSlider() {
-      if (this.slider.closest(".slider__slideList--moveTransition")) return;
-      this.slider.classList.add("slider__slideList--moveTransition");
+      if (this.slider.closest('.slider__slideList--moveTransition')) return;
+      this.slider.classList.add('slider__slideList--moveTransition');
     }
 
-    setPositionWithAnotherBoundary(positionValue) {
-      this.counterShiftSlider = positionValue;
+    setPositionWithAnotherBoundary(boundary) {
+      this.counterShiftSlider = boundary;
 
-      this.setTranslateX(this.slider, positionValue * this.step);
+      this.setTranslateX(this.slider, boundary * this.step);
       this.helperCaruselSlides.forEach((slide) => {
-        slide.style.transform = `translateX(${positionValue * -100}%)`;
+        slide.style.transform = `translateX(${boundary * -100}%)`;
       });
     }
 
     moveToAnotherBoundary(caruselDirection) {
-      let positionValue;
-
-      if (
+      const boundary =
         this.counterShiftSlider === this.startBoudarySlider &&
-        caruselDirection === "next"
-      ) {
-        positionValue = this.endBoundarySlider;
-      }
+        caruselDirection === 'next'
+          ? this.endBoundarySlider
+          : this.counterShiftSlider === this.endBoundarySlider &&
+            caruselDirection === 'prev'
+          ? this.startBoudarySlider
+          : undefined;
 
-      if (
-        this.counterShiftSlider === this.endBoundarySlider &&
-        caruselDirection === "prev"
-      ) {
-        positionValue = this.startBoudarySlider;
-      }
-
-      if (positionValue === undefined) return;
+      if (boundary === undefined) return;
 
       this.clearTransitionSlider();
-      this.setPositionWithAnotherBoundary(positionValue);
+      this.setPositionWithAnotherBoundary(boundary);
     }
 
     moveHelperCaruselSlides(direction) {
@@ -101,7 +94,7 @@ export const runSlider = () => {
       }
 
       const TRANSLATEX_VALUE =
-        direction === "next" ? 0 : 100 * this.amountSlides;
+        direction === 'next' ? 0 : 100 * this.amountSlides;
       const INDEX = this.counterShiftSlider * -1 - 1;
       this.setTranslateX(this.helperCaruselSlides[INDEX], TRANSLATEX_VALUE);
     }
@@ -111,9 +104,27 @@ export const runSlider = () => {
       this.moveHelperCaruselSlides(direction);
     }
 
+    calcIndexActiveSlide() {
+      return this.counterShiftSlider === this.endBoundarySlider
+        ? 0
+        : this.counterShiftSlider * -1;
+    }
+
+    setActiveSlide() {
+      this.removePrevActiveSlide();
+
+      this.activeSlide = this.slides[this.calcIndexActiveSlide()];
+      this.activeSlide.classList.add(this.activeSelector);
+    }
+
+    removePrevActiveSlide() {
+      this.activeSlide.classList.remove(this.activeSelector);
+    }
+
     nextSlide() {
-      this.carusel("next");
+      this.carusel('next');
       this.counterShiftSlider++;
+      this.setActiveSlide();
       //затримка - для непомітного виконання зміщеннь при carusel
       setTimeout(() => {
         this.addTransitionSlider();
@@ -122,9 +133,9 @@ export const runSlider = () => {
     }
 
     previousSlide() {
-      this.carusel("prev");
+      this.carusel('prev');
       this.counterShiftSlider--;
-
+      this.setActiveSlide();
       setTimeout(() => {
         this.addTransitionSlider();
         this.moveSliderOneStep();
@@ -144,12 +155,12 @@ export const runSlider = () => {
 
     run() {
       this.nextBtn.addEventListener(
-        "click",
+        'click',
         this.trottledSlideSwitch.bind(this, this.nextSlide, 500)
       );
 
       this.prevBtn.addEventListener(
-        "click",
+        'click',
         this.trottledSlideSwitch.bind(this, this.previousSlide, 500)
       );
     }
