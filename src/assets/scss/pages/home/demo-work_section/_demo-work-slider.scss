@@ -53,14 +53,14 @@
 
 @include l_table {
   .slider__item {
-    min-width: 100%;
+    flex: 0 0 100%
   }
 
   .demo-work__slider {
     position: relative;
     top: 0;
     left: 0;
-    max-width: 100%;
+    width: 100%;
     height: 300px;
   }
 }
