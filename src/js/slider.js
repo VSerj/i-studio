@@ -5,7 +5,7 @@ export const runSlider = () => {
     loop: true, //зацикленный
     inVisibleArea: 2, //колисество слайдов в области просмотра
     slideWidth: 70, //проценты от области слайдера
-    activeSelector: 'slider__item--active',
+    activeSelector: 'slide--isActive',
   };
 
   const sliderElems = {
@@ -13,7 +13,9 @@ export const runSlider = () => {
     slides: document.querySelectorAll('.slider__item'),
     prevBtn: document.querySelector('.slider-btn__previous'),
     nextBtn: document.querySelector('.slider-btn__next'),
-    activeSlide: document.querySelector('.slider__item--active'),
+    toggles: document.querySelectorAll('.slider-toggle'),
+    activeSlide: document.querySelector('.slider__item.slide--isActive'),
+    activeToggle: document.querySelector('.slider-toggle.slide--isActive'),
   };
 
   class Slider {
@@ -29,7 +31,9 @@ export const runSlider = () => {
       this.slides = sliderElems.slides;
       this.nextBtn = sliderElems.nextBtn;
       this.prevBtn = sliderElems.prevBtn;
+      this.toggles = sliderElems.toggles;
       this.activeSlide = sliderElems.activeSlide;
+      this.activeToggle = sliderElems.activeToggle;
       this.helperCaruselSlides = [...this.slides].splice(0, this.inVisibleArea);
       //Counters and boundary
       this.amountSlides = sliderElems.slides.length;
@@ -39,6 +43,16 @@ export const runSlider = () => {
       this.helperBoundary = -this.inVisibleArea;
       //state
       this.isTrottled = false;
+      //swipe
+      this.swipe = {
+        startX: 0,
+        currentX: 0,
+        deltaX: 0,
+        startTime: 0,
+        maxTime: 270,
+        minDistance: 40,
+        maxDistance: 140,
+      };
     }
 
     setTranslateX(element, value) {
@@ -110,21 +124,24 @@ export const runSlider = () => {
         : this.counterShiftSlider * -1;
     }
 
-    setActiveSlide() {
-      this.removePrevActiveSlide();
-
-      this.activeSlide = this.slides[this.calcIndexActiveSlide()];
+    setActiveSlideAndToggle() {
+      this.removeActiveSlideAndToggle();
+      const index = this.calcIndexActiveSlide();
+      this.activeSlide = this.slides[index];
       this.activeSlide.classList.add(this.activeSelector);
+      this.activeToggle = this.toggles[index];
+      this.activeToggle.classList.add(this.activeSelector);
     }
 
-    removePrevActiveSlide() {
+    removeActiveSlideAndToggle() {
+      this.activeToggle.classList.remove(this.activeSelector);
       this.activeSlide.classList.remove(this.activeSelector);
     }
 
     nextSlide() {
       this.carusel('next');
       this.counterShiftSlider++;
-      this.setActiveSlide();
+      this.setActiveSlideAndToggle();
       //затримка - для непомітного виконання зміщеннь при carusel
       setTimeout(() => {
         this.addTransitionSlider();
@@ -135,7 +152,7 @@ export const runSlider = () => {
     previousSlide() {
       this.carusel('prev');
       this.counterShiftSlider--;
-      this.setActiveSlide();
+      this.setActiveSlideAndToggle();
       setTimeout(() => {
         this.addTransitionSlider();
         this.moveSliderOneStep();
@@ -154,6 +171,45 @@ export const runSlider = () => {
     }
 
     run() {
+      this.slider.addEventListener('touchstart', (e) => {
+        //для мобільки
+        if (window.innerWidth <= 768 && this.step !== 100) {
+          this.step = 100;
+        }
+
+        e.preventDefault();
+        
+        this.swipe.startX = e.changedTouches[0].clientX;
+        this.swipe.startTime = Date.now();
+      });
+
+      this.slider.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+
+        this.swipe.currentX = e.changedTouches[0].clientX;
+        this.swipe.deltaX = this.swipe.currentX - this.swipe.startX;
+      });
+
+      this.slider.addEventListener('touchend', (e) => {
+        e.preventDefault();
+
+        const duration = Date.now() - this.swipe.startTime;
+        const distance = Math.abs(this.swipe.deltaX);
+        if (
+          distance < this.swipe.minDistance ||
+          distance > this.swipe.maxDistance ||
+          duration > this.swipe.maxTime
+        ) {
+          return;
+        }
+
+        if (this.swipe.deltaX < 0) {
+          this.trottledSlideSwitch.call(this, this.previousSlide, 500);
+        } else {
+          this.trottledSlideSwitch.call(this, this.nextSlide, 500);
+        }
+      });
+
       this.nextBtn.addEventListener(
         'click',
         this.trottledSlideSwitch.bind(this, this.nextSlide, 500)

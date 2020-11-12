@@ -44,7 +44,7 @@
   background: rgba($bg-color-darkest, 0.5);
 }
 
-.slider__item--active {
+.slide--isActive {
   .slider__overlay {
     visibility: hidden;
     opacity: 0;
@@ -53,7 +53,7 @@
 
 @include l_table {
   .slider__item {
-    flex: 0 0 100%
+    flex: 0 0 100%;
   }
 
   .demo-work__slider {

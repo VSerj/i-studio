@@ -120,7 +120,7 @@ block content
             ]
           ul.slider__slideList
             each image, index in sliderImg
-              - var activeFirstSlide = index ? "" : "slider__item--active"
+              - var activeFirstSlide = index ? "" : "slide--isActive"
               li.slider__item(class=`${activeFirstSlide}`)
                 .slider__overlay
                 img(
@@ -128,16 +128,16 @@ block content
                   alt="there was supposed to be a lates work slide"
                 )
           
-      .slider__btn-container
-        .slider__btn.slider-btn.slider-btn__next
-          span.slider-btn__arrow
-        .slider__btn.slider-btn.slider-btn__previous
-          span.slider-btn__arrow.slider-btn__arrow--previous
-        
-      ul.slider-toggles
-        li.slider-toggle
-        li.slider-toggle
-        li.slider-toggle
+        .slider__btn-container
+          .slider__btn.slider-btn.slider-btn__next
+            span.slider-btn__arrow
+          .slider__btn.slider-btn.slider-btn__previous
+            span.slider-btn__arrow.slider-btn__arrow--previous
+
+        ul.slider-toggles
+          li.slider-toggle.slide--isActive
+          li.slider-toggle
+          li.slider-toggle
 
     //Team
     section.team.overflow-h

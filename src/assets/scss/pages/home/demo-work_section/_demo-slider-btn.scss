@@ -2,7 +2,7 @@
   .slider__btn-container {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 0;
     z-index: 3;
     transform: translate(-50%, -50%);
   }
@@ -49,14 +49,14 @@
       @extend .slider-btn__arrow;
       top: 0;
       transform: rotate(-40deg) translate(0px, 5px) scaleX(0.6);
-      content: "";
+      content: '';
     }
 
     &::after {
       @extend .slider-btn__arrow;
       bottom: 0;
       transform: rotate(40deg) translate(0px, -5px) scaleX(0.6);
-      content: "";
+      content: '';
     }
   }
 
