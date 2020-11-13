@@ -43,15 +43,18 @@ export const runSlider = () => {
       this.helperBoundary = -this.inVisibleArea;
       //state
       this.isTrottled = false;
+      this.isSwipe = true;
       //swipe
       this.swipe = {
         startX: 0,
-        currentX: 0,
         deltaX: 0,
         startTime: 0,
-        maxTime: 270,
+        maxTime: 300,
         minDistance: 40,
-        maxDistance: 140,
+        maxDistance: 220,
+        prevBoundary: -36,
+        nextBoundary: 36,
+        widthSlider: this.slider.getBoundingClientRect().width,
       };
     }
 
@@ -64,42 +67,40 @@ export const runSlider = () => {
       this.setTranslateX(this.slider, CURRENT_STEP);
     }
 
-    clearTransitionSlider() {
+    removeTransitionSlider() {
       //для непомітного зміщення слайдера в інший кінець
       this.slider.classList.remove('slider__slideList--moveTransition');
     }
-
     addTransitionSlider() {
       if (this.slider.closest('.slider__slideList--moveTransition')) return;
       this.slider.classList.add('slider__slideList--moveTransition');
     }
 
-    setPositionWithAnotherBoundary(boundary) {
-      this.counterShiftSlider = boundary;
+    getOpossiteBoundary(moveDirection) {
+      return moveDirection === undefined
+        ? undefined
+        : this.counterShiftSlider === this.startBoudarySlider &&
+          moveDirection === 'next'
+        ? this.endBoundarySlider
+        : this.counterShiftSlider === this.endBoundarySlider &&
+          moveDirection === 'prev'
+        ? this.startBoudarySlider
+        : undefined;
+    }
 
-      this.setTranslateX(this.slider, boundary * this.step);
+    moveToOpossiteBoundary(moveDirection) {
+      const boundary = this.getOpossiteBoundary(moveDirection);
+      if (boundary === undefined) return;
+
+      this.removeTransitionSlider();
+      this.counterShiftSlider = boundary;
+      this.setTranslateX(this.slider, this.counterShiftSlider * this.step);
       this.helperCaruselSlides.forEach((slide) => {
         slide.style.transform = `translateX(${boundary * -100}%)`;
       });
     }
 
-    moveToAnotherBoundary(caruselDirection) {
-      const boundary =
-        this.counterShiftSlider === this.startBoudarySlider &&
-        caruselDirection === 'next'
-          ? this.endBoundarySlider
-          : this.counterShiftSlider === this.endBoundarySlider &&
-            caruselDirection === 'prev'
-          ? this.startBoudarySlider
-          : undefined;
-
-      if (boundary === undefined) return;
-
-      this.clearTransitionSlider();
-      this.setPositionWithAnotherBoundary(boundary);
-    }
-
-    moveHelperCaruselSlides(direction) {
+    moveHelperCaruselSlides(moveDirection) {
       if (
         this.counterShiftSlider < this.helperBoundary ||
         this.counterShiftSlider === this.startBoudarySlider
@@ -108,20 +109,20 @@ export const runSlider = () => {
       }
 
       const TRANSLATEX_VALUE =
-        direction === 'next' ? 0 : 100 * this.amountSlides;
-      const INDEX = this.counterShiftSlider * -1 - 1;
+        moveDirection === 'next' ? 0 : 100 * this.amountSlides;
+      const INDEX = Math.abs(this.counterShiftSlider) - 1;
       this.setTranslateX(this.helperCaruselSlides[INDEX], TRANSLATEX_VALUE);
     }
 
-    carusel(direction) {
-      this.moveToAnotherBoundary(direction);
-      this.moveHelperCaruselSlides(direction);
+    carusel(moveDirection) {
+      this.moveToOpossiteBoundary(moveDirection);
+      this.moveHelperCaruselSlides(moveDirection);
     }
 
     calcIndexActiveSlide() {
       return this.counterShiftSlider === this.endBoundarySlider
         ? 0
-        : this.counterShiftSlider * -1;
+        : Math.abs(this.counterShiftSlider);
     }
 
     setActiveSlideAndToggle() {
@@ -143,8 +144,8 @@ export const runSlider = () => {
       this.counterShiftSlider++;
       this.setActiveSlideAndToggle();
       //затримка - для непомітного виконання зміщеннь при carusel
+      this.addTransitionSlider();
       setTimeout(() => {
-        this.addTransitionSlider();
         this.moveSliderOneStep();
       }, 50);
     }
@@ -175,39 +176,75 @@ export const runSlider = () => {
         //для мобільки
         if (window.innerWidth <= 768 && this.step !== 100) {
           this.step = 100;
+          // this.inVisibleArea = 1;
+          // this.helperBoundary = -this.inVisibleArea;
+          // this.helperCaruselSlides = [...this.slides].splice(
+          //   0,
+          //   this.inVisibleArea
+          // );
         }
 
         e.preventDefault();
-        
+        this.swipe.slideWidth = this.slider.getBoundingClientRect().width;
         this.swipe.startX = e.changedTouches[0].clientX;
-        this.swipe.startTime = Date.now();
+        this.removeTransitionSlider();
+        // this.swipe.startTime = Date.now();
       });
 
       this.slider.addEventListener('touchmove', (e) => {
         e.preventDefault();
+        // Різниця між поточним дотиком і стартовим дотиком;
+        this.swipe.deltaX = e.changedTouches[0].clientX - this.swipe.startX;
+        // Значення різниці з пікселів в проценти;
+        this.swipe.deltaXPersentage = parseInt(
+          (this.swipe.deltaX / this.swipe.widthSlider) * 100
+        );
+        // Якщо відстань свайпу більше певної області слайдера вліво
+        if (this.swipe.deltaXPersentage < this.swipe.prevBoundary) {
+          // змінюємо слайд;
+          this.trottledSlideSwitch.call(this, this.previousSlide, 500);
+          // Моментально повертаємо слайдер і слайди в початкову позицію;
+          // Затримка необхіна для синхронизації, щоб не було "перескакувань";
+          if (this.counterShiftSlider === this.endBoundarySlider) {
+            setTimeout(() => this.carusel('prev'), 500);
+          }
+        }
 
-        this.swipe.currentX = e.changedTouches[0].clientX;
-        this.swipe.deltaX = this.swipe.currentX - this.swipe.startX;
+        // Рухаємо слайдер із слайдами при утримуванні дотику;
+        if (this.swipe.deltaXPersentage > this.swipe.prevBoundary) {
+          const step =
+            this.step * this.counterShiftSlider + this.swipe.deltaXPersentage;
+          this.setTranslateX(this.slider, step);
+        }
+
+        console.log(this.counterShiftSlider);
       });
 
       this.slider.addEventListener('touchend', (e) => {
         e.preventDefault();
-
-        const duration = Date.now() - this.swipe.startTime;
-        const distance = Math.abs(this.swipe.deltaX);
-        if (
-          distance < this.swipe.minDistance ||
-          distance > this.swipe.maxDistance ||
-          duration > this.swipe.maxTime
-        ) {
-          return;
+        // При свайпі не було зміни слайду,
+        // повертаємо поточний слайд в початкове положення;
+        if (Math.abs(this.swipe.deltaXPersentage) < this.swipe.nextBoundary) {
+          this.addTransitionSlider();
+          this.setTranslateX(this.slider, this.step * this.counterShiftSlider);
         }
+        // const duration = Date.now() - this.swipe.startTime;
+        // const distance = Math.abs(this.swipe.deltaX);
+        // if (
+        //   distance < this.swipe.minDistance ||
+        //   distance > this.swipe.maxDistance ||
+        //   duration > this.swipe.maxTime
+        // ) {
+        //   return;
+        // }
 
-        if (this.swipe.deltaX < 0) {
-          this.trottledSlideSwitch.call(this, this.previousSlide, 500);
-        } else {
-          this.trottledSlideSwitch.call(this, this.nextSlide, 500);
-        }
+        // if (this.swipe.deltaX < 0) {
+        //   this.trottledSlideSwitch.call(this, this.previousSlide, 500);
+        // } else {
+        //   this.trottledSlideSwitch.call(this, this.nextSlide, 500);
+        // }
+
+        // this.swipe.deltaX = 0
       });
 
       this.nextBtn.addEventListener(
