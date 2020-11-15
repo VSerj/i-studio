@@ -5,28 +5,29 @@ import { runButtonUp } from './button_up.js';
 import { Slider } from './slider';
 
 window.addEventListener('load', () => {
-  // stretchHeader()
-  // rollOut(
-  //   document.querySelectorAll('.fade'),
-  //   `${document.querySelector('.header').offsetHeight + 'px'} 0px 0px 30px`
-  // )
-  // runBurger()
-  // runButtonUp()
+  stretchHeader();
+  rollOut(
+    document.querySelectorAll('.fade'),
+    `${document.querySelector('.header').offsetHeight + 'px'} 0px 0px 30px`
+  );
+  runBurger();
+  runButtonUp();
   new Slider(
     {
       slider: document.querySelector('.slider__slideList'),
       slides: document.querySelectorAll('.slider__item'),
       prevBtn: document.querySelector('.slider-btn__previous'),
       nextBtn: document.querySelector('.slider-btn__next'),
-      toggles: document.querySelectorAll('.slider-toggle'),
+      toggles: document.querySelectorAll('.slider__toggle'),
       activeSlide: document.querySelector('.slider__item.slide--isActive'),
-      activeToggle: document.querySelector('.slider-toggle.slide--isActive'),
+      activeToggle: document.querySelector('.slider__toggle.slide--isActive'),
     },
     {
       inVisibleArea: 2,
-      slideWidth: 70, //проценты от области слайдера
+      slideWidth: 70,
       activeSelector: 'slide--isActive',
+      transitionSelector: 'slider__slideList--moveTransition',
+      delayTrottled: 500, 
     }
-  )
-  .run();
+  ).run();
 });

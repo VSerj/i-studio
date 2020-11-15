@@ -6,7 +6,7 @@ block content
       .container
 
         .fade-left.fade
-        
+
           .preview__title.preview-title
             h1.preview-title__main 
               | Digital production
@@ -46,7 +46,7 @@ block content
               img: `/assets/img/project-img/image-custom-${i + 1}.jpg`,
               alt: `project image${i + 1}`,
             })
-    
+
     //Our Awards
     section.awards.overflow-h
       .container.container-lines
@@ -103,7 +103,7 @@ block content
             | interactive menu available on exclusive branded iPads.
 
           +btn("#", "View the website")
-          
+
           ul.social-list
             li.social-item
               p Share
@@ -111,34 +111,37 @@ block content
               li.social-item
                 a.social-link(href="#")
                   i(class="icon-" + network)
-      
+
       .demo-work__slider
+        -
+          var sliderImg = [
+            "lw-img1.jpg", "lw-img2.jpg","lw-img4.jpg", "lw-img3.jpg"
+          ]
+
         .slider
-          -
-            var sliderImg = [
-              "lw-img1.jpg", "lw-img2.jpg","lw-img4.jpg", "lw-img3.jpg"
-            ]
           ul.slider__slideList
-            each image, index in sliderImg
-              - var activeFirstSlide = index ? "" : "slide--isActive"
+            each imageSlide, indexSlide in sliderImg
+              - var activeFirstSlide = indexSlide ? "" : "slide--isActive"
               li.slider__item(class=`${activeFirstSlide}`)
                 .slider__overlay
                 img(
-                  src=`./assets/img/lates-work/${image}`
+                  src=`./assets/img/lates-work/${imageSlide}`
                   alt="there was supposed to be a lates work slide"
                 )
-          
+
         .slider__btn-container
           .slider__btn.slider-btn.slider-btn__next
             span.slider-btn__arrow
           .slider__btn.slider-btn.slider-btn__previous
             span.slider-btn__arrow.slider-btn__arrow--previous
 
-        ul.slider-toggles
-          li.slider-toggle.slide--isActive(data-toggle-id="1")
-          li.slider-toggle(data-toggle-id="2")
-          li.slider-toggle(data-toggle-id="3")
-          li.slider-toggle(data-toggle-id="4")
+        ul.slider__toggles
+          each skipValue, indexSlide in sliderImg
+            - var activeFirstSlide = indexSlide ? "" : "slide--isActive"
+            li.slider__toggle(
+              class=`${activeFirstSlide}`
+              data-toggle-id=`${indexSlide +1}`
+            )
 
     //Team
     section.team.overflow-h
@@ -182,7 +185,6 @@ block content
                   p.member-info__position #{member.position}
 
           .team-info
-
             .team-info__box
               h2.title-primary.team-info__title
                 | Team

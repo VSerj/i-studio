@@ -1,5 +1,5 @@
 .demo-work {
-  .slider-toggles {
+  .slider__toggles {
     display: none;
     position: absolute;
     bottom: 1rem;
@@ -9,7 +9,7 @@
     transform: translateX(-50%);
   }
 
-  .slider-toggle {
+  .slider__toggle {
     opacity: 0.4;
     transition: all 0.3s;
     @include m(0, 10, 0, 0);
@@ -27,13 +27,15 @@
     }
   }
 }
-.demo-work .slider-toggle.slide--isActive {
+
+.demo-work .slider__toggle.slide--isActive {
   opacity: 1;
   background-color: $color-link--hover;
 }
+
 @include l_table {
   .demo-work {
-    .slider-toggles {
+    .slider__toggles {
       display: flex;
     }
   }

@@ -7,6 +7,8 @@ export class Slider {
     this.inVisibleArea = this.options.inVisibleArea;
     this.step = this.options.slideWidth;
     this.activeSelector = this.options.activeSelector;
+    this.transitionSelector = this.options.transitionSelector;
+    this.delayTrottled = this.options.delayTrottled;
     //DOM elements
     this.sliderElems = sliderElems;
     this.slider = sliderElems.slider;
@@ -43,18 +45,20 @@ export class Slider {
   }
 
   moveSliderOneStep() {
-    const CURRENT_STEP = this.counterShiftSlider * this.step;
-    this.setTranslateX(this.slider, CURRENT_STEP);
+    const currentStep = this.counterShiftSlider * this.step;
+    this.setTranslateX(this.slider, currentStep);
   }
 
   removeTransitionSlider() {
     //для непомітного зміщення слайдера в інший кінець
-    this.slider.classList.remove('slider__slideList--moveTransition');
+    this.slider.classList.remove(this.transitionSelector);
   }
 
   addTransitionSlider() {
-    if (this.slider.closest('.slider__slideList--moveTransition')) return;
-    this.slider.classList.add('slider__slideList--moveTransition');
+    if (this.slider.closest(`.${this.transitionSelector}`)) {
+      return;
+    }
+    this.slider.classList.add(this.transitionSelector);
   }
 
   // якщо слайдер досягає заданих границі, то зміщуємо його до протилежної
@@ -93,10 +97,9 @@ export class Slider {
       return;
     }
 
-    const TRANSLATEX_VALUE =
-      moveDirection === 'next' ? 0 : 100 * this.amountSlides;
-    const INDEX = Math.abs(this.counterShiftSlider) - 1;
-    this.setTranslateX(this.helperLoopSlides[INDEX], TRANSLATEX_VALUE);
+    const step = moveDirection === 'next' ? 0 : 100 * this.amountSlides;
+    const index = Math.abs(this.counterShiftSlider) - 1;
+    this.setTranslateX(this.helperLoopSlides[index], step);
   }
 
   loopMoving(moveDirection) {
@@ -211,9 +214,9 @@ export class Slider {
       }
 
       if (this.swipe.deltaX < 0) {
-        this.trottledSlideSwitch.call(this, this.prevSlide, 500);
+        this.trottledSlideSwitch.call(this, this.prevSlide, this.delayTrottled);
       } else {
-        this.trottledSlideSwitch.call(this, this.nextSlide, 500);
+        this.trottledSlideSwitch.call(this, this.nextSlide, this.delayTrottled);
       }
 
       this.swipe.deltaX = 0;
@@ -246,17 +249,18 @@ export class Slider {
       this.setParamsForScreen();
     });
   }
+
   run() {
     this.init();
     this.toggleMoving();
     this.swipeMoving();
     this.nextBtn.addEventListener(
       'click',
-      this.trottledSlideSwitch.bind(this, this.nextSlide, 500)
+      this.trottledSlideSwitch.bind(this, this.nextSlide, this.delayTrottled)
     );
     this.prevBtn.addEventListener(
       'click',
-      this.trottledSlideSwitch.bind(this, this.prevSlide, 500)
+      this.trottledSlideSwitch.bind(this, this.prevSlide, this.delayTrottled)
     );
   }
 }
