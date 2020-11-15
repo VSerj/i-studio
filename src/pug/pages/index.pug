@@ -116,7 +116,7 @@ block content
         .slider
           -
             var sliderImg = [
-              "lw-img1.jpg", "lw-img2.jpg", "lw-img3.jpg"
+              "lw-img1.jpg", "lw-img2.jpg","lw-img4.jpg", "lw-img3.jpg"
             ]
           ul.slider__slideList
             each image, index in sliderImg
@@ -135,9 +135,10 @@ block content
             span.slider-btn__arrow.slider-btn__arrow--previous
 
         ul.slider-toggles
-          li.slider-toggle.slide--isActive
-          li.slider-toggle
-          li.slider-toggle
+          li.slider-toggle.slide--isActive(data-toggle-id="1")
+          li.slider-toggle(data-toggle-id="2")
+          li.slider-toggle(data-toggle-id="3")
+          li.slider-toggle(data-toggle-id="4")
 
     //Team
     section.team.overflow-h
