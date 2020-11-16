@@ -1,38 +1,42 @@
 .demo-work {
-  .slider-btn-container {
+  .slider__btn-container {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 0;
+    z-index: 3;
     transform: translate(-50%, -50%);
   }
 
-  .slider-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  .slider__btn {
     @include m(0, 0, 10, 0);
-    width: px(62);
-    height: px(64);
-    background: $bg-color-default;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    color: $color-default--darkest;
 
     &:last-child {
       margin: 0;
     }
   }
 
-  .slider-btn-next {
+  .slider-btn {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: px(62);
+    height: px(64);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    background: $bg-color-default;
+    cursor: pointer;
+    color: $color-default--darkest;
+  }
+
+  .slider-btn__next {
     border-top-left-radius: px(10);
   }
 
-  .slider-btn-previous {
+  .slider-btn__previous {
     border-bottom-right-radius: px(10);
   }
 
-  .slider-arrow {
+  .slider-btn__arrow {
     display: block;
     position: absolute;
     transition: background 0.3s ease-in-out;
@@ -42,31 +46,31 @@
     background: $color-default--darkest;
 
     &::before {
-      @extend .slider-arrow;
+      @extend .slider-btn__arrow;
       top: 0;
       transform: rotate(-40deg) translate(0px, 5px) scaleX(0.6);
-      content: "";
+      content: '';
     }
 
     &::after {
-      @extend .slider-arrow;
+      @extend .slider-btn__arrow;
       bottom: 0;
       transform: rotate(40deg) translate(0px, -5px) scaleX(0.6);
-      content: "";
+      content: '';
     }
   }
 
-  .slider-arrow-previous {
+  .slider-btn__arrow--previous {
     transform: rotate(180deg);
   }
 
-  .slider-btn:hover .slider-arrow {
+  .slider-btn:hover .slider-btn__arrow {
     background: $color-default--darken;
   }
 }
 
 @include l_table {
-  .demo-work .slider-btn-container {
+  .demo-work .slider__btn-container {
     display: none;
   }
 }

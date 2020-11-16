@@ -1,13 +1,12 @@
 extend ../layout/base.pug
 block content
   main
-
     //Preview
     section.preview.overflow-h
       .container
 
         .fade-left.fade
-        
+
           .preview__title.preview-title
             h1.preview-title__main 
               | Digital production
@@ -47,7 +46,7 @@ block content
               img: `/assets/img/project-img/image-custom-${i + 1}.jpg`,
               alt: `project image${i + 1}`,
             })
-    
+
     //Our Awards
     section.awards.overflow-h
       .container.container-lines
@@ -91,7 +90,7 @@ block content
           +btn("#", "View all projects")
 
     //Inter Restaurant
-    section.demo-work.context-dark.overflow-h
+    section.demo-work.context-dark
       .container
 
         div.demo-work-container.fade-right.fade
@@ -113,22 +112,36 @@ block content
                 a.social-link(href="#")
                   i(class="icon-" + network)
 
-      ul.slider-list
-        each image in ["lw-img1.jpg", "lw-img2.jpg"]
-          li.slider-item
-            img(
-              src="./assets/img/lates-work/" + image
-              alt="there was supposed to be a lates work slide"
-            )
+      .demo-work__slider
+        -
+          var sliderImg = [
+            "lw-img1.jpg", "lw-img2.jpg","lw-img4.jpg", "lw-img3.jpg"
+          ]
 
-      .slider-btn-container 
-        .slider-btn.slider-btn-next
-          span.slider-arrow
-        .slider-btn.slider-btn-previous
-          span.slider-arrow.slider-arrow-previous
-      ul.slider-toggles
-        li.slider-toggle
-        li.slider-toggle
+        .slider
+          ul.slider__slideList
+            each imageSlide, indexSlide in sliderImg
+              - var activeFirstSlide = indexSlide ? "" : "slide--isActive"
+              li.slider__item(class=`${activeFirstSlide}`)
+                .slider__overlay
+                img(
+                  src=`./assets/img/lates-work/${imageSlide}`
+                  alt="there was supposed to be a lates work slide"
+                )
+
+        .slider__btn-container
+          .slider__btn.slider-btn.slider-btn__next
+            span.slider-btn__arrow
+          .slider__btn.slider-btn.slider-btn__previous
+            span.slider-btn__arrow.slider-btn__arrow--previous
+
+        ul.slider__toggles
+          each skipValue, indexSlide in sliderImg
+            - var activeFirstSlide = indexSlide ? "" : "slide--isActive"
+            li.slider__toggle(
+              class=`${activeFirstSlide}`
+              data-toggle-id=`${indexSlide +1}`
+            )
 
     //Team
     section.team.overflow-h
@@ -172,7 +185,6 @@ block content
                   p.member-info__position #{member.position}
 
           .team-info
-
             .team-info__box
               h2.title-primary.team-info__title
                 | Team
