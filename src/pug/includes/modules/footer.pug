@@ -1,4 +1,4 @@
-section.footer.context-dark
+section.footer.context-dark#contacts-anchor
   .container
   
     .footer-grid
@@ -41,7 +41,7 @@ section.footer.context-dark
 
         h3.title-secondary
           | Newsletter
-        form.footer-form.footer-box__form(action="#" method="post")
+        form.footer-form.footer-box__form(action="'Oppps'" method="post")
           .input-box
             .input-box__icon.ico-mail
             input.input-box__input.footer-form__text(
@@ -51,7 +51,7 @@ section.footer.context-dark
             )
             label.input-box__placeholder.input-box__placeholder--focus.footer-form__text(for="footer-mail")
               | E-mail
-          button.btn.footer-form__btn(type="submit")
+          button.btn.footer-form__btn(type="submit" onclick="return false")
             | Subscribe
   
 footer.footer-bottom.context-darkest
@@ -72,11 +72,11 @@ footer.footer-bottom.context-darkest
       
         ul.footer-bottom-nav
           li.footer-bottom-nav__item
-            a.footer-bottom__link(href="#")
+            a.footer-bottom__link(href="#about-anchor")
               | About us
           li.footer-bottom-nav__item
-            a.footer-bottom__link(href="#")
+            a.footer-bottom__link(href="#team-anchor")
               | Our Team
           li.footer-bottom-nav__item
-            a.footer-bottom__link(href="#")
-              | Blog
+            a.footer-bottom__link(href="#award-anchor")
+              | Awards

@@ -3,6 +3,7 @@ import { rollOut } from './rollout_fade_effect.js';
 import { stretchHeader } from './stretch_header.js';
 import { runButtonUp } from './button_up.js';
 import { Slider } from './slider';
+import { selectNavLink } from './select-nav-link.js';
 
 window.addEventListener('load', () => {
   stretchHeader();
@@ -12,6 +13,7 @@ window.addEventListener('load', () => {
   );
   runBurger();
   runButtonUp();
+  selectNavLink(document.querySelector('.nav'));
   new Slider(
     {
       slider: document.querySelector('.slider__slideList'),
