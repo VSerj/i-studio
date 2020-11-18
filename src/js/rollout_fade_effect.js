@@ -17,7 +17,6 @@ export function rollOut(elemsList = null, rootMargin = '0px 0px 0px 0px') {
       if (!isIntersecting) return;
 
       if (target.matches('.counter__number')) {
-        console.log(target);
         runCounter(target, 80);
       } else {
         target.classList.add('rollOut');

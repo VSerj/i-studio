@@ -1,3 +1,14 @@
+// section.awards {
+//   position: relative;
+// }
+
+// .helper-a {
+//   position: absolute;
+//   opacity: 0;
+//   z-index: -1;
+//   padding: 100px;
+//   pointer-events: none;
+// }
 
 .wrapper {
   position: relative;
@@ -58,7 +69,7 @@
 }
 
 @include l_desktop {
-  .container{
+  .container {
     max-width: 960px;
   }
 
@@ -73,7 +84,6 @@
   .text-big {
     font-size: px(16);
   }
-
 }
 
 @include sm_desktop {
@@ -83,7 +93,7 @@
 }
 
 @include l_table {
-  .container{
+  .container {
     max-width: 540px;
   }
 }
