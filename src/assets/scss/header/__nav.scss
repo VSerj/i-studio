@@ -23,11 +23,6 @@
       background: $bg-color-header-link;
       color: $color-header-link-hover;
     }
-
-    &--selected {
-      background: $bg-color-header-link;
-      color: $color-header-link-hover;
-    }
   }
 }
 
@@ -54,11 +49,6 @@
       color: $color-header-link--mobile;
 
       &:hover {
-        background: $bg-color-header-link-hover--mobile;
-        color: $color-default--light;
-      }
-
-      &--selected {
         background: $bg-color-header-link-hover--mobile;
         color: $color-default--light;
       }
