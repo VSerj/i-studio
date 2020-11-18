@@ -1,29 +1,35 @@
-'user strict'
+'user strict';
+import { runCounter } from './autofill_counter';
 
-export function rollOut(elemsList = null, rootMargin = "0px 0px 0px 0px") {
-  if (!elemsList) return
+export function rollOut(elemsList = null, rootMargin = '0px 0px 0px 0px') {
+  if (!elemsList) return;
 
   const rollOutOptions = {
     root: null,
     rootMargin,
     threshold: 0,
-  }
+  };
 
   const rollOutObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      const { target, isIntersecting } = entry
+    entries.forEach((entry) => {
+      const { target, isIntersecting } = entry;
 
-      if (!isIntersecting) return
+      if (!isIntersecting) return;
 
-      target.classList.add('rollOut')
-      observer.unobserve(target)
+      if (target.matches('.counter__number')) {
+        console.log(target);
+        runCounter(target, 80);
+      } else {
+        target.classList.add('rollOut');
+      }
 
-    })
-  }, rollOutOptions)
+      observer.unobserve(target);
+    });
+  }, rollOutOptions);
 
-  addObserverRollOut(elemsList)
+  addObserverRollOut(elemsList);
 
   function addObserverRollOut(elemsList) {
-    elemsList.forEach(elem => rollOutObserver.observe(elem))
+    elemsList.forEach((elem) => rollOutObserver.observe(elem));
   }
 }
