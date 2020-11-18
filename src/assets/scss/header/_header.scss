@@ -6,10 +6,10 @@
   grid-template-columns: 16% 84%;
   transition: height 0.2s linear;
   z-index: $zIndexHeader;
-  background: $bg-color-default;
   width: 100%;
   height: px(70);
   border-bottom: 1px solid $line-color-default--dark;
+  background: $bg-color-default;
 }
 
 .header__wrapper {

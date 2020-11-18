@@ -20,7 +20,7 @@ block content
             | creative campaigns both online and offline.
 
     //Every Project
-    section.project.overflow-h
+    section.project.overflow-h#about-anchor
       .container.container-lines
         +grid-bg-lines
 
@@ -48,7 +48,7 @@ block content
             })
 
     //Our Awards
-    section.awards.overflow-h
+    section.awards.overflow-h#award-anchor
       .container.container-lines
         +grid-bg-lines
 
@@ -144,7 +144,7 @@ block content
             )
 
     //Team
-    section.team.overflow-h
+    section.team.overflow-h#team-anchor
       .container.container-lines
         +grid-bg-lines
 
@@ -179,7 +179,10 @@ block content
               ]
             each member in members
               li(class=`member-box fade-${member.rollInSide} fade`)
-                img.member-box__photo(src=member.photo, alt="there was supposed to be a photo")
+                img.member-box__photo(
+                  src=member.photo
+                  alt="there was supposed to be a photo"
+                )
                 div.member-box__info.member-info
                   p.member-info__name #{member.name}
                   p.member-info__position #{member.position}

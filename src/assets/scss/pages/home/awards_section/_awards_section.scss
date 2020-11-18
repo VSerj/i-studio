@@ -1,12 +1,12 @@
 .awards_container {
   position: relative;
   z-index: $zIndexSectionContent;
-  @include p(100, 0, 100, 0);
+  @include p(80, 0, 100, 0);
 }
 
 @include sm_desktop {
   .awards_container {
-    @include p(50, 0, 65, 0);
+    @include p(60, 0, 65, 0);
   }
 }
 
