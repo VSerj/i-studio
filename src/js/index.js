@@ -7,7 +7,7 @@ import { Slider } from './slider';
 window.addEventListener('load', () => {
   stretchHeader();
   rollOut(
-    document.querySelectorAll('.fade'),
+    document.querySelectorAll('.fade, .counter__number'),
     `${document.querySelector('.header').offsetHeight + 'px'} 0px 0px 30px`
   );
   runBurger();
@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
       slideWidth: 70,
       activeSelector: 'slide--isActive',
       transitionSelector: 'slider__slideList--moveTransition',
-      delayTrottled: 500, 
+      delayTrottled: 500,
     }
   ).run();
 });
