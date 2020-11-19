@@ -3,52 +3,52 @@
   background-color: $bg-color-dark;
 }
 
-.demo-work-container {
+.demo-work__container {
   position: relative;
   z-index: $zIndexSectionContent;
   width: 42%;
   @include p(80, 0, 135, 0);
 }
 
-.demo-work-container .title-secondary {
+.demo-work__title {
   @include m(0, 0, 43, 0);
 }
 
-.demo-work-description {
+.demo-work__description {
   @include m(0, 0, 50, 0);
   color: $color-default-lighten;
 }
 
-.demo-work-container .btn {
+.demo-work__container .btn {
   @include m(0, 0, 52, 0);
 }
 
 @include l_desktop {
-  .demo-work-container {
+  .demo-work__container {
     @include p(60, 0, 55, 0);
     width: 40%;
   }
 
-  .demo-work-container .title-secondary {
+  .demo-work__title {
     @include m(0, 0, 23, 0);
   }
 
-  .demo-work-description {
+  .demo-work__description {
     @include m(0, 0, 25, 0);
   }
 
-  .demo-work-container .btn {
+  .demo-work__container .btn {
     @include m(0, 0, 25, 0);
   }
 }
 
 @include l_table {
-  .demo-work-container {
+  .demo-work__container {
     width: 100%;
   }
 }
 
-@import "/_demo-work-social.scss";
-@import "/_demo-work-slider.scss";
-@import "/_demo-slider-btn.scss";
-@import "/_demo-slider-toggles.scss";
+@import "/__social.scss";
+@import "/__slider.scss";
+@import "/__slider-btn.scss";
+@import "/__slider-toggles.scss";

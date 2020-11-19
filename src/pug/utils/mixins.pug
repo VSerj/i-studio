@@ -7,17 +7,17 @@ mixin grid-bg-lines
 mixin btn(href, text)
   a.btn(href=href)=text
 
-mixin counter(title, number, newClass)
+mixin counter(selector, title, number)
   mixin counter-inner(title, number)
     .counter__number= number
     .counter__box
       .counter__symbol +
       .counter__title= title
-  if newClass == undefined
+  if selector == undefined
     div(class="counter")
       +counter-inner(title, number)
   else 
-    div(class="counter" + " " + newClass)
+    div(class=`${selector} counter`)
       +counter-inner(title, number)
 
 //миксин для секции Every Project

@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const { VueLoaderPlugin } = require('vue-loader')
 
 // Main const
 const PATHS = {
@@ -67,7 +66,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          // useRelativePaths: true
+          useRelativePaths: true
         },
       },
       {
@@ -132,10 +131,10 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-      {
-        from: `${PATHS.src}/${PATHS.assets}vendor/font`,
-        to: `${PATHS.assets}vendor/font`,
-      },
+      // {
+      //   from: `${PATHS.src}/${PATHS.assets}vendor/font`,
+      //   to: `${PATHS.assets}vendor/font`,
+      // },
       { from: `${PATHS.src}/static`, to: '' },
     ]),
 

@@ -1,4 +1,4 @@
-.awards-link-arrow {
+.awards-list__itemArrow {
   display: block;
   position: absolute;
   width: 16px;
@@ -7,14 +7,14 @@
   border-radius: 0 25% 25% 0;
 
   &::before {
-    @extend .awards-link-arrow;
+    @extend .awards-list__itemArrow;
     top: 0;
     transform: rotate(-40deg) translate(0px, 5px) scaleX(0.6);
     content: "";
   }
 
   &::after {
-    @extend .awards-link-arrow;
+    @extend .awards-list__itemArrow;
     bottom: 0;
     transform: rotate(40deg) translate(0px, -5px) scaleX(0.6);
     content: "";

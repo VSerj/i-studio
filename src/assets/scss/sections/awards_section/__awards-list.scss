@@ -6,7 +6,7 @@
   border-right: 1px solid $line-color-default;
 }
 
-.awards-list-item {
+.awards-list__item {
   transition: background-color 0.3s ease-in-out;
   height: 100%;
   border-left: 1px solid $line-color-default;
@@ -22,7 +22,7 @@
   }
 }
 
-.awards-link {
+.awards-list__itemLink {
   display: flex;
   position: relative;
   align-items: center;
@@ -33,19 +33,19 @@
   color: $color-default--darken;
 }
 
-.awards-item-title {
+.awards-list__itemTitle {
   position: absolute;
   top: px(19);
   right: px(20);
   text-transform: uppercase;
 }
 
-.awards-link-img {
+.awards-list__itemImg {
   object-fit: contain;
 }
 
 @include sm_desktop {
-  .awards-item-title {
+  .awards-list__itemTitle {
     top: px(10);
   }
 }

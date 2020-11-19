@@ -10,9 +10,7 @@
   cursor: pointer;
 
   @include p(8, 24, 8, 22);
-  // overflow: hidden;
   text-transform: uppercase;
-  // text-overflow: ellipsis;
   white-space: nowrap;
   letter-spacing: 0.05em;
   color: #ffffff;
