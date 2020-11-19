@@ -3,6 +3,7 @@
 @import "/utils/_vars.scss";
 
 @import "/base/_fonts.scss";
+@import "/base/_fonts-icons.scss";
 @import "/base/_reset.scss";
 @import "/base/_base.scss";
 @import "/base/_common.scss";
@@ -18,8 +19,6 @@
 @import "/modules/form/_form.scss";
 @import "/modules/buttons/_button_up.scss";
 
-
-// @import "../vendor/mail/_flaticon";
-@import "/pages/home/home.scss";
+@import "/sections/_sections.scss";
 
 @import "/footer/_footer.scss";

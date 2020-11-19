@@ -6,7 +6,6 @@ block content
       .container
 
         .fade-left.fade
-
           .preview__title.preview-title
             h1.preview-title__main 
               | Digital production
@@ -25,7 +24,6 @@ block content
         +grid-bg-lines
 
         .project__container
-
           h2.project__title.title-primary 
             | Every Project
           h3.project__subtitle.text-big 
@@ -43,7 +41,7 @@ block content
             +project-images__item({
               index: i + 1,
               delay: time ? `t-delay-${time}` : '',
-              img: `/assets/img/project-img/image-custom-${i + 1}.jpg`,
+              img: `./assets/img/project-img/image-custom-${i + 1}.jpg`,
               alt: `project image${i + 1}`,
             })
 
@@ -53,7 +51,6 @@ block content
         +grid-bg-lines
 
         .awards_container
-
           .awards-head
             h2.awards-title.title-primary 
               | Our Awards
@@ -65,6 +62,7 @@ block content
 
           - var n = 1
           - var text = 'award #'
+          
           ul.awards-list.fade-down.fade
             while n < 6
               li.awards-list-item
@@ -84,7 +82,6 @@ block content
         +grid-bg-lines
 
         .lates-works-container
-
           h2.title-primary
             | Lates works
           +btn("#", "View all projects")
@@ -94,7 +91,6 @@ block content
       .container
 
         div.demo-work-container.fade-right.fade
-
           h3.title-secondary
             | Inter Restaurant
           p.demo-work-description
@@ -117,7 +113,6 @@ block content
           var sliderImg = [
             "lw-img1.jpg", "lw-img2.jpg","lw-img4.jpg", "lw-img3.jpg"
           ]
-
         .slider
           ul.slider__slideList
             each imageSlide, indexSlide in sliderImg
@@ -128,13 +123,11 @@ block content
                   src=`./assets/img/lates-work/${imageSlide}`
                   alt="there was supposed to be a lates work slide"
                 )
-
         .slider__btn-container
           .slider__btn.slider-btn.slider-btn__next
             span.slider-btn__arrow
           .slider__btn.slider-btn.slider-btn__previous
             span.slider-btn__arrow.slider-btn__arrow--previous
-
         ul.slider__toggles
           each skipValue, indexSlide in sliderImg
             - var activeFirstSlide = indexSlide ? "" : "slide--isActive"
@@ -155,25 +148,25 @@ block content
                 {
                   name: "John Smith",
                   position: "Senior designer",
-                  photo: "assets/img/photo-members/photo-1.jpg",
+                  photo: "./assets/img/photo-members/photo-1.jpg",
                   rollInSide: "right"
                 },
                 {
                   name: "Gary Hughes",
                   position: "Designer",
-                  photo: "assets/img/photo-members/photo-2.jpg", 
+                  photo: "./assets/img/photo-members/photo-2.jpg", 
                   rollInSide: "left"
                 }, 
                 {
                   name: "Sam Lee",
                   position: "Developer",
-                  photo: "assets/img/photo-members/photo-3.jpg",
+                  photo: "./assets/img/photo-members/photo-3.jpg",
                   rollInSide: "right"
                 },
                 {
                   name: "Sarah Parker",
                   position: "Marketing manager",
-                  photo: "assets/img/photo-members/photo-4.jpg",
+                  photo: "./assets/img/photo-members/photo-4.jpg",
                   rollInSide: "left"
                 }
               ]
@@ -195,10 +188,8 @@ block content
                 | We are a dedicated team of web design, 
                 | development and marketing professionals 
                 | always ready to help you.
-
             .team-info__box
               +counter("People in team", 20, "team-info__counter")
-
               ul.ordered-list.team-info__list
                 li.ordered-list__item
                   | 28 exceptional full-time professionals
