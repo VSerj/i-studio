@@ -1,4 +1,4 @@
-.awards-head {
+.awards-gridHeader {
   display: grid;
   grid-template-columns: repeat(3, 33.33333%);
   justify-items: center;
@@ -16,10 +16,20 @@
   }
 }
 
-.awards-description {
+@include sm_desktop {
+  .awards-gridHeader__item1 {
+    grid-column: 1 / 3;
+    @include m(0, 0, 30, 0);
+  }
+}
+
+@include width575 {
+  .awards-gridHeader__item1 {
+    grid-column: 1 / 2;
+  }
+}
+.awards-gridHeader__item2 {
   @include p(0, 40, 0, 45);
-  font-family: $font-family-default--light;
-  color: $color-default--darkest;
 
   @include l_desktop {
     @include p(0, 5, 0, 10);
@@ -38,19 +48,8 @@
   }
 }
 
-.awards__counter {
+.awards-gridHeader__item3 {
   max-width: 60%;
 }
 
-@include sm_desktop {
-  .awards-title {
-    grid-column: 1 / 3;
-    @include m(0, 0, 30, 0);
-  }
-}
 
-@include width575 {
-  .awards-title {
-    grid-column: 1 / 2;
-  }
-}

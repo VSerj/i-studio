@@ -50,31 +50,30 @@ block content
       .container.container-lines
         +grid-bg-lines
 
-        .awards_container
-          .awards-head
-            h2.awards-title.title-primary 
+        .awards__container
+          .awards-gridHeader
+            h2.awards-gridHeader__item1.title-primary 
               | Our Awards
-            p.awards-description.text-big
+            p.awards-gridHeader__item2.awards__description.text-big
               | As a leading web design team, we have 
               | received multiple awards over the years.
+            +counter("awards-gridHeader__item3", "international awards", "17")
 
-            +counter('international awards', '17', "awards__counter")
-
-          - var n = 1
-          - var text = 'award #'
-          
           ul.awards-list.fade-down.fade
+            - var n = 1
+            - var text = 'award #'
             while n < 6
-              li.awards-list-item
-                a.awards-link(href="#")
-                  span.awards-item-title #{text}#{n}
-                  img.awards-link-img(
-                    src="./assets/img/awards/brand-" + n++ + ".png"
+              li.awards-list__item
+                a.awards-list__itemLink(href="#")
+                  span.awards-list__itemTitle
+                    | #{text}#{n}
+                  img.awards-list__itemImg(
+                    src=`./assets/img/awards/brand-${n++}.png`
                     alt="there was supposed to be a award"
                   )
-            li.awards-list-item
-              a.awards-link
-                span.awards-link-arrow
+            li.awards-list__item
+              a.awards-list__itemLink
+                span.awards-list__itemArrow
 
     //Lates works
     section.overflow-h#lastes-works
@@ -90,10 +89,10 @@ block content
     section.demo-work.context-dark
       .container
 
-        div.demo-work-container.fade-right.fade
-          h3.title-secondary
+        div.demo-work__container.fade-right.fade#demo-work-anchor
+          h3.demo-work__title.title-secondary
             | Inter Restaurant
-          p.demo-work-description
+          p.demo-work__description
             | We designed and developed an updated website 
             | for the Inter Restaurant as well as their new 
             | interactive menu available on exclusive branded iPads.
@@ -189,7 +188,7 @@ block content
                 | development and marketing professionals 
                 | always ready to help you.
             .team-info__box
-              +counter("People in team", 20, "team-info__counter")
+              +counter("team-info__counter", "People in team", 20)
               ul.ordered-list.team-info__list
                 li.ordered-list__item
                   | 28 exceptional full-time professionals

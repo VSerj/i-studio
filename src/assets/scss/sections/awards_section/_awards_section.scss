@@ -1,15 +1,20 @@
-.awards_container {
+.awards__container {
   position: relative;
   z-index: $zIndexSectionContent;
   @include p(80, 0, 100, 0);
 }
 
 @include sm_desktop {
-  .awards_container {
+  .awards__container {
     @include p(60, 0, 65, 0);
   }
 }
 
-@import "/__head.scss";
-@import "/__list.scss";
-@import "/__arrow.scss";
+.awards__description {
+  font-family: $font-family-default--light;
+  color: $color-default--darkest;
+}
+
+@import "/__awards-header.scss";
+@import "/__awards-list.scss";
+@import "/__awards-list-item-arrow.scss";
