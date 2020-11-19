@@ -50,19 +50,9 @@ export class Slider {
   }
 
   removeTransitionSlider() {
-    //для непомітного зміщення слайдера в інший кінець
     this.slider.classList.remove(this.transitionSelector);
   }
 
-  addTransitionSlider() {
-    if (this.slider.closest(`.${this.transitionSelector}`)) {
-      return;
-    }
-    this.slider.classList.add(this.transitionSelector);
-  }
-
-  // якщо слайдер досягає заданих границі, то зміщуємо його до протилежної
-  // для зацикленності
   loopMovingToOpositeBoundary(moveDirection) {
     const boundary = this.getOpositeBoundary(moveDirection);
     if (boundary === undefined) return;
@@ -87,8 +77,6 @@ export class Slider {
       : undefined;
   }
 
-  // Переміщення слайдів, яких не видно в полі зору, для компенсації пустоти
-  // на початку і кінці слайдера при повільному русі. Для зацикленості.
   moveHelperLoopSlides(moveDirection) {
     if (
       this.counterShiftSlider < this.helperBoundary ||
@@ -133,13 +121,15 @@ export class Slider {
     if (this.isClickOnToggle) {
       this.removeTransitionSlider();
       this.moveSliderOneStep();
-    } else {
-      //затримка - для непомітного виконання зміщеннь при loop
-      setTimeout(() => {
-        this.addTransitionSlider();
-        this.moveSliderOneStep();
-      }, 50);
+      return
     }
+
+    setTimeout(() => {
+      if (!this.slider.closest(`.${this.transitionSelector}`)) {
+        this.slider.classList.add(this.transitionSelector);
+      }
+      this.moveSliderOneStep();
+    }, 50);
   }
 
   nextSlide() {
@@ -153,27 +143,25 @@ export class Slider {
     this.counterShiftSlider--;
     this.switchSlide();
   }
+  
+  togglesSwitching() {
+    const numberOfcallsToMove = (nameFuncToMove, counterOfCall) => {
+      while (counterOfCall) {
+        this[nameFuncToMove]();
+        --counterOfCall;
+      }
+    };
 
-  toggleMoving() {
     this.toggles.forEach((toggle) => {
       toggle.addEventListener('click', () => {
         const selectedToggleID = +toggle.dataset.toggleId;
-        // різниця використовується для визначення напралення руху і
-        // кроків для зміщення
         const deltaToggleID = selectedToggleID - this.activeToggleID;
+
         if (deltaToggleID === 0) {
           return;
         }
-        // для запуску switchSlide без transiiton
+
         this.isClickOnToggle = true;
-        // функція, яка імітує кліки і слугує для зміщення слайдера
-        // на к-ть кроків до відповідного слайдера, визваного перемикачем
-        const numberOfcallsToMove = (nameFuncToMove, counterOfCall) => {
-          while (counterOfCall) {
-            this[nameFuncToMove]();
-            --counterOfCall;
-          }
-        };
 
         numberOfcallsToMove(
           deltaToggleID > 0 ? 'prevSlide' : 'nextSlide',
@@ -188,20 +176,15 @@ export class Slider {
 
   swipeMoving() {
     this.slider.addEventListener('touchstart', (e) => {
-      e.preventDefault();
       this.swipe.startX = e.changedTouches[0].clientX;
       this.swipe.startTime = Date.now();
-    });
+    }, {passive: true});
 
     this.slider.addEventListener('touchmove', (e) => {
-      e.preventDefault();
-
-      // Різниця між поточним дотиком і стартовим дотиком;
       this.swipe.deltaX = e.changedTouches[0].clientX - this.swipe.startX;
-    });
+    }, {passive: true});
 
     this.slider.addEventListener('touchend', (e) => {
-      e.preventDefault();
 
       const duration = Date.now() - this.swipe.startTime;
       const distance = Math.abs(this.swipe.deltaX);
@@ -220,10 +203,9 @@ export class Slider {
       }
 
       this.swipe.deltaX = 0;
-    });
+    }, {passive: true});
   }
-  //trottledSlideSwitch затримка для великії к-ті виклів ф-ції.
-  //delayMs = duration в .slider__slideList--moveTransition.
+
   trottledSlideSwitch(func, delayMs) {
     if (this.isTrottled) return;
 
@@ -252,7 +234,7 @@ export class Slider {
 
   run() {
     this.init();
-    this.toggleMoving();
+    this.togglesSwitching();
     this.swipeMoving();
     this.nextBtn.addEventListener(
       'click',
