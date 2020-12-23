@@ -8,7 +8,7 @@ Learn How to make an interactive page using javascript
 ### Run project
 1. To run a project with a module devServer: `npm run dev`. 
     >You also need to download `npm packages`.
-2. Open on hosting [vserj.github.io](https://vserj.github.io/).
+2. Open on hosting [vserj.github.io](https://vserj.github.io/istudio-landing/).
 ### Tools and technologies
 * html 
 * css
